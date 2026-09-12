@@ -112,3 +112,11 @@ temp/
 client/public/__manus__/version.json
 .project-config.json
 .manus-logs/
+
+# Local Python virtual environment & agent tooling
+.venv/
+.agents/
+.claude/
+agent/
+cheeta-jewels-offline-media/
+skills-lock.json

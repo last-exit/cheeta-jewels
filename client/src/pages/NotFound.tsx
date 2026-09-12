@@ -1,49 +1,68 @@
-import { Button } from "@/components/ui/button";
-import { Card, CardContent } from "@/components/ui/card";
-import { AlertCircle, Home } from "lucide-react";
-import { useLocation } from "wouter";
+/**
+ * NOT FOUND — Editorial 404
+ * A quiet, considered page when a route is not in the public archive.
+ */
+import { motion } from "framer-motion";
+import { Link } from "wouter";
+import { ArrowLeft, ArrowUpRight } from "lucide-react";
 
 export default function NotFound() {
-  const [, setLocation] = useLocation();
-
-  const handleGoHome = () => {
-    setLocation("/");
-  };
-
   return (
-    <div className="min-h-screen w-full flex items-center justify-center bg-gradient-to-br from-slate-50 to-slate-100">
-      <Card className="w-full max-w-lg mx-4 shadow-lg border-0 bg-white/80 backdrop-blur-sm">
-        <CardContent className="pt-8 pb-8 text-center">
-          <div className="flex justify-center mb-6">
-            <div className="relative">
-              <div className="absolute inset-0 bg-red-100 rounded-full animate-pulse" />
-              <AlertCircle className="relative h-16 w-16 text-red-500" />
-            </div>
+    <main className="relative min-h-screen w-full bg-[#F4F1E8] text-[#1A1410] flex items-center justify-center px-6 py-32 select-none">
+
+      <div className="max-w-3xl w-full">
+        <motion.div
+          initial={{ opacity: 0, y: 16 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
+          className="space-y-10"
+        >
+          {/* Editorial mark */}
+          <div className="flex items-center gap-3">
+            <span className="h-px w-8 bg-[#6B1A2C]" />
+            <span className="font-sans text-[10px] uppercase tracking-[0.32em] text-[#1A1410]/55">
+              404 / Archive Notice
+            </span>
           </div>
 
-          <h1 className="text-4xl font-bold text-slate-900 mb-2">404</h1>
+          {/* Headline */}
+          <h1 className="font-serif text-[clamp(3.2rem,9vw,7rem)] font-normal leading-[0.92] tracking-[-0.03em] text-[#1A1410]">
+            An object <em className="not-italic text-[#6B1A2C]">undisclosed</em>.
+          </h1>
 
-          <h2 className="text-xl font-semibold text-slate-700 mb-4">
-            Page Not Found
-          </h2>
-
-          <p className="text-slate-600 mb-8 leading-relaxed">
-            Sorry, the page you are looking for doesn't exist.
-            <br />
-            It may have been moved or deleted.
+          {/* Body */}
+          <p className="font-sans text-base md:text-lg text-[#1A1410]/75 leading-relaxed max-w-xl">
+            The address you followed is not in the public archive of Cheetah Jewelz. Some pieces are kept under private viewing only. Others simply no longer exist.
           </p>
 
-          <div className="flex flex-col sm:flex-row gap-3 justify-center">
-            <Button
-              onClick={handleGoHome}
-              className="bg-blue-600 hover:bg-blue-700 text-white px-6 py-2.5 rounded-lg transition-all duration-200 shadow-md hover:shadow-lg"
+          {/* Actions */}
+          <div className="flex flex-col sm:flex-row items-start sm:items-center gap-4 pt-6">
+            <Link
+              href="/"
+              className="group inline-flex items-center gap-3 bg-[#1A1410] text-[#F4F1E8] hover:bg-[#6B1A2C] transition-colors duration-300 pl-6 pr-2.5 py-2.5 rounded-full font-sans text-[11px] uppercase tracking-[0.2em]"
             >
-              <Home className="w-4 h-4 mr-2" />
-              Go Home
-            </Button>
+              <span>Return to Entrance</span>
+              <span className="w-7 h-7 rounded-full bg-white/10 flex items-center justify-center transition-transform group-hover:translate-x-0.5">
+                <ArrowUpRight size={13} />
+              </span>
+            </Link>
+
+            <Link
+              href="/retail"
+              className="group inline-flex items-center gap-2 font-sans text-[11px] uppercase tracking-[0.2em] text-[#1A1410]/70 hover:text-[#1A1410] transition-colors"
+            >
+              <ArrowLeft size={13} className="transition-transform group-hover:-translate-x-0.5" />
+              <span>Browse the Collection</span>
+            </Link>
           </div>
-        </CardContent>
-      </Card>
-    </div>
+        </motion.div>
+
+        {/* Editorial footer */}
+        <div className="mt-24 pt-8 border-t border-[#1A1410]/10 flex items-center justify-between font-sans text-[10px] uppercase tracking-[0.24em] text-[#1A1410]/40">
+          <span>Cheetah Jewelz / Atelier Archive</span>
+          <span>Dubai · Est. 2026</span>
+        </div>
+      </div>
+    </main>
   );
 }

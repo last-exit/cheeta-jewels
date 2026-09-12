@@ -1,20 +1,29 @@
-/** Vintage Revival / Miami Empire style: a sharp house lockup with an official CJ mark and restrained Velvet Red cues. */
 import { ShoppingBag } from "lucide-react";
 import { Link } from "wouter";
 import TwinStrikeSeal from "@/components/TwinStrikeSeal";
+import { useCart } from "@/contexts/CartContext";
 
 export default function VintageHud({ dark = false }: { dark?: boolean }) {
+  const { totalCount } = useCart();
+
   return (
     <header className={`vintage-hud ${dark ? "is-dark" : ""}`}>
-      <Link href="/" className="flex items-center gap-2.5" aria-label="Cheeta Jewels home">
+      <Link href="/" className="flex items-center gap-2.5" aria-label="Cheetah Jewelz home">
         <TwinStrikeSeal dark={dark} className="cj-logo-wrap" />
-        <span className="cheeta-wordmark">Cheeta Jewels</span>
+        <span className="cheeta-wordmark">Cheetah Jewelz</span>
       </Link>
       <div className="flex items-center gap-4 sm:gap-7">
-        <Link href="/barrel-01" className="hud-collection-link font-mono text-[9px] uppercase tracking-[0.13em] sm:text-[10px]">Private Collection</Link>
-        <Link href="/philosophy" className="hud-philosophy-link font-mono text-[9px] uppercase tracking-[0.13em] sm:text-[10px]">The Philosophy</Link>
-        <Link href="/exclusive-rooms" className="hud-room-link font-mono text-[9px] uppercase tracking-[0.13em] sm:text-[10px]">The Exclusive Rooms</Link>
-        <Link href="/barrel-01" className="grid h-8 w-8 place-items-center border border-current/30 transition-colors hover:border-[#6b151e] hover:text-[#6b151e]" aria-label="View private collection"><ShoppingBag size={14} strokeWidth={1.35} /></Link>
+        <Link href="/retail" className="hud-collection-link font-sans text-[10px] uppercase tracking-[0.16em]">Private Collection</Link>
+        <Link href="/philosophy" className="hud-philosophy-link font-sans text-[10px] uppercase tracking-[0.16em]">The Philosophy</Link>
+        <Link href="/rooms" className="hud-room-link font-sans text-[10px] uppercase tracking-[0.16em]">The Exclusive Rooms</Link>
+        <Link href="/cart" className="relative grid h-8 w-8 place-items-center" aria-label="View private bag">
+          <ShoppingBag size={14} strokeWidth={1.35} />
+          {totalCount > 0 && (
+            <span className="absolute -top-0.5 -right-0.5 flex h-3.5 w-3.5 items-center justify-center rounded-full bg-[#6B1A2C] text-[8px] font-sans text-white">
+              {totalCount}
+            </span>
+          )}
+        </Link>
       </div>
     </header>
   );
