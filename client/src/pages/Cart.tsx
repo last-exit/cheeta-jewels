@@ -82,9 +82,9 @@ export default function Cart() {
             </p>
             <div className="pt-6">
               <Link
-                href="/retail"
+                href="/collection/barrel"
                 onClick={() => setShowConfirmation(false)}
-                className="inline-block font-sans text-xs uppercase tracking-[0.2em] text-[#0B0B0C] hover:text-[#4A0E16] transition-colors"
+                className="inline-block font-sans text-xs text-[#0B0B0C] hover:text-[#4A0E16] transition-colors font-medium"
               >
                 Return to Collection →
               </Link>
@@ -92,11 +92,11 @@ export default function Cart() {
           </motion.div>
         ) : cart.length === 0 ? (
           <div className="text-center py-24 space-y-4">
-            <p className="font-serif text-2xl text-[#0B0B0C]/60">Your bag is empty.</p>
+            <p className="font-serif text-2xl text-[#0B0B0C]/60 font-normal">Your bag is empty.</p>
             <div className="pt-4">
               <Link
-                href="/retail"
-                className="inline-block font-sans text-xs uppercase tracking-[0.2em] text-[#0B0B0C] hover:text-[#4A0E16] transition-colors"
+                href="/collection/barrel"
+                className="inline-block font-sans text-xs text-[#0B0B0C] hover:text-[#4A0E16] transition-colors font-medium"
               >
                 Explore Collection →
               </Link>
@@ -171,15 +171,15 @@ export default function Cart() {
 
             {/* Summary */}
             <div className="pt-8 space-y-6 max-w-md ml-auto">
-              <div className="space-y-3 font-sans text-xs uppercase tracking-[0.14em]">
-                <div className="flex justify-between text-[#0B0B0C]/50">
+              <div className="space-y-3 font-sans text-xs">
+                <div className="flex justify-between text-[#0B0B0C]/60">
                   <span>Subtotal</span>
                   <div className="flex items-baseline gap-1">
                     <span>AED</span>
                     <NumberFlow value={totalPrice} format={{ useGrouping: true }} />
                   </div>
                 </div>
-                <div className="flex justify-between text-[#0B0B0C]/50">
+                <div className="flex justify-between text-[#0B0B0C]/60">
                   <span>Delivery</span>
                   <span>Complimentary</span>
                 </div>
@@ -196,7 +196,7 @@ export default function Cart() {
                 <button
                   onClick={handleCheckout}
                   disabled={isCheckingOut}
-                  className="w-full py-3.5 bg-[#0B0B0C] text-[#F4F3EE] hover:bg-[#4A0E16] transition-colors font-sans text-xs uppercase tracking-[0.18em] font-medium cursor-pointer rounded-full active:scale-[0.98]"
+                  className="w-full py-3.5 bg-[#0B0B0C] text-[#F4F3EE] hover:bg-[#4A0E16] transition-colors font-sans text-xs font-medium cursor-pointer rounded-full active:scale-[0.98]"
                 >
                   {isCheckingOut ? "Processing..." : "Acquire"}
                 </button>

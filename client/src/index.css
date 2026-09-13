@@ -222,23 +222,18 @@
     }
   }
 
-  /* Luxury Subtext & Editorial Typography */
+  /* GT America Typography (Replacing all fake-monospaced tracked fonts) */
   .font-subtext {
-    font-family: "Cormorant Garamond", "Bodoni Moda", Georgia, serif;
-    letter-spacing: 0.24em;
-    text-transform: uppercase;
-    font-feature-settings: "liga" 1, "cpsp" 1;
+    font-family: var(--font-sans);
+    letter-spacing: normal;
   }
   .font-luxury {
-    font-family: "Tenor Sans", "Cormorant Garamond", sans-serif;
-    letter-spacing: 0.2em;
-    text-transform: uppercase;
-    font-feature-settings: "kern" 1;
+    font-family: var(--font-sans);
+    letter-spacing: normal;
   }
   .font-cinzel {
-    font-family: "Cinzel", "Bodoni Moda", serif;
-    letter-spacing: 0.22em;
-    text-transform: uppercase;
+    font-family: var(--font-sans);
+    letter-spacing: normal;
   }
 }
 

@@ -43,7 +43,7 @@ export default function Philosophy() {
       {/* ========================================================================= */}
       <section className="px-6 md:px-20 pt-28 md:pt-40 pb-24 md:pb-36 max-w-6xl mx-auto pl-16 md:pl-28">
         <div className="flex items-baseline justify-between mb-12">
-          <span className="font-sans text-xs uppercase tracking-[0.2em] text-[#4A0E16] font-medium">
+          <span className="font-sans text-xs text-[#4A0E16] font-medium">
             Dubai Atelier
           </span>
         </div>
@@ -65,7 +65,7 @@ export default function Philosophy() {
         </motion.h1>
 
         <div className="mt-16 md:mt-24 grid grid-cols-1 lg:grid-cols-12 gap-12 items-end border-t border-[#0B0B0C]/10 pt-12">
-          <div className="lg:col-span-5 font-sans text-xs uppercase tracking-[0.16em] text-[#0B0B0C]/50 leading-relaxed">
+          <div className="lg:col-span-5 font-sans text-xs text-[#0B0B0C]/55 leading-relaxed">
             A luxury house for solid gold jewellery, eyewear, and unmistakable presence.
           </div>
           <div className="lg:col-span-7 font-sans text-base md:text-lg leading-relaxed text-[#0B0B0C]/80">

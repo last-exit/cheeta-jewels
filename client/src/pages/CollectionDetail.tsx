@@ -1,14 +1,16 @@
 /**
  * CHEETA JEWELS / ICON LIVIN — Art-Directed Collection Destination
  * Pure #FFFFFF Canvas — Boxless Architecture (Zero AI card slop)
- * Museum Still Life Presentation with GT Sectra Display & GT America
+ * GT Sectra Display & GT America Typography
+ * - Cheeta Jewels transparent header button navigating to "/"
+ * - Zero fake-monospaced tracked fonts
  */
 import React, { useEffect, useState } from "react";
 import { Link, useParams } from "wouter";
 import CheetahBar from "@/components/CheetahBar";
 import Eyewear3DModel from "@/components/Eyewear3DModel";
 import ScrollReveal from "@/components/ScrollReveal";
-import { COLLECTIONS, CollectionProduct, COLLECTION_ORDER } from "@/data/collections";
+import { COLLECTIONS, CollectionProduct } from "@/data/collections";
 import { useCart } from "@/contexts/CartContext";
 import { playMetallicClick, playVaultAcquisition } from "@/lib/soundEffects";
 import { toast } from "sonner";
@@ -16,7 +18,6 @@ import { toast } from "sonner";
 export default function CollectionDetail() {
   const params = useParams<{ id: string }>();
   const rawId = (params.id || "barrel").toLowerCase();
-  // Support collection alias
   const collectionId = rawId === "gun" ? "barrel" : rawId;
   const collection = COLLECTIONS[collectionId] || COLLECTIONS.barrel;
   const { addToCart } = useCart();
@@ -102,7 +103,7 @@ export default function CollectionDetail() {
 
   return (
     <div className="relative w-full min-h-screen bg-[#FFFFFF] text-[#000000] selection:bg-[#000000] selection:text-[#FFFFFF]">
-      {/* Chrome Hearts Style Sidebar Navigation */}
+      {/* Official CJ Logo Sidebar Trigger */}
       <CheetahBar dark={false} />
 
       {/* Hairline Scroll-Progress Bar */}
@@ -111,8 +112,12 @@ export default function CollectionDetail() {
         style={{ transform: `scaleX(${scrollProgress})` }}
       />
 
-      {/* Floating Header */}
-      <header className="fixed top-0 left-0 right-0 z-40 px-6 sm:px-12 md:px-20 py-8 flex items-center justify-between pointer-events-none select-none">
+      {/* ========================================================================= */}
+      {/* TRANSPARENT HEADER BAR (Per Screenshot 2 Request)                        */}
+      {/* "Cheeta Jewels" is the transparent button that navigates to the homepage  */}
+      {/* ========================================================================= */}
+      <header className="fixed top-0 left-0 right-0 z-40 px-6 sm:px-12 md:px-16 py-6 flex items-center justify-between pointer-events-none select-none bg-transparent">
+        {/* Left: CHEETA JEWELS Button to Homepage */}
         <Link
           href="/"
           onClick={() => {
@@ -120,27 +125,19 @@ export default function CollectionDetail() {
               playMetallicClick();
             } catch {}
           }}
-          className="pointer-events-auto font-sans text-xs uppercase tracking-[0.24em] text-[#000000]/60 hover:text-[#000000] transition-colors pl-14 sm:pl-16"
-          aria-label="Back to Home"
+          className="pointer-events-auto font-serif text-lg sm:text-xl text-[#000000] hover:opacity-60 transition-opacity pl-14 sm:pl-16 cursor-pointer tracking-tight"
+          aria-label="Cheeta Jewels Home"
         >
-          ← HOME
+          CHEETA JEWELS
         </Link>
 
-        <div className="font-serif text-sm tracking-[0.24em] uppercase text-[#000000]/70 text-center">
-          {collection.label}
+        {/* Center: Collection Title */}
+        <div className="font-serif text-sm sm:text-base text-[#000000]/75 tracking-tight text-center">
+          {collection.title}
         </div>
 
-        <Link
-          href="/"
-          onClick={() => {
-            try {
-              playMetallicClick();
-            } catch {}
-          }}
-          className="pointer-events-auto font-sans text-xs uppercase tracking-[0.2em] text-[#000000]/60 hover:text-[#000000] transition-colors"
-        >
-          CLOSE ✕
-        </Link>
+        {/* Right: Balance spacer */}
+        <div className="w-16 sm:w-24" />
       </header>
 
       {/* ========================================================================= */}
@@ -169,20 +166,20 @@ export default function CollectionDetail() {
       </section>
 
       {/* ========================================================================= */}
-      {/* 2. COLLECTION MANIFESTO — GT SECTRA DISPLAY ON PURE WHITE                */}
+      {/* 2. COLLECTION MANIFESTO — GT SECTRA & GT AMERICA ON PURE WHITE           */}
       {/* ========================================================================= */}
       <section className="relative w-full px-6 sm:px-12 md:px-20 pt-12 md:pt-20 pb-24 md:pb-36 max-w-5xl mx-auto text-center select-none">
         <ScrollReveal>
-          <span className="font-sans text-xs uppercase tracking-[0.32em] text-[#000000]/40 block mb-4">
+          <span className="font-sans text-xs text-[#000000]/45 block mb-4 font-normal">
             {collection.eyebrow}
           </span>
-          <h1 className="font-serif text-[clamp(2.4rem,6.5vw,5.2rem)] font-normal leading-[1.06] tracking-tight uppercase text-[#000000]">
+          <h1 className="font-serif text-[clamp(2.4rem,6.5vw,5.2rem)] font-normal leading-[1.06] tracking-tight text-[#000000]">
             {collection.pageTitle}
           </h1>
         </ScrollReveal>
 
         <ScrollReveal delay={120}>
-          <p className="font-serif uppercase text-center text-xs sm:text-sm md:text-[15px] leading-[1.7] tracking-[0.08em] max-w-[48ch] mx-auto mt-10 md:mt-14 text-[#000000]/80">
+          <p className="font-sans text-sm sm:text-base md:text-lg leading-relaxed max-w-[50ch] mx-auto mt-8 md:mt-12 text-[#000000]/75 font-normal">
             {collection.intro}
           </p>
         </ScrollReveal>
@@ -202,14 +199,14 @@ export default function CollectionDetail() {
                 className="w-full h-full object-cover transition-transform duration-[1200ms] ease-out hover:scale-[1.02]"
               />
             </div>
-            <div className="mt-4 flex justify-between items-baseline font-sans text-[11px] uppercase tracking-[0.24em] text-[#000000]/45">
+            <div className="mt-4 flex justify-between items-baseline font-sans text-xs text-[#000000]/50 font-normal">
               <span>{collection.chapters[0]?.cap}</span>
               <span>{collection.chapters[0]?.note}</span>
             </div>
           </div>
         </ScrollReveal>
 
-        {/* Asymmetric Offset Duet: One Portrait, One Landscape */}
+        {/* Asymmetric Offset Duet */}
         <div className="grid grid-cols-1 md:grid-cols-12 gap-16 md:gap-12 mt-28 md:mt-48 items-start">
           <ScrollReveal delay={90} className="col-span-1 md:col-span-6 md:col-start-1">
             <div className="w-full max-w-lg">
@@ -220,7 +217,7 @@ export default function CollectionDetail() {
                   className="w-full h-full object-cover transition-transform duration-[1200ms] ease-out hover:scale-[1.02]"
                 />
               </div>
-              <div className="mt-4 flex justify-between items-baseline font-sans text-[11px] uppercase tracking-[0.24em] text-[#000000]/45">
+              <div className="mt-4 flex justify-between items-baseline font-sans text-xs text-[#000000]/50 font-normal">
                 <span>{collection.chapters[1]?.cap}</span>
                 <span>{collection.chapters[1]?.note}</span>
               </div>
@@ -236,7 +233,7 @@ export default function CollectionDetail() {
                   className="w-full h-full object-cover transition-transform duration-[1200ms] ease-out hover:scale-[1.02]"
                 />
               </div>
-              <div className="mt-4 flex justify-between items-baseline font-sans text-[11px] uppercase tracking-[0.24em] text-[#000000]/45">
+              <div className="mt-4 flex justify-between items-baseline font-sans text-xs text-[#000000]/50 font-normal">
                 <span>{collection.chapters[2]?.cap}</span>
                 <span>{collection.chapters[2]?.note}</span>
               </div>
@@ -248,35 +245,36 @@ export default function CollectionDetail() {
       {/* ========================================================================= */}
       {/* 4. POETIC AXIOM STATEMENT                                                 */}
       {/* ========================================================================= */}
-      <section className="relative w-full px-6 sm:px-12 py-28 md:py-48 max-w-4xl mx-auto text-center select-none">
+      <section className="relative w-full px-6 sm:px-12 py-28 md:py-44 max-w-4xl mx-auto text-center select-none">
         <ScrollReveal>
-          <p className="font-serif uppercase text-center text-xl sm:text-2xl md:text-3xl lg:text-4xl leading-[1.35] tracking-[0.06em] max-w-[36ch] mx-auto text-[#000000]">
+          <p className="font-serif text-2xl sm:text-3xl md:text-4xl leading-[1.35] tracking-tight max-w-[36ch] mx-auto text-[#000000] font-normal">
             &ldquo;{collection.statement}&rdquo;
           </p>
         </ScrollReveal>
       </section>
 
       {/* ========================================================================= */}
-      {/* 5. THE 360° ATELIER — FLOATING DIRECTLY ON PURE WHITE (NO CARD BOX)       */}
+      {/* 5. THE 360° ATELIER — GT AMERICA FONTS (Per Screenshot 3 Request)        */}
+      {/* Replaces all capitalized monospaced fonts with authentic GT America sans  */}
       {/* ========================================================================= */}
       <section className="relative w-full px-6 sm:px-12 md:px-20 py-20 md:py-32 max-w-6xl mx-auto select-none">
         <ScrollReveal>
           {/* Section Header */}
           <div className="text-center max-w-2xl mx-auto mb-12">
-            <span className="font-sans text-xs uppercase tracking-[0.3em] text-[#000000]/40 block mb-3">
-              THE ATELIER SALON
+            <span className="font-sans text-xs text-[#000000]/50 block mb-2 font-normal">
+              The Atelier Salon
             </span>
-            <h2 className="font-serif text-3xl sm:text-4xl md:text-5xl font-normal uppercase tracking-tight text-[#000000]">
+            <h2 className="font-serif text-3xl sm:text-4xl md:text-5xl font-normal tracking-tight text-[#000000]">
               Interactive 360° Inspection
             </h2>
           </div>
 
-          {/* Floating Canvas Area (Unbounded on White, Zero Box Borders) */}
+          {/* Floating Canvas Area (Zero box borders, pure white) */}
           <div className="relative w-full flex flex-col items-center justify-between min-h-[500px] sm:min-h-[600px] py-6">
-            {/* Top Minimalist Finish Controls */}
-            <div className="w-full flex flex-col sm:flex-row items-center justify-between gap-4 border-b border-black/10 pb-6">
-              <div className="flex items-center gap-3">
-                <span className="font-sans text-xs uppercase tracking-[0.24em] text-[#000000] font-medium">
+            {/* Top Bar: GT America Typography (No fake monospace) */}
+            <div className="w-full flex flex-col sm:flex-row items-center justify-between gap-4 border-b border-black/10 pb-5">
+              <div className="flex items-center gap-2.5 font-sans text-sm">
+                <span className="text-[#000000] font-medium">
                   {activeFrame === "gold"
                     ? "18K Brushed Gold"
                     : activeFrame === "gunmetal"
@@ -284,13 +282,13 @@ export default function CollectionDetail() {
                     : "Antique Bronze"}
                 </span>
                 <span className="text-black/30">/</span>
-                <span className="font-sans text-xs uppercase tracking-[0.24em] text-[#000000]/60">
-                  {activeLens.toUpperCase()} MINERAL
+                <span className="text-[#000000]/70 capitalize">
+                  {activeLens} Mineral
                 </span>
               </div>
 
-              {/* Metal Finish Switcher */}
-              <div className="flex items-center gap-2">
+              {/* Metal Finish Switcher in GT America */}
+              <div className="flex items-center gap-2 font-sans">
                 {[
                   { id: "gold", label: "18K Gold", hex: "#D4AF37" },
                   { id: "gunmetal", label: "Gunmetal", hex: "#23262B" },
@@ -304,10 +302,10 @@ export default function CollectionDetail() {
                       } catch {}
                       setActiveFrame(f.id as any);
                     }}
-                    className={`px-3.5 py-1.5 rounded-full text-[10px] font-sans uppercase tracking-[0.2em] transition-all cursor-pointer ${
+                    className={`px-3.5 py-1.5 rounded-full text-xs font-sans transition-all cursor-pointer ${
                       activeFrame === f.id
-                        ? "bg-black text-white"
-                        : "text-black/60 hover:text-black hover:bg-black/5"
+                        ? "bg-black text-white font-medium shadow-sm"
+                        : "text-black/70 hover:text-black hover:bg-black/5"
                     }`}
                   >
                     <span
@@ -320,7 +318,7 @@ export default function CollectionDetail() {
               </div>
             </div>
 
-            {/* 3D Model Floating Canvas (Completely seamless on white) */}
+            {/* 3D Model Floating Canvas */}
             <div className="relative w-full flex-1 flex items-center justify-center my-8 min-h-[340px] sm:min-h-[420px]">
               <Eyewear3DModel
                 key={`${activeFrame}-${activeLens}`}
@@ -331,11 +329,11 @@ export default function CollectionDetail() {
               />
             </div>
 
-            {/* Bottom Controls: Mineral Lens Swatches & Acquire Action */}
-            <div className="w-full flex flex-col md:flex-row items-center justify-between gap-6 border-t border-black/10 pt-6">
+            {/* Bottom Controls: Mineral Lens Swatches & Acquire Action in GT America */}
+            <div className="w-full flex flex-col md:flex-row items-center justify-between gap-6 border-t border-black/10 pt-5">
               {/* Mineral Lens Options */}
-              <div className="flex items-center gap-4 sm:gap-6 flex-wrap justify-center">
-                <span className="font-sans text-[11px] uppercase tracking-[0.24em] text-[#000000]/45 hidden sm:inline-block">
+              <div className="flex items-center gap-4 sm:gap-6 flex-wrap justify-center font-sans">
+                <span className="text-xs text-[#000000]/55 hidden sm:inline-block">
                   Mineral Optics:
                 </span>
                 {[
@@ -355,30 +353,29 @@ export default function CollectionDetail() {
                     className={`group flex items-center gap-2 px-3 py-1.5 rounded-full transition-all cursor-pointer ${
                       activeLens === lens.id
                         ? "bg-black/5 text-black font-medium"
-                        : "text-black/50 hover:text-black"
+                        : "text-black/60 hover:text-black"
                     }`}
                   >
                     <span
                       className="w-3 h-3 rounded-full border border-black/20 transition-transform group-hover:scale-110"
                       style={{ backgroundColor: lens.color }}
                     />
-                    <span className="font-sans text-xs uppercase tracking-[0.2em]">
-                      {lens.label}
-                    </span>
+                    <span className="text-xs">{lens.label}</span>
                   </button>
                 ))}
               </div>
 
-              {/* Bespoke Acquisition CTA */}
+              {/* Bespoke Acquisition CTA in GT America */}
               <button
                 onClick={handleAcquireBespoke}
-                className="px-8 py-3 rounded-full font-sans text-xs uppercase tracking-[0.22em] bg-black text-white hover:bg-black/80 transition-all duration-300 cursor-pointer active:scale-98"
+                className="px-7 py-2.5 rounded-full font-sans text-xs font-medium bg-black text-white hover:bg-black/80 transition-all duration-300 cursor-pointer active:scale-98"
               >
-                ACQUIRE 3D EDITION · AED 18,000
+                Acquire 3D Edition · AED 18,000
               </button>
             </div>
 
-            <span className="mt-4 font-sans text-[10px] uppercase tracking-[0.28em] text-[#000000]/40">
+            {/* Instruction helper in GT America */}
+            <span className="mt-4 font-sans text-xs text-[#000000]/45 font-normal">
               Drag horizontally to rotate 360° · Real-time physical render
             </span>
           </div>
@@ -394,15 +391,15 @@ export default function CollectionDetail() {
       >
         <div className="flex flex-col sm:flex-row sm:items-baseline justify-between pb-8 border-b border-black/10">
           <div>
-            <span className="font-sans text-xs uppercase tracking-[0.28em] text-[#000000]/40 block">
-              CATALOG
+            <span className="font-sans text-xs text-[#000000]/45 block font-normal">
+              Catalog
             </span>
-            <h2 className="font-serif text-3xl sm:text-4xl md:text-5xl font-normal mt-1 uppercase text-[#000000]">
+            <h2 className="font-serif text-3xl sm:text-4xl md:text-5xl font-normal mt-1 text-[#000000] tracking-tight">
               {collection.title} Editions
             </h2>
           </div>
-          <span className="font-sans text-xs uppercase tracking-[0.22em] text-[#000000]/40">
-            0{collection.products.length} SILHOUETTES
+          <span className="font-sans text-xs text-[#000000]/50 font-normal">
+            0{collection.products.length} Silhouettes
           </span>
         </div>
 
@@ -423,17 +420,17 @@ export default function CollectionDetail() {
                     className="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-[1.04]"
                   />
                   {/* Subtle floating Acquire badge */}
-                  <div className="absolute bottom-3 right-3 opacity-0 group-hover:opacity-100 transition-opacity duration-300 font-sans text-[10px] uppercase tracking-[0.2em] bg-black text-white px-3 py-1 rounded-full">
+                  <div className="absolute bottom-3 right-3 opacity-0 group-hover:opacity-100 transition-opacity duration-300 font-sans text-xs bg-black text-white px-3 py-1 rounded-full font-medium">
                     Acquire +
                   </div>
                 </div>
 
-                {/* Typographic Metadata */}
+                {/* Typographic Metadata in GT Sectra & GT America */}
                 <div className="mt-5 flex flex-col space-y-1.5">
                   <h3 className="font-serif text-base font-normal text-[#000000] leading-snug group-hover:underline">
                     {product.name}
                   </h3>
-                  <p className="font-sans text-xs uppercase tracking-[0.14em] text-[#000000]/50 leading-relaxed">
+                  <p className="font-sans text-xs text-[#000000]/55 leading-relaxed font-normal">
                     {product.material}
                   </p>
                   <p className="font-serif text-base font-normal text-[#000000] pt-1">
@@ -453,8 +450,8 @@ export default function CollectionDetail() {
         <div className="grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-12">
           {collection.credits.map((credit, idx) => (
             <ScrollReveal key={idx} delay={idx * 60}>
-              <div className="flex flex-col space-y-1.5">
-                <span className="font-sans text-[10px] uppercase tracking-[0.26em] text-[#000000]/40">
+              <div className="flex flex-col space-y-1.5 font-sans">
+                <span className="text-xs text-[#000000]/45 font-normal">
                   {credit.role}
                 </span>
                 <span className="font-serif text-sm sm:text-base text-[#000000]">
@@ -488,15 +485,15 @@ export default function CollectionDetail() {
           />
 
           <div className="absolute inset-0 bg-black/40 group-hover:bg-black/25 transition-colors duration-700 flex flex-col items-center justify-center text-center p-6 text-white">
-            <span className="font-sans text-xs uppercase tracking-[0.32em] text-white/70 mb-4 block">
-              NEXT DESTINATION
+            <span className="font-sans text-xs text-white/70 mb-3 block font-normal">
+              Next Destination
             </span>
-            <h2 className="font-serif text-[clamp(2.2rem,7vw,5.5rem)] font-normal uppercase tracking-tight leading-none">
+            <h2 className="font-serif text-[clamp(2.2rem,7vw,5.5rem)] font-normal tracking-tight leading-none">
               {collection.nextName}
             </h2>
-            <div className="mt-8 flex items-center gap-2 font-sans text-xs uppercase tracking-[0.24em] text-white">
-              <span>ENTER</span>
-              <span className="transition-transform duration-500 group-hover:translate-x-2">
+            <div className="mt-6 flex items-center gap-2 font-sans text-xs text-white font-medium">
+              <span>Enter Collection</span>
+              <span className="transition-transform duration-500 group-hover:translate-x-1.5">
                 →
               </span>
             </div>
