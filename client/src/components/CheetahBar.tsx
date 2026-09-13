@@ -177,6 +177,14 @@ export default function CheetahBar({ dark = false }: { dark?: boolean }) {
                     >
                       The Masquerade
                     </Link>
+                    <Link
+                      href="/collection/maharaja"
+                      className={`font-sans text-sm transition-all duration-200 hover:translate-x-1 ${subtextClass} ${
+                        location === "/collection/maharaja" ? "font-medium underline underline-offset-4" : ""
+                      }`}
+                    >
+                      The Maharaja
+                    </Link>
                   </motion.div>
                 )}
               </AnimatePresence>

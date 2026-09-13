@@ -131,7 +131,6 @@ export default function Home() {
               loop
               muted
               playsInline
-              poster={col.campaign}
               className={`absolute inset-0 h-full w-full object-cover object-center filter brightness-[0.75] contrast-[1.1] transition-opacity duration-1000 ease-in-out pointer-events-none ${
                 isActive ? "opacity-100" : "opacity-0"
               }`}

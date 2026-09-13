@@ -3,9 +3,10 @@ import { COLLECTIONS, COLLECTION_ORDER } from "../data/collections";
 
 describe("ICON LIVIN Dedicated Collections Specification", () => {
   it("should contain the active collections in COLLECTION_ORDER", () => {
-    expect(COLLECTION_ORDER).toEqual(["barrel", "masquerade"]);
+    expect(COLLECTION_ORDER).toEqual(["barrel", "masquerade", "maharaja"]);
     expect(COLLECTIONS.barrel.title).toBe("THE GUN COLLECTION");
     expect(COLLECTIONS.masquerade.title).toBe("THE MASQUERADE");
+    expect(COLLECTIONS.maharaja.title).toBe("MAHARAJA");
   });
 
   it("should enforce pure white canvas palettes across all collections", () => {
@@ -13,6 +14,8 @@ describe("ICON LIVIN Dedicated Collections Specification", () => {
     expect(COLLECTIONS.barrel.theme.ink).toBe("#000000");
     expect(COLLECTIONS.masquerade.theme.bg).toBe("#FFFFFF");
     expect(COLLECTIONS.masquerade.theme.ink).toBe("#000000");
+    expect(COLLECTIONS.maharaja.theme.bg).toBe("#FFFFFF");
+    expect(COLLECTIONS.maharaja.theme.ink).toBe("#000000");
   });
 
   it("should enforce 40-55 word all-caps intro paragraphs", () => {
@@ -28,7 +31,8 @@ describe("ICON LIVIN Dedicated Collections Specification", () => {
 
   it("should form an unbroken collection loop in nextId sequence", () => {
     expect(COLLECTIONS.barrel.nextId).toBe("masquerade");
-    expect(COLLECTIONS.masquerade.nextId).toBe("barrel");
+    expect(COLLECTIONS.masquerade.nextId).toBe("maharaja");
+    expect(COLLECTIONS.maharaja.nextId).toBe("barrel");
   });
 
   it("should provide 4 honest products per collection with materials and prices", () => {

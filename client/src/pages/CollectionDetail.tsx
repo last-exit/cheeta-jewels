@@ -150,7 +150,6 @@ export default function CollectionDetail() {
           muted
           loop
           playsInline
-          poster={collection.campaign}
           className="w-full h-full object-cover object-center pointer-events-none filter brightness-[0.85] contrast-[1.08]"
         >
           <source src={collection.video} type="video/mp4" />

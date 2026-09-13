@@ -165,7 +165,7 @@ export const COLLECTIONS: Record<string, CollectionData> = {
     },
     nextId: "barrel",
     nextName: "THE GUN COLLECTION",
-    nextCampaign: "/campaigns/barrel-poster.jpg",
+    nextCampaign: "/barrel/barrel-campaign.jpg",
   },
 
   masquerade: {
@@ -257,9 +257,9 @@ export const COLLECTIONS: Record<string, CollectionData> = {
       title: "Black Rhodium Obsidian Titanium",
       subtitle: "Concealed Visor Optics & Cabochon Hinge · Drag to Rotate 360°",
     },
-    nextId: "barrel",
-    nextName: "THE GUN COLLECTION",
-    nextCampaign: "/campaigns/barrel-poster.jpg",
+    nextId: "maharaja",
+    nextName: "MAHARAJA",
+    nextCampaign: "/campaigns/maharaja-poster.jpg",
   },
 
   savanah: {
@@ -451,5 +451,5 @@ export const COLLECTIONS: Record<string, CollectionData> = {
   },
 };
 
-export const COLLECTION_ORDER = ["barrel", "masquerade"] as const;
+export const COLLECTION_ORDER = ["barrel", "masquerade", "maharaja"] as const;
 export type CollectionId = (typeof COLLECTION_ORDER)[number];
