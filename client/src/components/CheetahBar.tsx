@@ -10,8 +10,8 @@ import { useCart } from "@/contexts/CartContext";
 
 const NAV_ITEMS = [
   { label: "Home", href: "/" },
-  { label: "Collection", href: "/retail" },
-  { label: "Exclusive Rooms", href: "/rooms" },
+  { label: "Collections", href: "/collection/maharaja" },
+  { label: "Archive Retail", href: "/retail" },
   { label: "Philosophy", href: "/philosophy" },
   { label: "Bag", href: "/cart" },
 ];

@@ -117,6 +117,11 @@ client/public/__manus__/version.json
 .venv/
 .agents/
 .claude/
+skills-lock.json
 agent/
 cheeta-jewels-offline-media/
-skills-lock.json
+
+# Root raw video files
+/*.mp4
+
+

@@ -1,24 +1,8 @@
-/* CHEETAH JEWELZ — Modern Jewelry With Instinct
- * ----------------------------------------------------------------------------
- * TYPE SYSTEM (final)
- *   Editorial serif : Bodoni Moda (display headlines, campaign copy)
- *   Contemporary sans: DM Sans (navigation, UI, body, pricing, spec sheets)
- *   Monospace       : Not used. The brief bans terminal/monospace.
- *
- * COLOR SYSTEM — Light ivory base + royal maroon accent
- *   --color-ivory        #F4F1E8   surface (warm cream)
- *   --color-bone         #F4F3EE   alt surface
- *   --color-white        #FFFFFF   surface
- *   --color-stone        #D8D3CA   divider, secondary surface
- *   --color-ink          #1A1410   primary text (warm near-black, not pure)
- *   --color-ink-soft     #6B6760   secondary text
- *   --color-maroon       #6B1A2C   primary accent (royal maroon)
- *   --color-maroon-deep  #4A0E16   deep maroon (hover, contrast)
- *   --color-gold         #B8985F   brushed gold (restrained accent)
- * ----------------------------------------------------------------------------
- */
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Tenor+Sans&display=swap');
 @import "tailwindcss";
 @import "tw-animate-css";
+
+/* CHEETAH JEWELZ — Modern Jewelry With Instinct
 
 /* Bodoni Moda display serif (kept from the existing site) */
 @font-face { font-family: "Bodoni Moda"; font-style: normal; font-weight: 400; font-display: swap; src: url("/manus-storage/fonts/bodoni-moda-500.ttf") format("truetype"); }
@@ -30,7 +14,7 @@
 @font-face { font-family: "DM Sans"; font-style: normal; font-weight: 500; font-display: swap; src: url("/manus-storage/fonts/dm-sans-500.ttf") format("truetype"); }
 @font-face { font-family: "DM Sans"; font-style: normal; font-weight: 600; font-display: swap; src: url("/manus-storage/fonts/dm-sans-600.ttf") format("truetype"); }
 
-@custom-variant dark (&is(.dark *));
+@custom-variant dark (&:is(.dark *));
 
 @theme inline {
   --radius-sm: 0px;
@@ -207,4 +191,24 @@
       height: 0;
     }
   }
+
+  /* Luxury Subtext & Editorial Typography */
+  .font-subtext {
+    font-family: "Cormorant Garamond", "Bodoni Moda", Georgia, serif;
+    letter-spacing: 0.24em;
+    text-transform: uppercase;
+    font-feature-settings: "liga" 1, "cpsp" 1;
+  }
+  .font-luxury {
+    font-family: "Tenor Sans", "Cormorant Garamond", sans-serif;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    font-feature-settings: "kern" 1;
+  }
+  .font-cinzel {
+    font-family: "Cinzel", "Bodoni Moda", serif;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+  }
 }
+
