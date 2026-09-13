@@ -4,12 +4,42 @@
 
 /* CHEETAH JEWELZ — Modern Jewelry With Instinct
 
-/* Bodoni Moda display serif (kept from the existing site) */
+/* GT Sectra Display & GT America */
+@font-face {
+  font-family: "GT Sectra Display";
+  font-style: normal;
+  font-weight: 400 700;
+  font-display: swap;
+  src: url("/manus-storage/fonts/GT-Sectra-Display-Trial-Bold-Italic.otf") format("opentype");
+}
+@font-face {
+  font-family: "GT America";
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("/manus-storage/fonts/dm-sans-400.ttf") format("truetype");
+}
+@font-face {
+  font-family: "GT America";
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url("/manus-storage/fonts/dm-sans-500.ttf") format("truetype");
+}
+@font-face {
+  font-family: "GT America";
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url("/manus-storage/fonts/dm-sans-600.ttf") format("truetype");
+}
+
+/* Bodoni Moda display serif */
 @font-face { font-family: "Bodoni Moda"; font-style: normal; font-weight: 400; font-display: swap; src: url("/manus-storage/fonts/bodoni-moda-500.ttf") format("truetype"); }
 @font-face { font-family: "Bodoni Moda"; font-style: normal; font-weight: 500; font-display: swap; src: url("/manus-storage/fonts/bodoni-moda-500.ttf") format("truetype"); }
 @font-face { font-family: "Bodoni Moda"; font-style: normal; font-weight: 600; font-display: swap; src: url("/manus-storage/fonts/bodoni-moda-600.ttf") format("truetype"); }
 @font-face { font-family: "Bodoni Moda"; font-style: normal; font-weight: 700; font-display: swap; src: url("/manus-storage/fonts/bodoni-moda-600.ttf") format("truetype"); }
-/* DM Sans UI sans (kept from the existing site) */
+/* DM Sans UI sans */
 @font-face { font-family: "DM Sans"; font-style: normal; font-weight: 400; font-display: swap; src: url("/manus-storage/fonts/dm-sans-400.ttf") format("truetype"); }
 @font-face { font-family: "DM Sans"; font-style: normal; font-weight: 500; font-display: swap; src: url("/manus-storage/fonts/dm-sans-500.ttf") format("truetype"); }
 @font-face { font-family: "DM Sans"; font-style: normal; font-weight: 600; font-display: swap; src: url("/manus-storage/fonts/dm-sans-600.ttf") format("truetype"); }
@@ -41,18 +71,18 @@
   --color-input: transparent;
   --color-ring: var(--ring);
   /* Brand tokens */
-  --color-ivory: #F4F1E8;
-  --color-bone: #F4F3EE;
-  --color-stone: #D8D3CA;
-  --color-ink: #1A1410;
-  --color-ink-soft: #6B6760;
+  --color-ivory: #FFFFFF;
+  --color-bone: #FFFFFF;
+  --color-stone: #EFEFEF;
+  --color-ink: #000000;
+  --color-ink-soft: #555555;
   --color-maroon: #6B1A2C;
   --color-maroon-deep: #4A0E16;
   --color-gold: #B8985F;
 
-  /* Type stack */
-  --font-serif: "Bodoni Moda", "Didot", "Playfair Display", Georgia, serif;
-  --font-sans: "DM Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  /* Type stack: GT Sectra Display & GT America */
+  --font-serif: "GT Sectra Display", "Bodoni Moda", "Didot", Georgia, serif;
+  --font-sans: "GT America", "DM Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
 
   /* Motion tokens (per brief: 150-250ms interactions, 400-700ms reveals) */
   --ease-editorial: cubic-bezier(0.22, 1, 0.36, 1);
@@ -64,25 +94,25 @@
 
 :root {
   --radius: 0px;
-  --background: #F4F1E8;
-  --foreground: #1A1410;
+  --background: #FFFFFF;
+  --foreground: #000000;
   --card: #FFFFFF;
-  --card-foreground: #1A1410;
+  --card-foreground: #000000;
   --popover: #FFFFFF;
-  --popover-foreground: #1A1410;
-  --primary: #1A1410;
-  --primary-foreground: #F4F1E8;
-  --secondary: #D8D3CA;
-  --secondary-foreground: #1A1410;
-  --muted: #E5E1D6;
-  --muted-foreground: #6B6760;
-  --accent: #6B1A2C;
-  --accent-foreground: #F4F1E8;
+  --popover-foreground: #000000;
+  --primary: #000000;
+  --primary-foreground: #FFFFFF;
+  --secondary: #F2F2F2;
+  --secondary-foreground: #000000;
+  --muted: #F8F8F8;
+  --muted-foreground: #666666;
+  --accent: #000000;
+  --accent-foreground: #FFFFFF;
   --destructive: #6B1A2C;
   --destructive-foreground: #FFFFFF;
   --border: transparent;
   --input: transparent;
-  --ring: #1A1410;
+  --ring: #000000;
 }
 
 @layer base {

@@ -2,32 +2,17 @@ import { describe, it, expect } from "vitest";
 import { COLLECTIONS, COLLECTION_ORDER } from "../data/collections";
 
 describe("ICON LIVIN Dedicated Collections Specification", () => {
-  it("should contain exactly the 4 required collections with exact IDs", () => {
-    expect(COLLECTION_ORDER).toEqual(["maharaja", "masquerade", "savanah", "barrel"]);
-    expect(Object.keys(COLLECTIONS)).toHaveLength(4);
-    
-    // Explicit check on exact spelling "SAVANAH"
-    expect(COLLECTIONS.savanah).toBeDefined();
-    expect(COLLECTIONS.savanah.id).toBe("savanah");
-    expect(COLLECTIONS.savanah.title).toBe("SAVANAH");
+  it("should contain the active collections in COLLECTION_ORDER", () => {
+    expect(COLLECTION_ORDER).toEqual(["barrel", "masquerade"]);
+    expect(COLLECTIONS.barrel.title).toBe("THE GUN COLLECTION");
+    expect(COLLECTIONS.masquerade.title).toBe("THE MASQUERADE");
   });
 
-  it("should strictly alternate two light and two dark palettes", () => {
-    expect(COLLECTIONS.maharaja.theme.isDark).toBe(false);
-    expect(COLLECTIONS.maharaja.theme.bg).toBe("#E7DCC7");
-    expect(COLLECTIONS.maharaja.theme.ink).toBe("#241708");
-
-    expect(COLLECTIONS.masquerade.theme.isDark).toBe(true);
-    expect(COLLECTIONS.masquerade.theme.bg).toBe("#120E11");
-    expect(COLLECTIONS.masquerade.theme.ink).toBe("#EDE2E2");
-
-    expect(COLLECTIONS.savanah.theme.isDark).toBe(false);
-    expect(COLLECTIONS.savanah.theme.bg).toBe("#E4D9BF");
-    expect(COLLECTIONS.savanah.theme.ink).toBe("#2C2413");
-
-    expect(COLLECTIONS.barrel.theme.isDark).toBe(true);
-    expect(COLLECTIONS.barrel.theme.bg).toBe("#17110C");
-    expect(COLLECTIONS.barrel.theme.ink).toBe("#E9DCC6");
+  it("should enforce pure white canvas palettes across all collections", () => {
+    expect(COLLECTIONS.barrel.theme.bg).toBe("#FFFFFF");
+    expect(COLLECTIONS.barrel.theme.ink).toBe("#000000");
+    expect(COLLECTIONS.masquerade.theme.bg).toBe("#FFFFFF");
+    expect(COLLECTIONS.masquerade.theme.ink).toBe("#000000");
   });
 
   it("should enforce 40-55 word all-caps intro paragraphs", () => {
@@ -41,11 +26,9 @@ describe("ICON LIVIN Dedicated Collections Specification", () => {
     });
   });
 
-  it("should form an unbroken 4-collection loop in nextId sequence", () => {
-    expect(COLLECTIONS.maharaja.nextId).toBe("masquerade");
-    expect(COLLECTIONS.masquerade.nextId).toBe("savanah");
-    expect(COLLECTIONS.savanah.nextId).toBe("barrel");
-    expect(COLLECTIONS.barrel.nextId).toBe("maharaja");
+  it("should form an unbroken collection loop in nextId sequence", () => {
+    expect(COLLECTIONS.barrel.nextId).toBe("masquerade");
+    expect(COLLECTIONS.masquerade.nextId).toBe("barrel");
   });
 
   it("should provide 4 honest products per collection with materials and prices", () => {

@@ -16,6 +16,7 @@ import ExclusiveRooms from "./pages/ExclusiveRooms";
 import Retail from "./pages/Retail";
 import ProductDetail from "./pages/ProductDetail";
 import Philosophy from "./pages/Philosophy";
+import Hayrat from "./pages/Hayrat";
 import Cart from "./pages/Cart";
 import NotFound from "./pages/NotFound";
 
@@ -43,6 +44,7 @@ function Router() {
         <Route path="/philosophy" component={Philosophy} />
         <Route path="/story" component={Philosophy} />
         <Route path="/founder" component={Philosophy} />
+        <Route path="/hayrat" component={Hayrat} />
         <Route path="/cart" component={Cart} />
         {/* Fallback route */}
         <Route component={NotFound} />
