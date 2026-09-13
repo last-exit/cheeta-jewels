@@ -5,7 +5,7 @@
  */
 import NumberFlow from "@number-flow/react";
 import { AnimatePresence, motion } from "framer-motion";
-import { ArrowDown, ArrowUpRight } from "lucide-react";
+import { ArrowUpRight } from "lucide-react";
 import React, { useState } from "react";
 import { Link } from "wouter";
 import CheetahBar from "@/components/CheetahBar";
@@ -128,17 +128,6 @@ export default function Home() {
             ICON LIVIN
           </motion.h1>
         </div>
-
-        {/* Minimal Scroll Cue */}
-        <footer className="relative z-20 flex items-end justify-center">
-          <a
-            href="#lookbook"
-            className="group flex flex-col items-center gap-2 font-sans text-[11px] uppercase tracking-[0.22em] text-white/70 hover:text-white transition-colors cursor-pointer"
-          >
-            <span>Explore</span>
-            <ArrowDown size={13} className="transition-transform group-hover:translate-y-1" />
-          </a>
-        </footer>
       </section>
 
       {/* ========================================================================= */}
