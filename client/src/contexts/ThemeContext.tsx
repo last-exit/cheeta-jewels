@@ -48,8 +48,13 @@ export function ThemeProvider({
       }
     : undefined;
 
+  const value = React.useMemo(
+    () => ({ theme, toggleTheme, switchable }),
+    [theme, toggleTheme, switchable]
+  );
+
   return (
-    <ThemeContext.Provider value={{ theme, toggleTheme, switchable }}>
+    <ThemeContext.Provider value={value}>
       {children}
     </ThemeContext.Provider>
   );

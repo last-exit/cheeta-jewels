@@ -125,7 +125,7 @@ export default function ExclusiveRooms() {
           setIsAudioPlaying(true);
         })
         .catch(() => {
-          setIsAudioPlaying(true);
+          setIsAudioPlaying(false);
         });
     }
   };
