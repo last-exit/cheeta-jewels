@@ -1,6 +1,6 @@
 /**
- * CHEETA JEWELS / ICON LIVIN — Art-Directed Collection Destination
- * Pure #FFFFFF Canvas — Boxless Architecture (Zero AI card slop)
+ * CHEETA JEWELS / ICON LIVIN : Art-Directed Collection Destination
+ * Pure #FFFFFF Canvas : Boxless Architecture (Zero AI card slop)
  * GT Sectra Display & GT America Typography
  * - Cheeta Jewels transparent header button navigating to "/"
  * - Zero fake-monospaced tracked fonts
@@ -8,6 +8,7 @@
 import React, { useEffect, useState } from "react";
 import { Link, useParams } from "wouter";
 import CheetahBar from "@/components/CheetahBar";
+import HeaderWordmark from "@/components/HeaderWordmark";
 import Eyewear3DModel from "@/components/Eyewear3DModel";
 import ScrollReveal from "@/components/ScrollReveal";
 import { COLLECTIONS, CollectionProduct } from "@/data/collections";
@@ -113,35 +114,12 @@ export default function CollectionDetail() {
       />
 
       {/* ========================================================================= */}
-      {/* TRANSPARENT HEADER BAR (Per Screenshot 2 Request)                        */}
-      {/* "Cheeta Jewels" is the transparent button that navigates to the homepage  */}
+      {/* CENTERED CHEETA JEWELS HEADER WORDMARK                                    */}
       {/* ========================================================================= */}
-      <header className="fixed top-0 left-0 right-0 z-40 px-6 sm:px-12 md:px-16 py-6 flex items-center justify-between pointer-events-none select-none bg-transparent">
-        {/* Left: CHEETA JEWELS Button to Homepage */}
-        <Link
-          href="/"
-          onClick={() => {
-            try {
-              playMetallicClick();
-            } catch {}
-          }}
-          className="pointer-events-auto font-serif text-lg sm:text-xl text-[#000000] hover:opacity-60 transition-opacity pl-14 sm:pl-16 cursor-pointer tracking-tight"
-          aria-label="Cheeta Jewels Home"
-        >
-          CHEETA JEWELS
-        </Link>
-
-        {/* Center: Collection Title */}
-        <div className="font-serif text-sm sm:text-base text-[#000000]/75 tracking-tight text-center">
-          {collection.title}
-        </div>
-
-        {/* Right: Balance spacer */}
-        <div className="w-16 sm:w-24" />
-      </header>
+      <HeaderWordmark dark={false} />
 
       {/* ========================================================================= */}
-      {/* 1. CINEMATIC FILM HERO — DISSOLVING INTO PURE WHITE                       */}
+      {/* 1. CINEMATIC FILM HERO : DISSOLVING INTO PURE WHITE                       */}
       {/* ========================================================================= */}
       <section className="relative w-full h-[75svh] md:h-[88svh] overflow-hidden bg-black select-none">
         <video
@@ -165,14 +143,14 @@ export default function CollectionDetail() {
       </section>
 
       {/* ========================================================================= */}
-      {/* 2. COLLECTION MANIFESTO — GT SECTRA & GT AMERICA ON PURE WHITE           */}
+      {/* 2. COLLECTION MANIFESTO : GT SECTRA & GT AMERICA ON PURE WHITE           */}
       {/* ========================================================================= */}
       <section className="relative w-full px-6 sm:px-12 md:px-20 pt-12 md:pt-20 pb-24 md:pb-36 max-w-5xl mx-auto text-center select-none">
         <ScrollReveal>
-          <span className="font-sans text-xs text-[#000000]/45 block mb-4 font-normal">
+          <span className="font-sans lowercase text-xs text-[#000000]/45 block mb-4 font-normal">
             {collection.eyebrow}
           </span>
-          <h1 className="font-serif text-[clamp(2.4rem,6.5vw,5.2rem)] font-normal leading-[1.06] tracking-tight text-[#000000]">
+          <h1 className="font-serif lowercase text-[clamp(2.4rem,6.5vw,5.2rem)] font-normal leading-[1.06] tracking-tight text-[#000000]">
             {collection.pageTitle}
           </h1>
         </ScrollReveal>
@@ -185,54 +163,54 @@ export default function CollectionDetail() {
       </section>
 
       {/* ========================================================================= */}
-      {/* 3. EDITORIAL STILL LIFE — ASYMMETRIC, UNCONTAINED, ZERO BOXES             */}
+      {/* 3. EDITORIAL STILL LIFE : SCULPTURAL ARCHITECTURAL VITRINES               */}
       {/* ========================================================================= */}
       <section className="relative w-full px-6 sm:px-12 md:px-20 py-16 md:py-32 max-w-7xl mx-auto select-none">
-        {/* Lead Hero Still: Centered Floating Monolith */}
+        {/* Lead Hero Still: Monumental Arched Vault Portal */}
         <ScrollReveal className="w-full flex justify-center">
           <div className="w-full max-w-2xl">
-            <div className="relative aspect-[4/3] w-full overflow-hidden bg-[#FAFAFA]">
+            <div className="relative aspect-[4/3] w-full overflow-hidden bg-[#F8F7F5] rounded-t-[160px] md:rounded-t-[220px] border border-black/5 shadow-xs">
               <img
                 src={collection.stills[0]}
                 alt={`${collection.title} editorial portrait`}
                 className="w-full h-full object-cover transition-transform duration-[1200ms] ease-out hover:scale-[1.02]"
               />
             </div>
-            <div className="mt-4 flex justify-between items-baseline font-sans text-xs text-[#000000]/50 font-normal">
+            <div className="mt-5 flex justify-between items-baseline font-sans text-xs text-[#000000]/50 font-normal px-2">
               <span>{collection.chapters[0]?.cap}</span>
               <span>{collection.chapters[0]?.note}</span>
             </div>
           </div>
         </ScrollReveal>
 
-        {/* Asymmetric Offset Duet */}
-        <div className="grid grid-cols-1 md:grid-cols-12 gap-16 md:gap-12 mt-28 md:mt-48 items-start">
+        {/* Asymmetric Offset Duet: Optical Capsule & Vaulted Plinth */}
+        <div className="grid grid-cols-1 md:grid-cols-12 gap-16 md:gap-12 mt-28 md:mt-44 items-start">
           <ScrollReveal delay={90} className="col-span-1 md:col-span-6 md:col-start-1">
             <div className="w-full max-w-lg">
-              <div className="relative aspect-[3/4] w-full overflow-hidden bg-[#FAFAFA]">
+              <div className="relative aspect-[3/4] w-full overflow-hidden bg-[#F8F7F5] rounded-[72px] border border-black/5 shadow-xs">
                 <img
                   src={collection.stills[1]}
                   alt={`${collection.title} detail`}
                   className="w-full h-full object-cover transition-transform duration-[1200ms] ease-out hover:scale-[1.02]"
                 />
               </div>
-              <div className="mt-4 flex justify-between items-baseline font-sans text-xs text-[#000000]/50 font-normal">
+              <div className="mt-5 flex justify-between items-baseline font-sans text-xs text-[#000000]/50 font-normal px-2">
                 <span>{collection.chapters[1]?.cap}</span>
                 <span>{collection.chapters[1]?.note}</span>
               </div>
             </div>
           </ScrollReveal>
 
-          <ScrollReveal delay={180} className="col-span-1 md:col-span-5 md:col-start-8 md:mt-32">
+          <ScrollReveal delay={180} className="col-span-1 md:col-span-5 md:col-start-8 md:mt-28">
             <div className="w-full">
-              <div className="relative aspect-[4/3] w-full overflow-hidden bg-[#FAFAFA]">
+              <div className="relative aspect-[4/3] w-full overflow-hidden bg-[#F8F7F5] rounded-t-[120px] rounded-b-[24px] border border-black/5 shadow-xs">
                 <img
                   src={collection.stills[2]}
                   alt={`${collection.title} architectural angle`}
                   className="w-full h-full object-cover transition-transform duration-[1200ms] ease-out hover:scale-[1.02]"
                 />
               </div>
-              <div className="mt-4 flex justify-between items-baseline font-sans text-xs text-[#000000]/50 font-normal">
+              <div className="mt-5 flex justify-between items-baseline font-sans text-xs text-[#000000]/50 font-normal px-2">
                 <span>{collection.chapters[2]?.cap}</span>
                 <span>{collection.chapters[2]?.note}</span>
               </div>
@@ -253,148 +231,104 @@ export default function CollectionDetail() {
       </section>
 
       {/* ========================================================================= */}
-      {/* 5. THE 360° ATELIER — GT AMERICA FONTS (Per Screenshot 3 Request)        */}
-      {/* Replaces all capitalized monospaced fonts with authentic GT America sans  */}
+      {/* 5. THE 360° ATELIER : MINIMALIST LUXURY (NO SUGGESTIONS, NO SUBTEXT)       */}
       {/* ========================================================================= */}
       <section className="relative w-full px-6 sm:px-12 md:px-20 py-20 md:py-32 max-w-6xl mx-auto select-none">
         <ScrollReveal>
           {/* Section Header */}
-          <div className="text-center max-w-2xl mx-auto mb-12">
-            <span className="font-sans text-xs text-[#000000]/50 block mb-2 font-normal">
-              The Atelier Salon
-            </span>
-            <h2 className="font-serif text-3xl sm:text-4xl md:text-5xl font-normal tracking-tight text-[#000000]">
-              Interactive 360° Inspection
+          <div className="text-center max-w-2xl mx-auto mb-10">
+            <h2 className="font-serif lowercase text-3xl sm:text-4xl md:text-5xl font-normal tracking-tight text-[#000000]">
+              interactive 360° inspection
             </h2>
           </div>
 
-          {/* Floating Canvas Area (Zero box borders, pure white) */}
-          <div className="relative w-full flex flex-col items-center justify-between min-h-[500px] sm:min-h-[600px] py-6">
-            {/* Top Bar: GT America Typography (No fake monospace) */}
-            <div className="w-full flex flex-col sm:flex-row items-center justify-between gap-4 border-b border-black/10 pb-5">
-              <div className="flex items-center gap-2.5 font-sans text-sm">
-                <span className="text-[#000000] font-medium">
-                  {activeFrame === "gold"
-                    ? "18K Brushed Gold"
-                    : activeFrame === "gunmetal"
-                    ? "Gunmetal Obsidian"
-                    : "Antique Bronze"}
-                </span>
-                <span className="text-black/30">/</span>
-                <span className="text-[#000000]/70 capitalize">
-                  {activeLens} Mineral
-                </span>
-              </div>
-
-              {/* Metal Finish Switcher in GT America */}
-              <div className="flex items-center gap-2 font-sans">
-                {[
-                  { id: "gold", label: "18K Gold", hex: "#D4AF37" },
-                  { id: "gunmetal", label: "Gunmetal", hex: "#23262B" },
-                  { id: "bronze", label: "Bronze", hex: "#7A5B3A" },
-                ].map((f) => (
-                  <button
-                    key={f.id}
-                    onClick={() => {
-                      try {
-                        playMetallicClick();
-                      } catch {}
-                      setActiveFrame(f.id as any);
-                    }}
-                    className={`px-3.5 py-1.5 rounded-full text-xs font-sans transition-all cursor-pointer ${
-                      activeFrame === f.id
-                        ? "bg-black text-white font-medium shadow-sm"
-                        : "text-black/70 hover:text-black hover:bg-black/5"
-                    }`}
-                  >
-                    <span
-                      className="inline-block w-2 h-2 rounded-full mr-1.5 align-middle"
-                      style={{ backgroundColor: f.hex }}
-                    />
-                    {f.label}
-                  </button>
-                ))}
-              </div>
+          {/* Floating Canvas Area with Ambient Luxury Aura */}
+          <div className="relative w-full flex flex-col items-center justify-between min-h-[480px] sm:min-h-[560px] py-4">
+            {/* Ambient Radial Pedestal Glow */}
+            <div
+              className="absolute inset-0 pointer-events-none flex items-center justify-center overflow-hidden"
+              aria-hidden="true"
+            >
+              <div className="w-[340px] sm:w-[500px] h-[340px] sm:h-[500px] rounded-full bg-gradient-to-tr from-[#B8985F]/[0.08] to-transparent blur-3xl" />
             </div>
 
             {/* 3D Model Floating Canvas */}
-            <div className="relative w-full flex-1 flex items-center justify-center my-8 min-h-[340px] sm:min-h-[420px]">
+            <div className="relative w-full flex-1 flex items-center justify-center my-6 min-h-[340px] sm:min-h-[440px] md:min-h-[480px]">
               <Eyewear3DModel
                 key={`${activeFrame}-${activeLens}`}
                 frameType={activeFrame}
                 lensType={activeLens}
-                className="w-full h-[340px] sm:h-[420px] md:h-[480px]"
+                className="w-full h-[340px] sm:h-[440px] md:h-[480px]"
                 autoRotate={true}
               />
             </div>
 
-            {/* Bottom Controls: Mineral Lens Swatches & Acquire Action in GT America */}
-            <div className="w-full flex flex-col md:flex-row items-center justify-between gap-6 border-t border-black/10 pt-5">
-              {/* Mineral Lens Options */}
-              <div className="flex items-center gap-4 sm:gap-6 flex-wrap justify-center font-sans">
-                <span className="text-xs text-[#000000]/55 hidden sm:inline-block">
-                  Mineral Optics:
-                </span>
+            {/* Pure Controls: Gem Mineral Lens Swatches & Acquire Action */}
+            <div className="w-full flex flex-col sm:flex-row items-center justify-between gap-6 pt-4">
+              {/* Gem-like Mineral Lens Swatches */}
+              <div className="flex items-center gap-2.5 sm:gap-3 flex-wrap justify-center font-sans">
                 {[
                   { id: "ruby", label: "Ruby", color: "#8A0E1C" },
                   { id: "obsidian", label: "Obsidian", color: "#1A1C20" },
                   { id: "amber", label: "Amber", color: "#B86314" },
                   { id: "emerald", label: "Emerald", color: "#0F5C43" },
-                ].map((lens) => (
-                  <button
-                    key={lens.id}
-                    onClick={() => {
-                      try {
-                        playMetallicClick();
-                      } catch {}
-                      setActiveLens(lens.id as any);
-                    }}
-                    className={`group flex items-center gap-2 px-3 py-1.5 rounded-full transition-all cursor-pointer ${
-                      activeLens === lens.id
-                        ? "bg-black/5 text-black font-medium"
-                        : "text-black/60 hover:text-black"
-                    }`}
-                  >
-                    <span
-                      className="w-3 h-3 rounded-full border border-black/20 transition-transform group-hover:scale-110"
-                      style={{ backgroundColor: lens.color }}
-                    />
-                    <span className="text-xs">{lens.label}</span>
-                  </button>
-                ))}
+                ].map((lens) => {
+                  const isSelected = activeLens === lens.id;
+                  return (
+                    <button
+                      key={lens.id}
+                      onClick={() => {
+                        try {
+                          playMetallicClick();
+                        } catch {}
+                        setActiveLens(lens.id as any);
+                      }}
+                      className={`group flex items-center gap-2 px-3.5 py-1.5 rounded-full transition-all duration-300 cursor-pointer ${
+                        isSelected
+                          ? "bg-black text-white shadow-xs"
+                          : "bg-black/[0.03] text-black/70 hover:text-black hover:bg-black/[0.06]"
+                      }`}
+                    >
+                      <span
+                        className={`w-2.5 h-2.5 rounded-full transition-transform duration-300 ${
+                          isSelected ? "scale-110 ring-2 ring-white/40" : "group-hover:scale-110"
+                        }`}
+                        style={{ backgroundColor: lens.color }}
+                      />
+                      <span className="text-xs font-normal">{lens.label}</span>
+                    </button>
+                  );
+                })}
               </div>
 
-              {/* Bespoke Acquisition CTA in GT America */}
+              {/* Bespoke Acquisition CTA */}
               <button
                 onClick={handleAcquireBespoke}
-                className="px-7 py-2.5 rounded-full font-sans text-xs font-medium bg-black text-white hover:bg-black/80 transition-all duration-300 cursor-pointer active:scale-98"
+                className="group relative inline-flex items-center gap-3 px-8 py-2.5 rounded-full font-sans text-xs font-medium bg-black text-white hover:bg-[#4A0E16] transition-all duration-300 cursor-pointer active:scale-98 shadow-xs"
               >
-                Acquire 3D Edition · AED 18,000
+                <span>Acquire 3D Edition</span>
+                <span className="text-white/40">·</span>
+                <span>AED 18,000</span>
               </button>
             </div>
-
-            {/* Instruction helper in GT America */}
-            <span className="mt-4 font-sans text-xs text-[#000000]/45 font-normal">
-              Drag horizontally to rotate 360° · Real-time physical render
-            </span>
           </div>
         </ScrollReveal>
       </section>
 
       {/* ========================================================================= */}
-      {/* 6. EYEWEAR EDITIONS — UNCONFINED STILL LIFE GALLERY (NO BOXES)              */}
+      {/* 6. EYEWEAR EDITIONS : ARCHITECTURAL ARCHES & OPTICAL CAPSULE VITRINES      */}
       {/* ========================================================================= */}
       <section
         id="frames"
-        className="relative w-full px-6 sm:px-12 md:px-20 pt-20 md:pt-36 pb-28 max-w-7xl mx-auto select-none"
+        className="relative w-full px-6 sm:px-12 md:px-20 pt-20 md:pt-36 pb-32 max-w-7xl mx-auto select-none"
       >
-        <div className="flex flex-col sm:flex-row sm:items-baseline justify-between pb-8 border-b border-black/10">
+        <div className="flex flex-col sm:flex-row sm:items-baseline justify-between pb-8">
           <div>
-            <span className="font-sans text-xs text-[#000000]/45 block font-normal">
-              Catalog
+            <span className="font-sans lowercase text-xs text-[#000000]/45 block font-normal">
+              catalog
             </span>
-            <h2 className="font-serif text-3xl sm:text-4xl md:text-5xl font-normal mt-1 text-[#000000] tracking-tight">
-              {collection.title} Editions
+            <h2 className="font-serif lowercase text-3xl sm:text-4xl md:text-5xl font-normal mt-1 text-[#000000] tracking-tight">
+              {collection.title} editions
             </h2>
           </div>
           <span className="font-sans text-xs text-[#000000]/50 font-normal">
@@ -402,63 +336,60 @@ export default function CollectionDetail() {
           </span>
         </div>
 
-        {/* Anti-Slop Layout: Floating Still-Life Products Directly on White */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 lg:gap-16 mt-16 md:mt-24">
-          {collection.products.map((product, idx) => (
-            <ScrollReveal key={product.id} delay={idx * 80}>
-              <div
-                className="group flex flex-col cursor-pointer"
-                onClick={() => handleEnquire(product)}
-              >
-                {/* Floating Product Silhouette (No box frame, no gray border) */}
-                <div className="relative aspect-[4/3] w-full overflow-hidden bg-[#FAFAFA] flex items-center justify-center transition-transform duration-700 ease-out group-hover:-translate-y-1">
-                  <img
-                    src={product.quad}
-                    alt={product.name}
-                    loading="lazy"
-                    className="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-[1.04]"
-                  />
-                  {/* Subtle floating Acquire badge */}
-                  <div className="absolute bottom-3 right-3 opacity-0 group-hover:opacity-100 transition-opacity duration-300 font-sans text-xs bg-black text-white px-3 py-1 rounded-full font-medium">
-                    Acquire +
+        {/* Sculptural Staggered Salon Layout (Architectural Arches & Stadium Capsules) */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-10 mt-16 md:mt-24">
+          {collection.products.map((product, idx) => {
+            const isArched = idx % 2 === 0;
+            return (
+              <ScrollReveal key={product.id} delay={idx * 80}>
+                <div
+                  className={`group flex flex-col cursor-pointer ${
+                    !isArched ? "md:mt-14" : ""
+                  }`}
+                  onClick={() => handleEnquire(product)}
+                >
+                  {/* Sculptural Vitrine Silhouette */}
+                  <div
+                    className={`relative aspect-[3/4] w-full overflow-hidden bg-[#F8F7F5] border border-black/5 flex items-center justify-center p-6 transition-all duration-700 ease-out group-hover:-translate-y-2 group-hover:shadow-[0_24px_48px_rgba(0,0,0,0.07)] ${
+                      isArched
+                        ? "rounded-t-[140px] rounded-b-[16px]"
+                        : "rounded-[72px]"
+                    }`}
+                  >
+                    {/* Architectural Numeral Marker */}
+                    <div className="absolute top-4 left-1/2 -translate-x-1/2 font-sans text-[10px] tracking-widest text-black/35 font-medium">
+                      0{idx + 1}
+                    </div>
+
+                    <img
+                      src={product.quad}
+                      alt={product.name}
+                      loading="lazy"
+                      className="max-h-[75%] max-w-[85%] object-contain mix-blend-multiply transition-transform duration-700 ease-out group-hover:scale-108 filter contrast-[1.03]"
+                    />
+
+                    {/* Floating Acquire Pill on Hover */}
+                    <div className="absolute bottom-4 left-1/2 -translate-x-1/2 opacity-0 group-hover:opacity-100 transition-all duration-300 translate-y-1 group-hover:translate-y-0 font-sans text-xs bg-black text-white px-4 py-1.5 rounded-full font-medium shadow-sm whitespace-nowrap">
+                      Acquire Edition +
+                    </div>
+                  </div>
+
+                  {/* Typographic Metadata in GT Sectra & GT America */}
+                  <div className="mt-5 flex flex-col space-y-1.5 px-2">
+                    <h3 className="font-serif text-lg font-normal text-[#000000] leading-snug group-hover:underline">
+                      {product.name}
+                    </h3>
+                    <p className="font-sans text-xs text-[#000000]/55 leading-relaxed font-normal">
+                      {product.material}
+                    </p>
+                    <p className="font-serif text-base font-normal text-[#000000] pt-0.5">
+                      {product.priceDisplay}
+                    </p>
                   </div>
                 </div>
-
-                {/* Typographic Metadata in GT Sectra & GT America */}
-                <div className="mt-5 flex flex-col space-y-1.5">
-                  <h3 className="font-serif text-base font-normal text-[#000000] leading-snug group-hover:underline">
-                    {product.name}
-                  </h3>
-                  <p className="font-sans text-xs text-[#000000]/55 leading-relaxed font-normal">
-                    {product.material}
-                  </p>
-                  <p className="font-serif text-base font-normal text-[#000000] pt-1">
-                    {product.priceDisplay}
-                  </p>
-                </div>
-              </div>
-            </ScrollReveal>
-          ))}
-        </div>
-      </section>
-
-      {/* ========================================================================= */}
-      {/* 7. ATELIER CREDITS                                                        */}
-      {/* ========================================================================= */}
-      <section className="relative w-full px-6 sm:px-12 md:px-20 py-20 md:py-28 max-w-7xl mx-auto border-t border-black/10 select-none">
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-12">
-          {collection.credits.map((credit, idx) => (
-            <ScrollReveal key={idx} delay={idx * 60}>
-              <div className="flex flex-col space-y-1.5 font-sans">
-                <span className="text-xs text-[#000000]/45 font-normal">
-                  {credit.role}
-                </span>
-                <span className="font-serif text-sm sm:text-base text-[#000000]">
-                  {credit.name}
-                </span>
-              </div>
-            </ScrollReveal>
-          ))}
+              </ScrollReveal>
+            );
+          })}
         </div>
       </section>
 

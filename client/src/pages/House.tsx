@@ -4,22 +4,27 @@
 import { motion } from "framer-motion";
 import { ArrowDownRight, ArrowUpRight } from "lucide-react";
 import { Link } from "wouter";
-import VintageHud from "@/components/VintageHud";
+import CheetahBar from "@/components/CheetahBar";
+import HeaderWordmark from "@/components/HeaderWordmark";
 
-const mark = "/manus-storage/cheeta-cj-official_8dcc9825.png";
+const mark = "/brand/cheeta-cj-transparent.png";
 const atelierImage = "/manus-storage/cheeta-dubai-atelier_0dde518b.png";
 const necklaceImage = "/manus-storage/cheeta-necklace-atrium_e7928040.png";
 
 const chapters = [
-  ["01", "The beginning", "Raised beneath Dubai's ever-changing skyline, Eisa Saidi built an instinct for style that never asked for permission."],
-  ["02", "The proof", "The look that invited ridicule became influence. What was mocked first was copied later."],
-  ["03", "The house", "Cheetah Jewelz turns that conviction into wearable art for people who refuse to blend in."],
+  ["01", "the beginning", "Raised beneath Dubai's ever-changing skyline, Eisa Saidi built an instinct for style that never asked for permission."],
+  ["02", "the proof", "The look that invited ridicule became influence. What was mocked first was copied later."],
+  ["03", "the house", "Cheetah Jewelz turns that conviction into wearable art for people who refuse to blend in."],
 ];
 
 export default function House() {
   return (
     <main className="relative overflow-hidden bg-[#F4F1E8] text-[#1A1410]">
-      <VintageHud />
+      {/* Floating Transparent Cheetah Bar */}
+      <CheetahBar dark={false} />
+
+      {/* Centered Transparent CHEETA JEWELS Header Wordmark */}
+      <HeaderWordmark dark={false} />
 
       <section className="house-hero px-5 pb-16 pt-24 sm:px-8 sm:pb-24 sm:pt-28 lg:px-11 lg:pb-32 lg:pt-36">
         <div className="mx-auto max-w-[1680px] pt-5">

@@ -26,7 +26,7 @@ export default function Shipping() {
               rest: "3–5 business days to dispatch, then 2–4 business days in transit (GCC) or 4–6 business days (international).",
             },
             {
-              lead: "Numbered edition 004—100:",
+              lead: "Numbered edition 004 - 100:",
               rest: "Each piece is finished to order. Allow 4–6 weeks for hand-finishing before dispatch.",
             },
             {
@@ -60,7 +60,7 @@ export default function Shipping() {
           Every piece arrives in the house's signature leopard-print velvet
           case with a hand-stamped leather card, certificate of
           authenticity, microfibre cloth, and care guide. Gift wrapping is
-          not offered — the case is the wrapping.
+          not offered : the case is the wrapping.
         </p>
       </Section>
     </LegalPage>

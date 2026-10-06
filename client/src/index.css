@@ -2,12 +2,28 @@
 @import "tailwindcss";
 @import "tw-animate-css";
 
-/* CHEETAH JEWELZ — Modern Jewelry With Instinct
+/* CHEETAH JEWELZ : Modern Jewelry With Instinct
 
-/* GT Sectra Display & GT America */
+/* GT Sectra Display (Upright, Normal, High-Contrast Luxury) & GT America */
 @font-face {
   font-family: "GT Sectra Display";
   font-style: normal;
+  font-weight: 600 700 800;
+  font-display: swap;
+  src: url("/manus-storage/fonts/GT-Sectra-Display-Bold.woff") format("woff"),
+       url("/manus-storage/fonts/GT-Sectra-Display-Bold.ttf") format("truetype");
+}
+@font-face {
+  font-family: "GT Sectra Display";
+  font-style: normal;
+  font-weight: 300 400 500;
+  font-display: swap;
+  src: url("/manus-storage/fonts/GT-Sectra-Fine-Book.woff") format("woff"),
+       url("/manus-storage/fonts/GT-Sectra-Fine-Book.ttf") format("truetype");
+}
+@font-face {
+  font-family: "GT Sectra Display";
+  font-style: italic;
   font-weight: 400 700;
   font-display: swap;
   src: url("/manus-storage/fonts/GT-Sectra-Display-Trial-Bold-Italic.otf") format("opentype");

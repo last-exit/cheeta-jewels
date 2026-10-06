@@ -1,14 +1,21 @@
 /**
- * NOT FOUND — Editorial 404
+ * NOT FOUND : Editorial 404
  * A quiet, considered page when a route is not in the public archive.
  */
 import { motion } from "framer-motion";
 import { Link } from "wouter";
 import { ArrowLeft, ArrowUpRight } from "lucide-react";
+import CheetahBar from "@/components/CheetahBar";
+import HeaderWordmark from "@/components/HeaderWordmark";
 
 export default function NotFound() {
   return (
     <main className="relative min-h-screen w-full bg-[#F4F1E8] text-[#1A1410] flex items-center justify-center px-6 py-32 select-none">
+      {/* Floating Transparent Cheetah Bar */}
+      <CheetahBar dark={false} />
+
+      {/* Centered Transparent CHEETA JEWELS Header Wordmark */}
+      <HeaderWordmark dark={false} />
 
       <div className="max-w-3xl w-full">
         <motion.div
@@ -20,14 +27,14 @@ export default function NotFound() {
           {/* Editorial mark */}
           <div className="flex items-center gap-3">
             <span className="h-px w-8 bg-[#6B1A2C]" />
-            <span className="font-sans text-[10px] uppercase tracking-[0.32em] text-[#1A1410]/55">
-              404 / Archive Notice
+            <span className="font-sans lowercase text-xs tracking-wider text-[#1A1410]/55">
+              404 / archive notice
             </span>
           </div>
 
           {/* Headline */}
-          <h1 className="font-serif text-[clamp(3.2rem,9vw,7rem)] font-normal leading-[0.92] tracking-[-0.03em] text-[#1A1410]">
-            An object <em className="not-italic text-[#6B1A2C]">undisclosed</em>.
+          <h1 className="font-serif lowercase text-[clamp(3.2rem,9vw,7rem)] font-normal leading-[0.92] tracking-[-0.03em] text-[#1A1410]">
+            an object <em className="not-italic text-[#6B1A2C]">undisclosed</em>.
           </h1>
 
           {/* Body */}
@@ -58,7 +65,7 @@ export default function NotFound() {
         </motion.div>
 
         {/* Editorial footer */}
-        <div className="mt-24 pt-8 border-t border-[#1A1410]/10 flex items-center justify-between font-sans text-[10px] uppercase tracking-[0.24em] text-[#1A1410]/40">
+        <div className="mt-24 pt-8 flex items-center justify-between font-sans text-[10px] uppercase tracking-[0.24em] text-[#1A1410]/40">
           <span>Cheetah Jewelz / Atelier Archive</span>
           <span>Dubai · Est. 2026</span>
         </div>

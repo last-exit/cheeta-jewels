@@ -33,7 +33,7 @@ export default function Terms() {
           items={[
             {
               lead: "Numbering:",
-              rest: "Pieces 001—100 are numbered at the bridge of the frame, in the leather card, and in the certificate of authenticity.",
+              rest: "Pieces 001 - 100 are numbered at the bridge of the frame, in the leather card, and in the certificate of authenticity.",
             },
             {
               lead: "Edition integrity:",

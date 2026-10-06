@@ -1,5 +1,5 @@
 /**
- * MACRO JEWELRY LOUPE — 4x Precision Craftsmanship Inspection
+ * MACRO JEWELRY LOUPE : 4x Precision Craftsmanship Inspection
  * Follows mouse movement to reveal 4x magnified micro-engravings,
  * 18K solid gold hallmarks, and gemstone facets inside a circular brass loupe.
  */

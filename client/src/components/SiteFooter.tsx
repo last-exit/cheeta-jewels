@@ -30,10 +30,10 @@ const PRIMARY = [
 
 export default function SiteFooter() {
   return (
-    <footer className="relative w-full bg-[#F4F1E8] text-[#1A1410] border-t border-[#1A1410]/10">
+    <footer className="relative w-full bg-[#F4F1E8] text-[#1A1410]">
       <div className="max-w-7xl mx-auto px-6 md:px-12 py-16 md:py-24">
-        {/* Top — wordmark + tagline */}
-        <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-8 pb-12 md:pb-16 border-b border-[#1A1410]/10">
+        {/* Top: wordmark + tagline */}
+        <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-8 pb-12 md:pb-16">
           <div>
             <Link
               href="/"
@@ -41,8 +41,8 @@ export default function SiteFooter() {
             >
               Cheetah Jewelz
             </Link>
-            <p className="mt-3 font-serif text-base md:text-lg italic text-[#1A1410]/65 max-w-md">
-              Icon Livin' — the first 100 pairs, hand-finished in the Dubai atelier.
+            <p className="mt-3 font-serif text-base md:text-lg text-[#1A1410]/65 max-w-md">
+              icon livin': the first 100 pairs, hand-finished in the Dubai atelier.
             </p>
           </div>
 
@@ -54,8 +54,8 @@ export default function SiteFooter() {
           </a>
         </div>
 
-        {/* Middle — link grid */}
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-10 md:gap-12 py-12 md:py-16 border-b border-[#1A1410]/10">
+        {/* Middle: link grid */}
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-10 md:gap-12 py-12 md:py-16">
           <FooterColumn title="The House" items={PRIMARY} />
           <FooterColumn title="Service" items={SERVICE} />
           <FooterColumn title="Legal" items={LEGAL} />
@@ -71,15 +71,15 @@ export default function SiteFooter() {
               <span className="text-[#1A1410]/55">By appointment only</span>
             </address>
             <p className="mt-4 font-sans text-[10px] uppercase tracking-[0.32em] text-[#1A1410]/50">
-              Sat — Thu · 10:00 — 18:00 GST
+              Sat - Thu · 10:00 - 18:00 GST
             </p>
           </div>
         </div>
 
-        {/* Bottom — credit row */}
+        {/* Bottom: credit row */}
         <div className="mt-10 flex flex-col md:flex-row md:items-center md:justify-between gap-3 font-sans text-[10px] uppercase tracking-[0.32em] text-[#1A1410]/45">
           <span>© 2026 Cheetah Jewelz, Dubai</span>
-          <span>Numbered 001 — 100</span>
+          <span>Numbered 001 - 100</span>
         </div>
       </div>
     </footer>

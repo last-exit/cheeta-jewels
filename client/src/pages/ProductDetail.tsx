@@ -1,37 +1,24 @@
 /**
- * RETAIL PDP — Individual Product Experience & Leopard Presentation
- * Radical luxury: 4x Precision Macro Loupe inspection, Swiss mechanical NumberFlow pricing,
- * verified high-res imagery, and Italian leopard velvet packaging.
+ * RETAIL PDP : Individual Product Experience & Leopard Presentation
+ * Pure luxury editorial with GT Sectra Display and GT America.
  */
 import NumberFlow from "@number-flow/react";
 import { ArrowLeft } from "lucide-react";
 import React, { useState } from "react";
-import { Link, useRoute } from "wouter";
-import { toast } from "sonner";
+import { Link, useParams } from "wouter";
 import CheetahBar from "@/components/CheetahBar";
+import HeaderWordmark from "@/components/HeaderWordmark";
 import MacroJewelryLoupe from "@/components/MacroJewelryLoupe";
 import { useCart } from "@/contexts/CartContext";
 import { playMetallicClick, playVaultAcquisition } from "@/lib/soundEffects";
-import { PRODUCTS, type ProductItem } from "./Retail";
-
-const PRODUCT_MAP: Record<string, ProductItem> = {
-  "barrel-01": PRODUCTS[0],
-  "barrel-02": PRODUCTS[1],
-  "barrel-03": PRODUCTS[2],
-  "emerald-signet": PRODUCTS[3],
-  "atrium-necklace": PRODUCTS[4],
-};
+import { PRODUCTS } from "./Retail";
+import { toast } from "sonner";
 
 export default function ProductDetail() {
-  const [, params] = useRoute("/product/:slug");
-  const slug = params?.slug || "barrel-01";
-  const product = PRODUCT_MAP[slug] || PRODUCTS.find((p) => p.slug === slug) || PRODUCTS[0];
+  const { slug } = useParams<{ slug: string }>();
+  const product = PRODUCTS.find((p) => p.slug === slug) || PRODUCTS[0];
   const { addToCart, totalCount } = useCart();
-  const [selectedImage, setSelectedImage] = useState<string>(product.productImage);
-
-  React.useEffect(() => {
-    setSelectedImage(product.productImage);
-  }, [product.productImage]);
+  const [selectedImage, setSelectedImage] = useState(product.productImage);
 
   const handleAdd = () => {
     playVaultAcquisition();
@@ -44,7 +31,7 @@ export default function ProductDetail() {
       priceDisplay: product.priceDisplay,
       image: product.productImage,
     });
-    toast.success(`${product.name} added to bag.`, {
+    toast.success(`${product.name} acquired.`, {
       description: `${product.frame} · ${product.priceDisplay}`,
     });
   };
@@ -59,22 +46,25 @@ export default function ProductDetail() {
       {/* Floating Transparent Cheetah Bar */}
       <CheetahBar />
 
+      {/* Centered Transparent CHEETA JEWELS Header Wordmark */}
+      <HeaderWordmark dark={false} />
+
       <div className="max-w-6xl mx-auto px-6 md:px-20 py-24 md:py-36 pl-16 md:pl-28">
         {/* Navigation Breadcrumb */}
-        <div className="mb-16 md:mb-24 flex items-center justify-between">
+        <div className="mb-16 md:mb-24 flex items-center justify-between font-sans lowercase text-xs tracking-wider">
           <Link
             href="/retail"
-            className="group inline-flex items-center gap-2 font-sans text-xs uppercase tracking-[0.16em] text-[#0B0B0C]/50 hover:text-[#0B0B0C] transition-colors"
+            className="group inline-flex items-center gap-2 text-[#0B0B0C]/50 hover:text-[#0B0B0C] transition-colors"
           >
             <ArrowLeft size={13} className="transition-transform group-hover:-translate-x-1" />
-            <span>Collection</span>
+            <span>retail</span>
           </Link>
 
           <Link
             href="/cart"
-            className="font-sans text-xs uppercase tracking-[0.14em] text-[#0B0B0C]/50 hover:text-[#0B0B0C] transition-colors"
+            className="text-[#0B0B0C]/50 hover:text-[#0B0B0C] transition-colors"
           >
-            Bag ({totalCount})
+            bag ({totalCount})
           </Link>
         </div>
 
@@ -99,18 +89,18 @@ export default function ProductDetail() {
                   className={`h-16 w-16 p-2 bg-[#EBEAE4] transition-all cursor-pointer ${
                     selectedImage === product.productImage ? "ring-1 ring-[#4A0E16]" : "opacity-50 hover:opacity-100"
                   }`}
-                  aria-label="Primary product view"
+                  aria-label="primary product view"
                 >
-                  <img src={product.productImage} alt="Front View" className="h-full w-full object-contain" />
+                  <img src={product.productImage} alt="front view" className="h-full w-full object-contain" />
                 </button>
                 <button
                   onClick={() => handleSelectImage(product.altImage!)}
                   className={`h-16 w-16 p-2 bg-[#EBEAE4] transition-all cursor-pointer ${
                     selectedImage === product.altImage ? "ring-1 ring-[#4A0E16]" : "opacity-50 hover:opacity-100"
                   }`}
-                  aria-label="Alternate perspective view"
+                  aria-label="alternate perspective view"
                 >
-                  <img src={product.altImage} alt="Alternate View" className="h-full w-full object-contain" />
+                  <img src={product.altImage} alt="alternate view" className="h-full w-full object-contain" />
                 </button>
               </div>
             )}
@@ -119,16 +109,16 @@ export default function ProductDetail() {
           {/* Right: Essential Information & Action */}
           <div className="lg:col-span-5 flex flex-col justify-center space-y-8">
             <div>
-              <h1 className="font-serif text-4xl md:text-5xl font-normal tracking-tight text-[#0B0B0C]">
+              <h1 className="font-serif lowercase text-4xl md:text-5xl font-normal tracking-tight text-[#0B0B0C]">
                 {product.name}
               </h1>
-              <p className="font-sans text-xs uppercase tracking-[0.12em] text-[#0B0B0C]/60 mt-2">
+              <p className="font-sans lowercase text-xs tracking-wider text-[#0B0B0C]/60 mt-2">
                 {product.frame} · {product.lens}
               </p>
 
               {/* Swiss Mechanical NumberFlow Price Display */}
               <div className="mt-8 flex items-baseline gap-2 font-serif text-3xl sm:text-4xl font-normal text-[#0B0B0C]">
-                <span>AED</span>
+                <span className="uppercase tracking-wide">AED</span>
                 <NumberFlow value={product.price} format={{ useGrouping: true }} />
               </div>
             </div>
@@ -137,9 +127,9 @@ export default function ProductDetail() {
             <div className="pt-2 space-y-4">
               <button
                 onClick={handleAdd}
-                className="group relative w-full py-4 bg-[#0B0B0C] text-[#F4F3EE] hover:bg-[#4A0E16] transition-all duration-300 font-sans text-xs uppercase tracking-[0.18em] font-medium cursor-pointer active:scale-[0.98] flex items-center justify-center gap-3 rounded-full"
+                className="group relative w-full py-4 bg-[#0B0B0C] text-[#F4F3EE] hover:bg-[#4A0E16] transition-all duration-300 font-sans lowercase text-xs tracking-wider font-medium cursor-pointer active:scale-[0.98] flex items-center justify-center gap-3 rounded-full"
               >
-                <span>Acquire</span>
+                <span>acquire</span>
                 <span className="transition-transform group-hover:translate-x-1">→</span>
               </button>
             </div>
@@ -149,8 +139,8 @@ export default function ProductDetail() {
         {/* Leopard Packaging Section on PDP */}
         <div className="mt-24 md:mt-36 bg-[#141211] text-[#F4F3EE] shadow-xl grid grid-cols-1 lg:grid-cols-12 items-center overflow-hidden">
           <div className="lg:col-span-7 p-8 md:p-12 space-y-3">
-            <h3 className="font-serif text-2xl md:text-3xl font-normal text-[#F4F3EE]">
-              The Leopard Velvet Vault
+            <h3 className="font-serif lowercase text-2xl md:text-3xl font-normal text-[#F4F3EE]">
+              the leopard velvet vault
             </h3>
             <p className="font-sans text-sm text-[#F4F3EE]/70 leading-relaxed max-w-md">
               Each acquisition is encased in handcrafted Italian leopard velvet with imperial burgundy silk and solid gold hardware.

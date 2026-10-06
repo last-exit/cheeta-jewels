@@ -1,11 +1,13 @@
 /**
- * THE FOUNDER — Eisa Saidi
+ * THE FOUNDER : Eisa Saidi
  * Real content from the Cheeta Jewels writup (2026).
  * Founder story, real quote, real inspirations, real product context.
  */
 import { motion } from "framer-motion";
 import { ArrowDownRight, Sparkles } from "lucide-react";
 import { Link } from "wouter";
+import CheetahBar from "@/components/CheetahBar";
+import HeaderWordmark from "@/components/HeaderWordmark";
 
 const atelierImage = "/manus-storage/cheeta-dubai-atelier_0dde518b.png";
 const leopardBox = "/manus-storage/cheeta-leopard-vault-box.jpg";
@@ -13,17 +15,22 @@ const leopardBox = "/manus-storage/cheeta-leopard-vault-box.jpg";
 export default function Founder() {
   return (
     <main className="min-h-screen w-full bg-[#F4F1E8] text-[#1A1410] selection:bg-[#1A1410] selection:text-[#F4F1E8] overflow-x-hidden">
+      {/* Floating Transparent Cheetah Bar */}
+      <CheetahBar dark={false} />
+
+      {/* Centered Transparent CHEETA JEWELS Header Wordmark */}
+      <HeaderWordmark dark={false} />
 
       {/* ========================================================================= */}
       {/* 1. FOUNDER OPEN */}
       {/* ========================================================================= */}
       <section className="px-6 md:px-20 pt-24 md:pt-36 pb-16 md:pb-24 max-w-7xl mx-auto pl-16 md:pl-28">
-        <div className="flex items-baseline justify-between mb-12">
-          <p className="font-sans text-[10px] uppercase tracking-[0.32em] text-[#6B1A2C]">
-            The Founder
+        <div className="flex items-baseline justify-between mb-12 font-sans lowercase text-xs tracking-wider">
+          <p className="text-[#6B1A2C]">
+            the founder
           </p>
-          <p className="font-sans text-[10px] uppercase tracking-[0.24em] text-[#1A1410]/40">
-            Dubai · Est. 2026
+          <p className="text-[#1A1410]/40">
+            dubai · est. 2026
           </p>
         </div>
 
@@ -31,18 +38,18 @@ export default function Founder() {
           initial={{ opacity: 0, y: 24 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.9, ease: [0.22, 1, 0.36, 1] }}
-          className="font-serif text-[clamp(3.2rem,10vw,9rem)] leading-[0.88] tracking-[-0.035em] text-[#1A1410]"
+          className="font-serif lowercase text-[clamp(3.2rem,10vw,9rem)] leading-[0.88] tracking-[-0.035em] text-[#1A1410]"
         >
-          Eisa<br />Saidi
+          eisa<br />saidi
         </motion.h1>
 
-        <p className="mt-10 font-sans text-xs uppercase tracking-[0.24em] text-[#1A1410]/55">
-          Founder · Known in the ring as "The Cheetah"
+        <p className="mt-10 font-sans lowercase text-xs tracking-wider text-[#1A1410]/55">
+          founder · known in the ring as "the cheetah"
         </p>
       </section>
 
       {/* ========================================================================= */}
-      {/* 2. THE BRAIDS — the real origin moment */}
+      {/* 2. THE BRAIDS : the real origin moment */}
       {/* ========================================================================= */}
       <section className="px-6 md:px-20 py-16 md:py-24 max-w-3xl mx-auto pl-16 md:pl-28">
         <motion.div
@@ -67,7 +74,7 @@ export default function Founder() {
       {/* ========================================================================= */}
       {/* 3. HIS WORDS */}
       {/* ========================================================================= */}
-      <section className="px-6 md:px-20 py-20 md:py-32 max-w-3xl mx-auto pl-16 md:pl-28 border-t border-[#1A1410]/10">
+      <section className="px-6 md:px-20 py-20 md:py-32 max-w-3xl mx-auto pl-16 md:pl-28">
         <motion.figure
           initial={{ opacity: 0, y: 16 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -90,7 +97,7 @@ export default function Founder() {
       {/* ========================================================================= */}
       {/* 4. THE CHEETAH NICKNAME */}
       {/* ========================================================================= */}
-      <section className="px-6 md:px-20 py-16 md:py-24 max-w-7xl mx-auto pl-16 md:pl-28 grid grid-cols-1 md:grid-cols-12 gap-10 items-start border-t border-[#1A1410]/10">
+      <section className="px-6 md:px-20 py-16 md:py-24 max-w-7xl mx-auto pl-16 md:pl-28 grid grid-cols-1 md:grid-cols-12 gap-10 items-start">
         <div className="md:col-span-4">
           <span className="font-sans text-[10px] uppercase tracking-[0.32em] text-[#6B1A2C] block mb-4">
             The Cheetah
@@ -105,9 +112,9 @@ export default function Founder() {
       </section>
 
       {/* ========================================================================= */}
-      {/* 5. INSPIRATIONS — the real two */}
+      {/* 5. INSPIRATIONS : the real two */}
       {/* ========================================================================= */}
-      <section className="px-6 md:px-20 py-20 md:py-32 max-w-7xl mx-auto pl-16 md:pl-28 border-t border-[#1A1410]/10">
+      <section className="px-6 md:px-20 py-20 md:py-32 max-w-7xl mx-auto pl-16 md:pl-28">
         <div className="mb-16 max-w-2xl">
           <span className="font-sans text-[10px] uppercase tracking-[0.32em] text-[#6B1A2C] block mb-4">
             Two references he gave us
@@ -165,9 +172,9 @@ export default function Founder() {
       </section>
 
       {/* ========================================================================= */}
-      {/* 6. THE FIRST COLLECTION — the real product line */}
+      {/* 6. THE FIRST COLLECTION : the real product line */}
       {/* ========================================================================= */}
-      <section className="px-6 md:px-20 py-20 md:py-32 max-w-7xl mx-auto pl-16 md:pl-28 border-t border-[#1A1410]/10">
+      <section className="px-6 md:px-20 py-20 md:py-32 max-w-7xl mx-auto pl-16 md:pl-28">
         <div className="grid grid-cols-1 md:grid-cols-12 gap-10 items-end">
           <div className="md:col-span-7">
             <span className="font-sans text-[10px] uppercase tracking-[0.32em] text-[#6B1A2C] block mb-4">
@@ -206,9 +213,9 @@ export default function Founder() {
       </section>
 
       {/* ========================================================================= */}
-      {/* 8. THE CASE — the leopard vault, briefly */}
+      {/* 8. THE CASE : the leopard vault, briefly */}
       {/* ========================================================================= */}
-      <section className="px-6 md:px-20 py-16 md:py-24 max-w-7xl mx-auto pl-16 md:pl-28 grid grid-cols-1 md:grid-cols-12 gap-10 items-center border-t border-[#1A1410]/10">
+      <section className="px-6 md:px-20 py-16 md:py-24 max-w-7xl mx-auto pl-16 md:pl-28 grid grid-cols-1 md:grid-cols-12 gap-10 items-center">
         <div className="md:col-span-7 order-2 md:order-1">
           <div className="aspect-[4/3] w-full overflow-hidden">
             <img
@@ -232,7 +239,7 @@ export default function Founder() {
       {/* ========================================================================= */}
       {/* 9. CTA BACK TO COLLECTION */}
       {/* ========================================================================= */}
-      <section className="px-6 md:px-20 py-20 md:py-32 max-w-7xl mx-auto pl-16 md:pl-28 border-t border-[#1A1410]/10 flex flex-wrap items-center justify-between gap-6">
+      <section className="px-6 md:px-20 py-20 md:py-32 max-w-7xl mx-auto pl-16 md:pl-28 flex flex-wrap items-center justify-between gap-6">
         <Link
           href="/retail"
           className="group inline-flex items-center gap-3 bg-[#1A1410] text-[#F4F1E8] hover:bg-[#6B1A2C] transition-colors duration-300 pl-6 pr-2.5 py-3 rounded-full font-sans text-[11px] uppercase tracking-[0.22em]"

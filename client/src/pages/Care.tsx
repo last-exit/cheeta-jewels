@@ -32,7 +32,7 @@ export default function Care() {
       <Section no="02" title="Cleaning the frame">
         <p>
           Wipe the 18K brushed gold frame with the supplied microfibre
-          cloth only. Do not use household polish, alcohol, or ammonia —
+          cloth only. Do not use household polish, alcohol, or ammonia :
           they will strip the brushed finish. The frame does not need to be
           polished; the matte grain is intentional.
         </p>

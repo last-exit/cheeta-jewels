@@ -1,5 +1,5 @@
 /**
- * CHEETA JEWELS / ICON LIVIN — Editorial Collections Data
+ * CHEETA JEWELS / ICON LIVIN : Editorial Collections Data
  * All collection content, media paths, color themes, and specifications.
  * Zero hardcoded values in presentation JSX components.
  */
@@ -77,12 +77,12 @@ export const COLLECTIONS: Record<string, CollectionData> = {
   maharaja: {
     id: "maharaja",
     index: "01",
-    eyebrow: "FW26 — CHAPTER 01",
+    eyebrow: "fw26 / chapter 01",
     title: "MAHARAJA",
     subtitle: "SOVEREIGN GEOMETRY IN 18K SOLID GOLD",
     cta: "View the Collection",
     secondary: "Acquire Edition",
-    label: "01 / 04 — MAHARAJA",
+    label: "01 / 04 : maharaja",
     pageTitle: "THE MAHARAJA COLLECTION",
     intro:
       "CARVED FROM ARCHITECTURAL JALI LATTICEWORK AND SOLID EIGHTEEN-KARAT GOLD, THE MAHARAJA SERIES CONFRONTS THE MONUMENTAL GRANDEUR OF THE RAJASTHAN COURTS. AN UNFLINCHING GEOMETRIC SILHOUETTE CRAFTED FOR THOSE WHO COMMAND OBSERVED SPACES WITH AUDACIOUS RESTRAINT, IMPERIAL PROPORTIONS, AND UNCOMPROMISING SIGHTLINES UNDER HARSH OPULENT LIGHT.",
@@ -115,7 +115,7 @@ export const COLLECTIONS: Record<string, CollectionData> = {
     products: [
       {
         id: "maharaja-01",
-        name: "Maharaja I — The Solid Octagon",
+        name: "maharaja i: the solid octagon",
         material: "18K Hand-Finished Gold · Amber Mineral Lenses",
         price: 18500,
         priceDisplay: "AED 18,500",
@@ -123,7 +123,7 @@ export const COLLECTIONS: Record<string, CollectionData> = {
       },
       {
         id: "maharaja-02",
-        name: "Maharaja II — Jali Screen Aviator",
+        name: "maharaja ii: jali screen aviator",
         material: "18K Solid Yellow Gold · Custom Gradient Optics",
         price: 19500,
         priceDisplay: "AED 19,500",
@@ -131,7 +131,7 @@ export const COLLECTIONS: Record<string, CollectionData> = {
       },
       {
         id: "maharaja-03",
-        name: "Maharaja III — Chiseled Pilot",
+        name: "maharaja iii: chiseled pilot",
         material: "Chiseled 18K Gold · Emerald Cabochon Inlay",
         price: 21000,
         priceDisplay: "AED 21,000",
@@ -139,7 +139,7 @@ export const COLLECTIONS: Record<string, CollectionData> = {
       },
       {
         id: "maharaja-04",
-        name: "Maharaja IV — Imperial Monolith",
+        name: "maharaja iv: imperial monolith",
         material: "18K Solid Rose Gold · Smoke Quartz Mineral Lenses",
         price: 22500,
         priceDisplay: "AED 22,500",
@@ -171,7 +171,7 @@ export const COLLECTIONS: Record<string, CollectionData> = {
   masquerade: {
     id: "masquerade",
     index: "02",
-    eyebrow: "ATELIER ARCHIVE — CHAPTER 02",
+    eyebrow: "atelier archive / chapter 02",
     title: "THE MASQUERADE",
     subtitle: "OBSIDIAN LACQUER & SCULPTED TITANIUM",
     cta: "View the Collection",
@@ -209,7 +209,7 @@ export const COLLECTIONS: Record<string, CollectionData> = {
     products: [
       {
         id: "masquerade-01",
-        name: "Masquerade I — Concealed Visor",
+        name: "masquerade i: concealed visor",
         material: "Polished Black Titanium · Blackout Onyx Lenses",
         price: 16800,
         priceDisplay: "AED 16,800",
@@ -217,7 +217,7 @@ export const COLLECTIONS: Record<string, CollectionData> = {
       },
       {
         id: "masquerade-02",
-        name: "Masquerade II — Obsidian Round",
+        name: "masquerade ii: obsidian round",
         material: "Gunmetal Titanium · Emerald Cabochon",
         price: 17500,
         priceDisplay: "AED 17,500",
@@ -225,7 +225,7 @@ export const COLLECTIONS: Record<string, CollectionData> = {
       },
       {
         id: "masquerade-03",
-        name: "Masquerade III — Cat-Eye Nocturne",
+        name: "masquerade iii: cat-eye nocturne",
         material: "Hammered Titanium & Plum Acetate",
         price: 19000,
         priceDisplay: "AED 19,000",
@@ -233,7 +233,7 @@ export const COLLECTIONS: Record<string, CollectionData> = {
       },
       {
         id: "masquerade-04",
-        name: "Masquerade IV — Carbon Visor Shield",
+        name: "masquerade iv: carbon visor shield",
         material: "Forged Carbon & Crimson Enamel",
         price: 18200,
         priceDisplay: "AED 18,200",
@@ -265,12 +265,12 @@ export const COLLECTIONS: Record<string, CollectionData> = {
   savanah: {
     id: "savanah",
     index: "03",
-    eyebrow: "FW26 — CHAPTER 03",
+    eyebrow: "fw26 / chapter 03",
     title: "SAVANAH",
     subtitle: "DESERT BRONZE & TRANSLUCENT AMBER",
     cta: "View the Collection",
     secondary: "Acquire Edition",
-    label: "03 / 04 — SAVANAH",
+    label: "03 / 04 : savanah",
     pageTitle: "THE SAVANAH COLLECTION",
     intro:
       "SCULPTED BY THE SCORCHING SOLITUDE OF ARABIAN DUNES, THE SAVANAH SERIES EXTRACTS PURE RADIANCE FROM SUN-BLEACHED ACETATE AND DESERT BRONZE. WARM OCHRE OPTICS CAPTURE THE DESERT HORIZON IN UNRIVALED CLARITY, OFFERING AN ANTHROPOLOGICAL MEDITATION ON NOMADIC ENDURANCE, BONE-WARMED STONE, AND PRISTINE ARCHITECTURAL FORM.",
@@ -303,7 +303,7 @@ export const COLLECTIONS: Record<string, CollectionData> = {
     products: [
       {
         id: "savanah-01",
-        name: "Savanah I — Dune Wire Aviator",
+        name: "savanah i: dune wire aviator",
         material: "Sand-Cast Bronze · Amber Mineral Lenses",
         price: 16500,
         priceDisplay: "AED 16,500",
@@ -311,7 +311,7 @@ export const COLLECTIONS: Record<string, CollectionData> = {
       },
       {
         id: "savanah-02",
-        name: "Savanah II — Sun-Bleached Honey",
+        name: "savanah ii: sun-bleached honey",
         material: "Mazzucchelli Amber Acetate · Ochre Lenses",
         price: 17000,
         priceDisplay: "AED 17,000",
@@ -319,7 +319,7 @@ export const COLLECTIONS: Record<string, CollectionData> = {
       },
       {
         id: "savanah-03",
-        name: "Savanah III — Dune Mirage Titanium",
+        name: "savanah iii: dune mirage titanium",
         material: "Matte Desert Titanium · Polarized Gold Lenses",
         price: 15800,
         priceDisplay: "AED 15,800",
@@ -327,7 +327,7 @@ export const COLLECTIONS: Record<string, CollectionData> = {
       },
       {
         id: "savanah-04",
-        name: "Savanah IV — Nomadic Billet Shield",
+        name: "savanah iv: nomadic billet shield",
         material: "Raw Billet Bronze · Sun-Warm Gradient Lenses",
         price: 18000,
         priceDisplay: "AED 18,000",
@@ -359,13 +359,13 @@ export const COLLECTIONS: Record<string, CollectionData> = {
   barrel: {
     id: "barrel",
     index: "01",
-    eyebrow: "ATELIER ARCHIVE — CHAPTER 01",
+    eyebrow: "atelier archive / chapter 01",
     title: "THE GUN COLLECTION",
     subtitle: "KNURLED GUNMETAL & 18K SOLID HARDWARE",
     cta: "View the Collection",
     secondary: "Acquire Edition",
     label: "THE GUN COLLECTION",
-    pageTitle: "THE GUN COLLECTION — DOUBLE BARREL",
+    pageTitle: "the gun collection: double barrel",
     intro:
       "TEMPERED INSIDE THE SHADOWS OF CENTURY-OLD FRENCH CELLARS, THE GUN COLLECTION UNITES KNURLED GUNMETAL WITH CHARRED OAK PATINAS. ITS PROPRIETARY DUAL-CYLINDER CROSSBAR FORGES AN UNYIELDING INDUSTRIAL HORIZON, ECHOING THE RAW DISCIPLINE OF AGED GRAIN, SMOKED MINERAL OPTICS, AND TIME-HONORED COGNAC BRILLIANCE.",
     statement:
@@ -397,7 +397,7 @@ export const COLLECTIONS: Record<string, CollectionData> = {
     products: [
       {
         id: "barrel-01",
-        name: "The Double Barrel 01 — Brushed Gold",
+        name: "the double barrel 01: brushed gold",
         material: "18K Brushed Gold · Custom Ruby Mineral Lenses",
         price: 15000,
         priceDisplay: "AED 15,000",
@@ -405,7 +405,7 @@ export const COLLECTIONS: Record<string, CollectionData> = {
       },
       {
         id: "barrel-02",
-        name: "The Double Barrel 02 — Obsidian",
+        name: "the double barrel 02: obsidian",
         material: "Gunmetal Obsidian · Polarized Smoke Mineral Lenses",
         price: 15000,
         priceDisplay: "AED 15,000",
@@ -413,7 +413,7 @@ export const COLLECTIONS: Record<string, CollectionData> = {
       },
       {
         id: "barrel-03",
-        name: "The Double Barrel 03 — Antique Bronze",
+        name: "the double barrel 03: antique bronze",
         material: "Antique Bronze · Amber Gradient Mineral Lenses",
         price: 15000,
         priceDisplay: "AED 15,000",
@@ -421,7 +421,7 @@ export const COLLECTIONS: Record<string, CollectionData> = {
       },
       {
         id: "barrel-04",
-        name: "The Double Barrel 04 — Charred Oak",
+        name: "the double barrel 04: charred oak",
         material: "Charred Oak Acetate & Damascus Steel · Cognac Lenses",
         price: 19500,
         priceDisplay: "AED 19,500",

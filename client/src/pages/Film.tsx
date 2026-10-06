@@ -6,6 +6,8 @@
 import { AnimatePresence, motion } from "framer-motion";
 import { useEffect, useRef, useState } from "react";
 import { Play, Pause, Volume2, VolumeX, X, ChevronLeft, ChevronRight, Subtitles } from "lucide-react";
+import CheetahBar from "@/components/CheetahBar";
+import HeaderWordmark from "@/components/HeaderWordmark";
 
 /* ------------------------------------------------------------------ */
 /*  Film metadata                                                      */
@@ -22,37 +24,37 @@ const PLATES: Plate[] = [
   {
     src: "/manus-storage/cheeta-leopard-vault-box.jpg",
     alt: "The leopard-print velvet case, photographed in the Dubai atelier",
-    caption: "The case — hand-stitched velvet, hallmarked brass clasp",
+    caption: "The case : hand-stitched velvet, hallmarked brass clasp",
     no: "I",
   },
   {
     src: "/manus-storage/cheeta-dubai-atelier_0dde518b.png",
     alt: "Eisa Saidi at the workbench in the Dubai atelier",
-    caption: "The atelier — Al Quoz, 04:12 GST",
+    caption: "The atelier : Al Quoz, 04:12 GST",
     no: "II",
   },
   {
     src: "/manus-storage/cheeta-room-1910_79d40eca.png",
     alt: "Interior of a private salon, low light, brushed gold",
-    caption: "Salon I — velvets & brass",
+    caption: "Salon I : velvets & brass",
     no: "III",
   },
   {
     src: "/manus-storage/cheeta-presence-eye_09963203.png",
     alt: "Close-up of the gold frame on the bridge of the nose",
-    caption: "Presence I — the bridge",
+    caption: "Presence I : the bridge",
     no: "IV",
   },
   {
     src: "/manus-storage/cheeta-dubai-private-salon.jpg",
     alt: "The private salon in low light, the leopard case on the table",
-    caption: "Salon II — by appointment",
+    caption: "Salon II : by appointment",
     no: "V",
   },
   {
     src: "/manus-storage/cheeta-presence-tail_5c764f52.png",
     alt: "Close-up of the brushed gold temple tip",
-    caption: "Presence II — the temple tip",
+    caption: "Presence II : the temple tip",
     no: "VI",
   },
 ];
@@ -70,7 +72,7 @@ export default function Film() {
   const [duration, setDuration] = useState(0);
   const [lightboxIdx, setLightboxIdx] = useState<number | null>(null);
 
-  // Pause when leaving the tab — keeps browser autoplay policies happy
+  // Pause when leaving the tab : keeps browser autoplay policies happy
   useEffect(() => {
     const onVis = () => {
       if (document.hidden && videoRef.current) videoRef.current.pause();
@@ -127,8 +129,14 @@ export default function Film() {
 
   return (
     <main className="relative w-full min-h-screen bg-[#1A1410] text-[#F4F1E8]">
+      {/* Floating Transparent Cheetah Bar */}
+      <CheetahBar dark />
+
+      {/* Centered Transparent CHEETA JEWELS Header Wordmark */}
+      <HeaderWordmark dark />
+
       {/* ============================================================== */}
-      {/*  HERO — video player                                              */}
+      {/*  HERO : video player                                              */}
       {/* ============================================================== */}
       <section className="relative w-full h-screen min-h-[640px] overflow-hidden bg-black">
         <video
@@ -251,13 +259,13 @@ export default function Film() {
       </section>
 
       {/* ============================================================== */}
-      {/*  PLATES — gallery with lightbox                                  */}
+      {/*  PLATES : gallery with lightbox                                  */}
       {/* ============================================================== */}
       <section className="relative w-full bg-[#100C0A] py-20 md:py-28 pl-0 md:pl-24 pr-6 md:pr-12">
         <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-4 mb-12 md:mb-16 pl-6 md:pl-0">
           <div>
             <span className="font-sans text-[10px] uppercase tracking-[0.4em] text-[#B8985F]/85">
-              Plates · I — VI
+              Plates · I - VI
             </span>
             <h2 className="mt-3 font-serif text-4xl md:text-5xl text-[#F4F1E8] tracking-tight leading-[1.05] max-w-2xl">
               Stills from the inaugural shoot.
@@ -322,12 +330,12 @@ export default function Film() {
             {[
               ["Directed by", "the house"],
               ["Cinematography", "Dubai · Atelier"],
-              ["Wardrobe", "Cheetah Jewelz — The 100"],
+              ["Wardrobe", "Cheetah Jewelz : The 100"],
               ["Location", "Al Quoz, Dubai"],
               ["Music", "Original score, in-house"],
               ["Run time", "02:14"],
             ].map(([k, v]) => (
-              <div key={k} className="border-t border-[#F4F1E8]/10 pt-4">
+              <div key={k} className="pt-4">
                 <dt className="font-sans text-[9px] uppercase tracking-[0.42em] text-[#F4F1E8]/40">
                   {k}
                 </dt>
@@ -336,8 +344,8 @@ export default function Film() {
             ))}
           </dl>
 
-          <div className="mt-16 pt-8 border-t border-[#F4F1E8]/10 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3 font-sans text-[10px] uppercase tracking-[0.32em] text-[#F4F1E8]/45">
-            <span>© 2026 — Cheetah Jewelz, Dubai</span>
+          <div className="mt-16 pt-8 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3 font-sans text-[10px] uppercase tracking-[0.32em] text-[#F4F1E8]/45">
+            <span>© 2026 · Cheetah Jewelz, Dubai</span>
             <span>All rights reserved</span>
           </div>
         </div>

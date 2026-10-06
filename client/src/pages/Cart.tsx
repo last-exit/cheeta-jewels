@@ -9,6 +9,7 @@ import React, { useState } from "react";
 import { Link } from "wouter";
 import { toast } from "sonner";
 import CheetahBar from "@/components/CheetahBar";
+import HeaderWordmark from "@/components/HeaderWordmark";
 import { useCart } from "@/contexts/CartContext";
 import { playMetallicClick, playVaultAcquisition } from "@/lib/soundEffects";
 
@@ -46,25 +47,28 @@ export default function Cart() {
       {/* Floating Transparent Cheetah Bar */}
       <CheetahBar />
 
+      {/* Centered Transparent CHEETA JEWELS Header Wordmark */}
+      <HeaderWordmark dark={false} />
+
       <div className="max-w-5xl mx-auto px-6 md:px-20 py-24 md:py-36 pl-16 md:pl-28">
         {/* Back Link */}
-        <div className="mb-12">
+        <div className="mb-12 font-sans lowercase text-xs tracking-wider">
           <Link
             href="/retail"
-            className="group inline-flex items-center gap-2 font-sans text-xs uppercase tracking-[0.16em] text-[#0B0B0C]/50 hover:text-[#0B0B0C] transition-colors"
+            className="group inline-flex items-center gap-2 text-[#0B0B0C]/50 hover:text-[#0B0B0C] transition-colors"
           >
             <ArrowLeft size={13} className="transition-transform group-hover:-translate-x-1" />
-            <span>Collection</span>
+            <span>retail</span>
           </Link>
         </div>
 
         {/* Header */}
-        <header className="mb-16 flex items-baseline justify-between border-b border-[#0B0B0C]/10 pb-6">
-          <h1 className="font-serif text-4xl md:text-5xl font-normal tracking-tight">
-            Bag
+        <header className="mb-16 flex items-baseline justify-between pb-6">
+          <h1 className="font-serif lowercase text-4xl md:text-5xl font-normal tracking-tight">
+            bag
           </h1>
-          <span className="font-sans text-xs uppercase tracking-[0.14em] text-[#0B0B0C]/40">
-            {totalCount} {totalCount === 1 ? "Piece" : "Pieces"}
+          <span className="font-sans lowercase text-xs tracking-wider text-[#0B0B0C]/40">
+            {totalCount} {totalCount === 1 ? "piece" : "pieces"}
           </span>
         </header>
 
@@ -74,8 +78,8 @@ export default function Cart() {
             animate={{ opacity: 1, y: 0 }}
             className="py-16 text-center space-y-4"
           >
-            <h2 className="font-serif text-3xl font-normal text-[#0B0B0C]">
-              Acquisition Initiated
+            <h2 className="font-serif lowercase text-3xl font-normal text-[#0B0B0C]">
+              acquisition initiated
             </h2>
             <p className="font-sans text-sm text-[#0B0B0C]/70 max-w-md mx-auto leading-relaxed">
               Your reservation has been logged with the atelier. A private concierge will contact you with your schedule.
@@ -84,21 +88,21 @@ export default function Cart() {
               <Link
                 href="/collection/barrel"
                 onClick={() => setShowConfirmation(false)}
-                className="inline-block font-sans text-xs text-[#0B0B0C] hover:text-[#4A0E16] transition-colors font-medium"
+                className="inline-block font-sans lowercase text-xs text-[#0B0B0C] hover:text-[#4A0E16] transition-colors font-medium"
               >
-                Return to Collection →
+                return to collection →
               </Link>
             </div>
           </motion.div>
         ) : cart.length === 0 ? (
           <div className="text-center py-24 space-y-4">
-            <p className="font-serif text-2xl text-[#0B0B0C]/60 font-normal">Your bag is empty.</p>
+            <p className="font-serif lowercase text-2xl text-[#0B0B0C]/60 font-normal">your bag is empty.</p>
             <div className="pt-4">
               <Link
                 href="/collection/barrel"
-                className="inline-block font-sans text-xs text-[#0B0B0C] hover:text-[#4A0E16] transition-colors font-medium"
+                className="inline-block font-sans lowercase text-xs text-[#0B0B0C] hover:text-[#4A0E16] transition-colors font-medium"
               >
-                Explore Collection →
+                explore collection →
               </Link>
             </div>
           </div>
@@ -109,7 +113,7 @@ export default function Cart() {
               {cart.map((item) => (
                 <div
                   key={item.id}
-                  className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-6 pb-8 border-b border-[#0B0B0C]/10"
+                  className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-6 pb-8"
                 >
                   <div className="flex items-center gap-6">
                     <div className="h-20 w-20 flex items-center justify-center shrink-0 bg-[#EBEAE4]/40 p-2">
@@ -183,7 +187,7 @@ export default function Cart() {
                   <span>Delivery</span>
                   <span>Complimentary</span>
                 </div>
-                <div className="flex justify-between text-xl font-serif font-normal text-[#0B0B0C] pt-4 border-t border-[#0B0B0C]/10">
+                <div className="flex justify-between text-xl font-serif font-normal text-[#0B0B0C] pt-4">
                   <span>Total</span>
                   <div className="flex items-baseline gap-1">
                     <span>AED</span>

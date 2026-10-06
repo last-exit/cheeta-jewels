@@ -128,3 +128,68 @@ export function playLensSwap() {
     // Audio context silent fallback
   }
 }
+
+/**
+ * 4. Atmospheric Runway Showroom Soundscape (Sub-bass drone + Warm fifth)
+ */
+let ambientGainNode: GainNode | null = null;
+let ambientOsc1: OscillatorNode | null = null;
+let ambientOsc2: OscillatorNode | null = null;
+
+export function toggleAtmosphericSoundscape(enable: boolean) {
+  try {
+    const ctx = getAudioContext();
+    if (!ctx) return false;
+
+    if (enable) {
+      if (ambientGainNode) return true; // Already active
+
+      const now = ctx.currentTime;
+      ambientGainNode = ctx.createGain();
+      ambientGainNode.gain.setValueAtTime(0.0001, now);
+      ambientGainNode.gain.exponentialRampToValueAtTime(0.045, now + 1.2);
+
+      const filter = ctx.createBiquadFilter();
+      filter.type = "lowpass";
+      filter.frequency.setValueAtTime(180, now);
+
+      ambientOsc1 = ctx.createOscillator();
+      ambientOsc1.type = "sine";
+      ambientOsc1.frequency.setValueAtTime(55, now); // A1 note
+
+      ambientOsc2 = ctx.createOscillator();
+      ambientOsc2.type = "triangle";
+      ambientOsc2.frequency.setValueAtTime(82.4, now); // E2 fifth
+
+      ambientOsc1.connect(filter);
+      ambientOsc2.connect(filter);
+      filter.connect(ambientGainNode);
+      ambientGainNode.connect(ctx.destination);
+
+      ambientOsc1.start();
+      ambientOsc2.start();
+      return true;
+    } else {
+      if (!ambientGainNode) return false;
+      const now = ctx.currentTime;
+      ambientGainNode.gain.setValueAtTime(ambientGainNode.gain.value, now);
+      ambientGainNode.gain.exponentialRampToValueAtTime(0.0001, now + 0.8);
+      setTimeout(() => {
+        try {
+          ambientOsc1?.stop();
+          ambientOsc2?.stop();
+          ambientOsc1?.disconnect();
+          ambientOsc2?.disconnect();
+          ambientGainNode?.disconnect();
+        } catch {}
+        ambientOsc1 = null;
+        ambientOsc2 = null;
+        ambientGainNode = null;
+      }, 900);
+      return false;
+    }
+  } catch {
+    return false;
+  }
+}
+

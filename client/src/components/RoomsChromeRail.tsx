@@ -2,7 +2,7 @@
  * ROOMS CHROME RAIL
  * Left-side permanent ornament for the Exclusive Rooms page.
  *
- * Drawn after the Chrome Hearts silver-gothic vocabulary — stacked cruciform,
+ * Drawn after the Chrome Hearts silver-gothic vocabulary : stacked cruciform,
  * dagger, fleur-de-lis and scroll motifs, on a brushed-silver gradient against
  * the obsidian salon backdrop. Pure ornament; no navigation.
  */
@@ -197,7 +197,7 @@ export default function RoomsChromeRail() {
           <div className="h-6 w-px bg-gradient-to-b from-[#B8B8B8]/55 to-transparent" />
         </div>
 
-        {/* Vertical pinstripe inscription — Chrome Hearts style */}
+        {/* Vertical pinstripe inscription : Chrome Hearts style */}
         <div className="flex items-stretch gap-2">
           <span className="font-serif text-[10px] tracking-[0.4em] text-[#A8A39A]/70 [writing-mode:vertical-rl] rotate-180 self-center">
             EST · MMXXVI

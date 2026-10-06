@@ -42,7 +42,7 @@ export default function Contact() {
             },
             {
               lead: "Hours:",
-              rest: "Saturday — Thursday, 10:00 — 18:00 GST. Closed Friday.",
+              rest: "Saturday - Thursday, 10:00 - 18:00 GST. Closed Friday.",
             },
             {
               lead: "By appointment only:",

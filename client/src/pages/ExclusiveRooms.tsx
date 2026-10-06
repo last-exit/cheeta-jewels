@@ -1,5 +1,5 @@
 /**
- * EXCLUSIVE ROOMS — Private Viewing Salon Showcase
+ * EXCLUSIVE ROOMS : Private Viewing Salon Showcase
  * Radical luxury: Real-time 3D WebGL eyewear, GPU gold dust particle engine,
  * procedural Web Audio API synthesis, and atmospheric room lighting.
  */
@@ -8,6 +8,7 @@ import { ArrowLeft, ArrowRight, Calendar, Volume2, VolumeX } from "lucide-react"
 import React, { useEffect, useRef, useState } from "react";
 import { toast } from "sonner";
 import CheetahBar from "@/components/CheetahBar";
+import HeaderWordmark from "@/components/HeaderWordmark";
 import Eyewear3DModel from "@/components/Eyewear3DModel";
 import GoldParticleEngine from "@/components/GoldParticleEngine";
 import { playLensSwap, playMetallicClick, playVaultAcquisition } from "@/lib/soundEffects";
@@ -171,6 +172,9 @@ export default function ExclusiveRooms() {
       {/* Floating Transparent Cheetah Bar */}
       <CheetahBar dark />
 
+      {/* Centered Transparent CHEETA JEWELS Header Wordmark */}
+      <HeaderWordmark dark={true} />
+
       {/* ========================================================================= */}
       {/* 1. ATMOSPHERIC ROOM BACKGROUND & GPU GOLD PARTICLES                        */}
       {/* ========================================================================= */}
@@ -223,10 +227,10 @@ export default function ExclusiveRooms() {
             exit={{ opacity: 0, y: -10 }}
             transition={{ duration: 0.4, ease: [0.23, 1, 0.32, 1] }}
           >
-            <h1 className="font-serif text-4xl sm:text-5xl md:text-6xl font-normal tracking-tight text-[#F4F3EE] drop-shadow-[0_16px_32px_rgba(0,0,0,0.8)]">
+            <h1 className="font-serif lowercase text-4xl sm:text-5xl md:text-6xl font-normal tracking-tight text-[#F4F3EE] drop-shadow-[0_16px_32px_rgba(0,0,0,0.8)]">
               {activePair.name}
             </h1>
-            <p className="font-sans text-xs uppercase tracking-[0.14em] text-[#F4F3EE]/60 mt-2">
+            <p className="font-sans lowercase text-xs tracking-wider text-[#F4F3EE]/60 mt-2">
               {activePair.finish}
             </p>
           </motion.div>

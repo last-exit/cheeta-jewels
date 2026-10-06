@@ -1,5 +1,5 @@
 /**
- * EYEWEAR 3D MODEL — Awwwards-Tier Photorealistic WebGL & Three.js Engine
+ * EYEWEAR 3D MODEL : Awwwards-Tier Photorealistic WebGL & Three.js Engine
  * Crafted with custom PBR physical materials, dual-rail double barrel bridge,
  * sculpted cheetah temple hinges, Fresnel glass coating, and smooth spring physics.
  */
@@ -19,6 +19,7 @@ export default function Eyewear3DModel({
   className = "w-full h-full",
   autoRotate = true,
 }: Eyewear3DModelProps) {
+  const [hasWebGLError, setHasWebGLError] = React.useState(false);
   const mountRef = useRef<HTMLDivElement | null>(null);
   const lensMaterialsRef = useRef<THREE.MeshPhysicalMaterial[]>([]);
   const frameMaterialsRef = useRef<THREE.MeshStandardMaterial[]>([]);
@@ -142,7 +143,14 @@ export default function Eyewear3DModel({
     camera.position.set(0, 0.1, 4.6);
 
     // 3. Renderer with ACES Tone Mapping & Subpixel Antialiasing
-    const renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true, powerPreference: "high-performance" });
+    let renderer: THREE.WebGLRenderer;
+    try {
+      renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true, powerPreference: "high-performance" });
+    } catch (e) {
+      console.warn("WebGL not supported or context unavailable:", e);
+      setHasWebGLError(true);
+      return;
+    }
     renderer.setSize(width, height);
     renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
     renderer.toneMapping = THREE.ACESFilmicToneMapping;
@@ -457,6 +465,18 @@ export default function Eyewear3DModel({
       renderer.dispose();
     };
   }, []);
+
+  if (hasWebGLError) {
+    return (
+      <div className={`relative flex items-center justify-center p-6 select-none ${className}`}>
+        <img
+          src="/manus-storage/cheeta-double-barrel-hero_c55a3dea.png"
+          alt="3D Eyewear Model Archive"
+          className="max-h-full max-w-full object-contain filter drop-shadow-[0_24px_48px_rgba(0,0,0,0.12)]"
+        />
+      </div>
+    );
+  }
 
   return (
     <div

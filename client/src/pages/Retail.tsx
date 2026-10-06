@@ -1,5 +1,5 @@
 /**
- * RETAIL CATALOG — Minimalist Luxury Archive
+ * RETAIL CATALOG : Minimalist Luxury Archive
  * Radical luxury: Pure typography in GT Sectra Display & GT America,
  * Cartier/Repossi-level isolated still life, and Swiss NumberFlow pricing.
  */
@@ -9,6 +9,7 @@ import { Eye, Grid, Layers } from "lucide-react";
 import React, { useState } from "react";
 import { Link } from "wouter";
 import CheetahBar from "@/components/CheetahBar";
+import HeaderWordmark from "@/components/HeaderWordmark";
 import { useCart } from "@/contexts/CartContext";
 import { playMetallicClick, playVaultAcquisition } from "@/lib/soundEffects";
 import { toast } from "sonner";
@@ -135,19 +136,22 @@ export default function Retail() {
       {/* Floating Transparent Cheetah Bar */}
       <CheetahBar />
 
+      {/* Centered Transparent CHEETA JEWELS Header Wordmark */}
+      <HeaderWordmark dark={false} />
+
       <div className="max-w-6xl mx-auto px-6 md:px-20 py-24 md:py-36 pl-16 md:pl-28">
         {/* ========================================================================= */}
         {/* 1. MINIMALIST HEADER                                                      */}
         {/* ========================================================================= */}
-        <header className="mb-20 md:mb-32 flex flex-col sm:flex-row sm:items-end justify-between gap-6 border-b border-[#0B0B0C]/10 pb-8">
+        <header className="mb-20 md:mb-32 flex flex-col sm:flex-row sm:items-end justify-between gap-6 pb-8">
           <div>
-            <h1 className="font-serif text-5xl sm:text-6xl font-normal tracking-tight text-[#0B0B0C]">
-              Collection
+            <h1 className="font-serif lowercase text-5xl sm:text-6xl font-normal tracking-tight text-[#0B0B0C]">
+              retail
             </h1>
           </div>
 
           {/* Filter & View Mode Controls */}
-          <div className="flex items-center gap-6 font-sans text-xs uppercase tracking-[0.14em]">
+          <div className="flex items-center gap-6 font-sans lowercase text-xs tracking-wider">
             {/* Category Filter */}
             <div className="flex items-center gap-3">
               <button
@@ -158,7 +162,7 @@ export default function Retail() {
                     : "text-[#0B0B0C]/40 hover:text-[#0B0B0C]"
                 }`}
               >
-                All
+                all
               </button>
               <span className="text-[#0B0B0C]/20">/</span>
               <button
@@ -169,7 +173,7 @@ export default function Retail() {
                     : "text-[#0B0B0C]/40 hover:text-[#0B0B0C]"
                 }`}
               >
-                Eyewear
+                eyewear
               </button>
               <span className="text-[#0B0B0C]/20">/</span>
               <button
@@ -180,7 +184,7 @@ export default function Retail() {
                     : "text-[#0B0B0C]/40 hover:text-[#0B0B0C]"
                 }`}
               >
-                Jewelry
+                jewelry
               </button>
             </div>
 
@@ -209,9 +213,9 @@ export default function Retail() {
             {/* Bag Counter */}
             <Link
               href="/cart"
-              className="text-[#0B0B0C]/60 hover:text-[#0B0B0C] transition-colors pl-2"
+              className="text-[#0B0B0C]/60 hover:text-[#0B0B0C] transition-colors pl-2 lowercase"
             >
-              Bag ({totalCount})
+              bag ({totalCount})
             </Link>
           </div>
         </header>
@@ -257,9 +261,9 @@ export default function Retail() {
                     </Link>
 
                     {product.altImage && (
-                      <span className="absolute bottom-4 right-4 font-sans text-[10px] uppercase tracking-[0.16em] text-[#0B0B0C]/35 flex items-center gap-1">
+                      <span className="absolute bottom-4 right-4 font-sans lowercase text-[10px] tracking-wider text-[#0B0B0C]/35 flex items-center gap-1">
                         <Eye size={11} />
-                        Alternate
+                        alternate
                       </span>
                     )}
                   </div>
@@ -273,18 +277,18 @@ export default function Retail() {
                     <div>
                       <Link
                         href={`/product/${product.slug}`}
-                        className="font-serif text-3xl sm:text-4xl font-normal tracking-tight text-[#0B0B0C] hover:text-[#4A0E16] transition-colors block"
+                        className="font-serif lowercase text-3xl sm:text-4xl font-normal tracking-tight text-[#0B0B0C] hover:text-[#4A0E16] transition-colors block"
                       >
                         {product.name}
                       </Link>
-                      <p className="font-sans text-xs uppercase tracking-[0.12em] text-[#0B0B0C]/55 mt-2">
+                      <p className="font-sans lowercase text-xs tracking-wider text-[#0B0B0C]/55 mt-2">
                         {product.frame} · {product.lens}
                       </p>
                     </div>
 
                     {/* Mechanical Price Roll */}
                     <div className="flex items-baseline gap-1.5 font-serif text-3xl font-normal text-[#0B0B0C]">
-                      <span>AED</span>
+                      <span className="uppercase tracking-wide">AED</span>
                       <NumberFlow value={product.price} format={{ useGrouping: true }} />
                     </div>
 
@@ -292,9 +296,9 @@ export default function Retail() {
                     <div className="pt-2 flex items-center gap-6">
                       <button
                         onClick={() => handleAddToCart(product)}
-                        className="group/btn relative inline-flex items-center gap-4 bg-[#0B0B0C] text-[#F4F3EE] hover:bg-[#4A0E16] transition-all duration-300 pl-6 pr-2 py-2 rounded-full font-sans text-xs uppercase tracking-[0.16em] cursor-pointer active:scale-[0.98]"
+                        className="group/btn relative inline-flex items-center gap-4 bg-[#0B0B0C] text-[#F4F3EE] hover:bg-[#4A0E16] transition-all duration-300 pl-6 pr-2 py-2 rounded-full font-sans lowercase text-xs tracking-wider cursor-pointer active:scale-[0.98]"
                       >
-                        <span>Acquire</span>
+                        <span>acquire</span>
                         <span className="w-7 h-7 rounded-full bg-white/15 flex items-center justify-center transition-transform group-hover/btn:translate-x-0.5">
                           +
                         </span>
@@ -302,9 +306,9 @@ export default function Retail() {
 
                       <Link
                         href={`/product/${product.slug}`}
-                        className="font-sans text-xs uppercase tracking-[0.14em] text-[#0B0B0C]/50 hover:text-[#0B0B0C] transition-colors py-2"
+                        className="font-sans lowercase text-xs tracking-wider text-[#0B0B0C]/50 hover:text-[#0B0B0C] transition-colors py-2"
                       >
-                        Details →
+                        details →
                       </Link>
                     </div>
                   </div>
@@ -328,19 +332,19 @@ export default function Retail() {
                   />
                 </Link>
 
-                <div className="mt-6 flex items-end justify-between border-t border-[#0B0B0C]/10 pt-4">
+                <div className="mt-6 flex items-end justify-between pt-4">
                   <div>
                     <Link
                       href={`/product/${product.slug}`}
-                      className="font-serif text-2xl font-normal tracking-tight text-[#0B0B0C] hover:text-[#4A0E16] transition-colors block"
+                      className="font-serif lowercase text-2xl font-normal tracking-tight text-[#0B0B0C] hover:text-[#4A0E16] transition-colors block"
                     >
                       {product.name}
                     </Link>
-                    <p className="font-sans text-xs uppercase tracking-[0.12em] text-[#0B0B0C]/50 mt-1">
+                    <p className="font-sans lowercase text-xs tracking-wider text-[#0B0B0C]/50 mt-1">
                       {product.frame}
                     </p>
                     <div className="flex items-baseline gap-1 font-serif text-xl font-normal text-[#0B0B0C] mt-2">
-                      <span>AED</span>
+                      <span className="uppercase tracking-wide">AED</span>
                       <NumberFlow value={product.price} format={{ useGrouping: true }} />
                     </div>
                   </div>

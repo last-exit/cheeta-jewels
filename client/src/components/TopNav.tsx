@@ -1,5 +1,5 @@
 /**
- * TOP NAV — Transparent over hero, becomes solid ivory on scroll.
+ * TOP NAV : Transparent over hero, becomes solid ivory on scroll.
  * Centered wordmark, hover dropdowns for grouped links, mobile full-screen menu.
  */
 import { AnimatePresence, motion, useScroll, useMotionValueEvent } from "framer-motion";
@@ -12,7 +12,7 @@ const NAV_GROUPS: { label: string; href?: string; children?: { label: string; hr
   {
     label: "Shop",
     children: [
-      { label: "The 100", href: "/retail", sub: "Numbered 001—100" },
+      { label: "The 100", href: "/retail", sub: "Numbered 001 - 100" },
       { label: "The Double Barrel 01", href: "/product/double-barrel-01" },
       { label: "The Double Barrel 02", href: "/product/double-barrel-02" },
       { label: "The Double Barrel 03", href: "/product/double-barrel-03" },
@@ -143,7 +143,7 @@ export default function TopNav() {
           {/* Center: wordmark */}
           <Link
             href="/"
-            aria-label="Cheetah Jewelz — Home"
+            aria-label="Cheetah Jewelz : Home"
             className="font-serif text-xl md:text-2xl tracking-tight absolute left-1/2 -translate-x-1/2"
           >
             Cheetah Jewelz
@@ -174,14 +174,14 @@ export default function TopNav() {
             transition={{ duration: 0.22, ease: [0.22, 1, 0.36, 1] }}
             onMouseEnter={() => openGroupWithDelay("Shop")}
             onMouseLeave={scheduleClose}
-            className="fixed top-16 md:top-20 left-0 right-0 z-30 bg-[#F4F1E8]/96 backdrop-blur-md border-b border-[#1A1410]/10"
+            className="fixed top-16 md:top-20 left-0 right-0 z-30 bg-[#F4F1E8]/96 backdrop-blur-md"
           >
             <div className="max-w-7xl mx-auto px-6 md:px-10 py-10 grid grid-cols-1 md:grid-cols-2 gap-10">
               {NAV_GROUPS[0].children?.map((child) => (
                 <Link
                   key={child.href}
                   href={child.href}
-                  className="group flex items-baseline justify-between border-b border-[#1A1410]/10 py-4 hover:border-[#6B1A2C] transition-colors"
+                  className="group flex items-baseline justify-between py-4 transition-colors"
                 >
                   <div>
                     <div className="font-serif text-2xl md:text-3xl tracking-tight text-[#1A1410] group-hover:text-[#6B1A2C] transition-colors">
@@ -212,7 +212,7 @@ export default function TopNav() {
             transition={{ duration: 0.25 }}
             className="fixed inset-0 z-50 bg-[#F4F1E8] text-[#1A1410] flex flex-col"
           >
-            <div className="flex items-center justify-between px-6 h-16 border-b border-[#1A1410]/10">
+            <div className="flex items-center justify-between px-6 h-16">
               <span className="font-serif text-xl tracking-tight">Cheetah Jewelz</span>
               <button
                 onClick={() => setMobileOpen(false)}
