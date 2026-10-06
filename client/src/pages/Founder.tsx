@@ -249,12 +249,6 @@ export default function Founder() {
             <ArrowDownRight size={13} />
           </span>
         </Link>
-        <Link
-          href="/rooms"
-          className="inline-flex items-center gap-2 font-sans text-[11px] uppercase tracking-[0.22em] text-[#1A1410]/60 hover:text-[#1A1410] transition-colors py-2"
-        >
-          Book a private viewing →
-        </Link>
       </section>
     </main>
   );

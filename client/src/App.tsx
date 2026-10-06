@@ -13,7 +13,6 @@ import SmoothScroll from "./components/SmoothScroll";
 
 const Home = lazy(() => import("./pages/Home"));
 const CollectionDetail = lazy(() => import("./pages/CollectionDetail"));
-const ExclusiveRooms = lazy(() => import("./pages/ExclusiveRooms"));
 const Retail = lazy(() => import("./pages/Retail"));
 const ProductDetail = lazy(() => import("./pages/ProductDetail"));
 const Philosophy = lazy(() => import("./pages/Philosophy"));
@@ -48,8 +47,6 @@ function Router() {
           <Route path="/" component={Home} />
           <Route path="/collection/:id" component={CollectionDetail} />
           <Route path="/collection" component={CollectionDetail} />
-          <Route path="/rooms" component={ExclusiveRooms} />
-          <Route path="/exclusive-rooms" component={ExclusiveRooms} />
           <Route path="/retail" component={Retail} />
           <Route path="/eyewear" component={Retail} />
           <Route path="/product/:slug" component={ProductDetail} />

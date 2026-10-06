@@ -253,13 +253,6 @@ export default function Philosophy() {
                 <span>retail</span>
                 <ArrowUpRight size={13} />
               </Link>
-              <Link
-                href="/rooms"
-                className="font-sans lowercase text-xs tracking-wider text-[#F4F3EE] hover:text-[#d4af37] transition-colors flex items-center gap-1.5"
-              >
-                <span>exclusive rooms</span>
-                <ArrowUpRight size={13} />
-              </Link>
             </div>
           </div>
         </div>
