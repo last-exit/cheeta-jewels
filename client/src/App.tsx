@@ -10,6 +10,7 @@ import ErrorBoundary from "./components/ErrorBoundary";
 import { ThemeProvider } from "./contexts/ThemeContext";
 import { CartProvider } from "./contexts/CartContext";
 import SmoothScroll from "./components/SmoothScroll";
+import VIPGatekeeper from "./components/VIPGatekeeper";
 
 const Home = lazy(() => import("./pages/Home"));
 const CollectionDetail = lazy(() => import("./pages/CollectionDetail"));
@@ -80,7 +81,9 @@ function App() {
           <TooltipProvider>
             <Toaster position="bottom-right" />
             <SmoothScroll>
-              <Router />
+              <VIPGatekeeper>
+                <Router />
+              </VIPGatekeeper>
             </SmoothScroll>
           </TooltipProvider>
         </CartProvider>

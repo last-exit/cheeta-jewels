@@ -1,9 +1,13 @@
 /**
  * CHEETA JEWELS / ICON LIVIN : Art-Directed Collection Destination
- * Pure #FFFFFF Canvas : Boxless Architecture (Zero AI card slop)
- * GT Sectra Display & GT America Typography
- * - Cheeta Jewels transparent header button navigating to "/"
- * - Zero fake-monospaced tracked fonts
+ * Pure #F9F6F0 Canvas : Gentle Monster-Inspired Boxless Architecture
+ * - Zero boxes, zero card vitrines, zero generic AI grids
+ * - Eyewear frames float freely on the open canvas with natural soft contact shadows
+ * - Asymmetric editorial layout with flagship spotlight and staggered sculptural duets
+ * - Bespoke collection motifs (gun rifling / mughal jali / venetian / savannah) + subtle cheetah rosettes
+ * - GT Sectra Display & GT America typography
+ * - Zero unnecessary subtext, coordinates, or AI micro-labels
+ * - Zero em dashes anywhere
  */
 import React, { useEffect, useState } from "react";
 import { Link, useParams } from "wouter";
@@ -11,6 +15,8 @@ import CheetahBar from "@/components/CheetahBar";
 import HeaderWordmark from "@/components/HeaderWordmark";
 import Eyewear3DModel from "@/components/Eyewear3DModel";
 import ScrollReveal from "@/components/ScrollReveal";
+import SubtleLuxuryBackground from "@/components/SubtleLuxuryBackground";
+import CollectionBespokeMotifs from "@/components/CollectionBespokeMotifs";
 import { COLLECTIONS, CollectionProduct } from "@/data/collections";
 import { useCart } from "@/contexts/CartContext";
 import { playMetallicClick, playVaultAcquisition } from "@/lib/soundEffects";
@@ -102,26 +108,36 @@ export default function CollectionDetail() {
     });
   };
 
+  // Safe product mapping
+  const p1 = collection.products[0];
+  const p2 = collection.products[1];
+  const p3 = collection.products[2];
+  const p4 = collection.products[3];
+
   return (
-    <div className="relative w-full min-h-screen bg-[#FFFFFF] text-[#000000] selection:bg-[#000000] selection:text-[#FFFFFF]">
+    <div className="relative w-full min-h-screen bg-[#F9F6F0] text-[#2A241D] selection:bg-[#2A241D] selection:text-[#F9F6F0] overflow-hidden">
       {/* Official CJ Logo Sidebar Trigger */}
-      <CheetahBar dark={false} />
+      <CheetahBar dark />
 
       {/* Hairline Scroll-Progress Bar */}
       <div
-        className="fixed top-0 left-0 right-0 h-[1.5px] z-50 origin-left pointer-events-none bg-[#000000] transition-transform duration-75"
+        className="fixed top-0 left-0 right-0 h-[1.5px] z-50 origin-left pointer-events-none bg-[#2A241D] transition-transform duration-75"
         style={{ transform: `scaleX(${scrollProgress})` }}
       />
 
-      {/* ========================================================================= */}
-      {/* CENTERED CHEETA JEWELS HEADER WORDMARK                                    */}
-      {/* ========================================================================= */}
+      {/* Centered Transparent Cheeta Jewels Header Wordmark */}
       <HeaderWordmark dark={false} />
 
+      {/* Subtle Background Swirls & Cheetah Rosettes (3-4% Opacity) */}
+      <SubtleLuxuryBackground variant="full" />
+
+      {/* Bespoke Collection Artwork (Gun Rifling / Mughal Jali / Venetian Mask / Savannah Cheetah) */}
+      <CollectionBespokeMotifs collectionId={collection.id} />
+
       {/* ========================================================================= */}
-      {/* 1. CINEMATIC FILM HERO : DISSOLVING INTO PURE WHITE                       */}
+      {/* 1. CINEMATIC FILM HERO : DISSOLVING INTO WARM LUXURY BEIGE                */}
       {/* ========================================================================= */}
-      <section className="relative w-full h-[75svh] md:h-[88svh] overflow-hidden bg-black select-none">
+      <section className="relative w-full h-[70svh] md:h-[82svh] overflow-hidden bg-black select-none">
         <video
           key={collection.video}
           autoPlay
@@ -133,86 +149,71 @@ export default function CollectionDetail() {
           <source src={collection.video} type="video/mp4" />
         </video>
 
-        {/* Seamless Dissolve into pure #FFFFFF */}
+        {/* Seamless Dissolve into warm beige #F9F6F0 */}
         <div
-          className="absolute inset-x-0 bottom-0 h-44 md:h-64 pointer-events-none z-20"
+          className="absolute inset-x-0 bottom-0 h-40 md:h-56 pointer-events-none z-20"
           style={{
-            background: "linear-gradient(to bottom, transparent 0%, #FFFFFF 100%)",
+            background: "linear-gradient(to bottom, transparent 0%, #F9F6F0 100%)",
           }}
         />
       </section>
 
       {/* ========================================================================= */}
-      {/* 2. COLLECTION MANIFESTO : GT SECTRA & GT AMERICA ON PURE WHITE           */}
+      {/* 2. COLLECTION MANIFESTO : TIGHTENED EDITORIAL RHYTHM                      */}
       {/* ========================================================================= */}
-      <section className="relative w-full px-6 sm:px-12 md:px-20 pt-12 md:pt-20 pb-24 md:pb-36 max-w-5xl mx-auto text-center select-none">
+      <section className="relative w-full px-6 sm:px-12 md:px-20 pt-10 md:pt-16 pb-12 md:pb-16 max-w-5xl mx-auto text-center select-none">
         <ScrollReveal>
-          <span className="font-sans lowercase text-xs text-[#000000]/45 block mb-4 font-normal">
-            {collection.eyebrow}
-          </span>
-          <h1 className="font-serif lowercase text-[clamp(2.4rem,6.5vw,5.2rem)] font-normal leading-[1.06] tracking-tight text-[#000000]">
+          <h1 className="font-serif lowercase text-[clamp(2.4rem,5.5vw,4.5rem)] font-normal leading-[1.05] tracking-tight text-[#2A241D]">
             {collection.pageTitle}
           </h1>
         </ScrollReveal>
 
-        <ScrollReveal delay={120}>
-          <p className="font-sans text-sm sm:text-base md:text-lg leading-relaxed max-w-[50ch] mx-auto mt-8 md:mt-12 text-[#000000]/75 font-normal">
+        <ScrollReveal delay={100}>
+          <p className="font-sans text-sm sm:text-base md:text-lg leading-relaxed max-w-[48ch] mx-auto mt-4 md:mt-6 text-[#2A241D]/75 font-normal">
             {collection.intro}
           </p>
         </ScrollReveal>
       </section>
 
       {/* ========================================================================= */}
-      {/* 3. EDITORIAL STILL LIFE : SCULPTURAL ARCHITECTURAL VITRINES               */}
+      {/* 3. EDITORIAL STILL LIFE : GENTLE MONSTER UNBOXED PHOTOGRAPHY SPREAD      */}
       {/* ========================================================================= */}
-      <section className="relative w-full px-6 sm:px-12 md:px-20 py-16 md:py-32 max-w-7xl mx-auto select-none">
-        {/* Lead Hero Still: Monumental Arched Vault Portal */}
+      <section className="relative w-full px-6 sm:px-12 md:px-20 py-12 md:py-20 max-w-7xl mx-auto select-none">
+        {/* Lead Hero Plate : Unboxed Borderless Editorial Photography */}
         <ScrollReveal className="w-full flex justify-center">
-          <div className="w-full max-w-2xl">
-            <div className="relative aspect-[4/3] w-full overflow-hidden bg-[#F8F7F5] rounded-t-[160px] md:rounded-t-[220px] border border-black/5 shadow-xs">
+          <div className="w-full max-w-4xl">
+            <div className="relative aspect-[16/10] sm:aspect-[16/9] w-full overflow-hidden shadow-[0_20px_50px_rgba(42,36,29,0.07)]">
               <img
                 src={collection.stills[0]}
                 alt={`${collection.title} editorial portrait`}
                 className="w-full h-full object-cover transition-transform duration-[1200ms] ease-out hover:scale-[1.02]"
               />
             </div>
-            <div className="mt-5 flex justify-between items-baseline font-sans text-xs text-[#000000]/50 font-normal px-2">
-              <span>{collection.chapters[0]?.cap}</span>
-              <span>{collection.chapters[0]?.note}</span>
-            </div>
           </div>
         </ScrollReveal>
 
-        {/* Asymmetric Offset Duet: Optical Capsule & Vaulted Plinth */}
-        <div className="grid grid-cols-1 md:grid-cols-12 gap-16 md:gap-12 mt-28 md:mt-44 items-start">
-          <ScrollReveal delay={90} className="col-span-1 md:col-span-6 md:col-start-1">
-            <div className="w-full max-w-lg">
-              <div className="relative aspect-[3/4] w-full overflow-hidden bg-[#F8F7F5] rounded-[72px] border border-black/5 shadow-xs">
+        {/* Asymmetric Offset Duet : Unboxed Architectural Crops */}
+        <div className="grid grid-cols-1 md:grid-cols-12 gap-10 md:gap-14 mt-16 md:mt-24 items-start">
+          <ScrollReveal delay={90} className="col-span-1 md:col-span-7">
+            <div className="w-full">
+              <div className="relative aspect-[4/5] w-full overflow-hidden shadow-[0_20px_45px_rgba(42,36,29,0.06)]">
                 <img
                   src={collection.stills[1]}
                   alt={`${collection.title} detail`}
                   className="w-full h-full object-cover transition-transform duration-[1200ms] ease-out hover:scale-[1.02]"
                 />
               </div>
-              <div className="mt-5 flex justify-between items-baseline font-sans text-xs text-[#000000]/50 font-normal px-2">
-                <span>{collection.chapters[1]?.cap}</span>
-                <span>{collection.chapters[1]?.note}</span>
-              </div>
             </div>
           </ScrollReveal>
 
-          <ScrollReveal delay={180} className="col-span-1 md:col-span-5 md:col-start-8 md:mt-28">
+          <ScrollReveal delay={180} className="col-span-1 md:col-span-5 md:mt-24">
             <div className="w-full">
-              <div className="relative aspect-[4/3] w-full overflow-hidden bg-[#F8F7F5] rounded-t-[120px] rounded-b-[24px] border border-black/5 shadow-xs">
+              <div className="relative aspect-[4/3] w-full overflow-hidden shadow-[0_20px_45px_rgba(42,36,29,0.06)]">
                 <img
                   src={collection.stills[2]}
                   alt={`${collection.title} architectural angle`}
                   className="w-full h-full object-cover transition-transform duration-[1200ms] ease-out hover:scale-[1.02]"
                 />
-              </div>
-              <div className="mt-5 flex justify-between items-baseline font-sans text-xs text-[#000000]/50 font-normal px-2">
-                <span>{collection.chapters[2]?.cap}</span>
-                <span>{collection.chapters[2]?.note}</span>
               </div>
             </div>
           </ScrollReveal>
@@ -220,53 +221,56 @@ export default function CollectionDetail() {
       </section>
 
       {/* ========================================================================= */}
-      {/* 4. POETIC AXIOM STATEMENT                                                 */}
+      {/* 4. POETIC AXIOM STATEMENT : UNBOXED EDITORIAL MONOGRAPH                   */}
       {/* ========================================================================= */}
-      <section className="relative w-full px-6 sm:px-12 py-28 md:py-44 max-w-4xl mx-auto text-center select-none">
+      <section className="relative w-full px-6 sm:px-12 py-16 md:py-24 max-w-4xl mx-auto text-center select-none">
         <ScrollReveal>
-          <p className="font-serif text-2xl sm:text-3xl md:text-4xl leading-[1.35] tracking-tight max-w-[36ch] mx-auto text-[#000000] font-normal">
-            &ldquo;{collection.statement}&rdquo;
+          <span className="font-serif text-4xl sm:text-5xl text-[#D4AF37]/50 block mb-3 leading-none">
+            &ldquo;
+          </span>
+          <p className="font-serif text-2xl sm:text-3xl md:text-4xl leading-[1.25] tracking-tight max-w-[32ch] mx-auto text-[#2A241D] font-normal">
+            {collection.statement}
           </p>
         </ScrollReveal>
       </section>
 
       {/* ========================================================================= */}
-      {/* 5. THE 360° ATELIER : MINIMALIST LUXURY (NO SUGGESTIONS, NO SUBTEXT)       */}
+      {/* 5. THE 360° INSPECTION : UNBOXED FLOATING VIRTUAL VITRINE                 */}
       {/* ========================================================================= */}
-      <section className="relative w-full px-6 sm:px-12 md:px-20 py-20 md:py-32 max-w-6xl mx-auto select-none">
+      <section className="relative w-full px-6 sm:px-12 md:px-20 py-14 md:py-22 max-w-6xl mx-auto select-none">
         <ScrollReveal>
           {/* Section Header */}
-          <div className="text-center max-w-2xl mx-auto mb-10">
-            <h2 className="font-serif lowercase text-3xl sm:text-4xl md:text-5xl font-normal tracking-tight text-[#000000]">
+          <div className="pb-5 border-b border-[#2A241D]/10 mb-8 text-center sm:text-left">
+            <h2 className="font-serif lowercase text-2xl sm:text-3xl md:text-4xl font-normal tracking-tight text-[#2A241D]">
               interactive 360° inspection
             </h2>
           </div>
 
-          {/* Floating Canvas Area with Ambient Luxury Aura */}
-          <div className="relative w-full flex flex-col items-center justify-between min-h-[480px] sm:min-h-[560px] py-4">
-            {/* Ambient Radial Pedestal Glow */}
+          {/* Unboxed 3D Model Floating in Pure Open Space */}
+          <div className="relative w-full flex flex-col items-center justify-between min-h-[440px] sm:min-h-[520px]">
+            {/* Ambient Radial Pedestal Halo */}
             <div
               className="absolute inset-0 pointer-events-none flex items-center justify-center overflow-hidden"
               aria-hidden="true"
             >
-              <div className="w-[340px] sm:w-[500px] h-[340px] sm:h-[500px] rounded-full bg-gradient-to-tr from-[#B8985F]/[0.08] to-transparent blur-3xl" />
+              <div className="w-[340px] sm:w-[500px] h-[340px] sm:h-[500px] rounded-full bg-gradient-to-tr from-[#D4AF37]/[0.10] to-transparent blur-3xl" />
             </div>
 
             {/* 3D Model Floating Canvas */}
-            <div className="relative w-full flex-1 flex items-center justify-center my-6 min-h-[340px] sm:min-h-[440px] md:min-h-[480px]">
+            <div className="relative w-full flex-1 flex items-center justify-center min-h-[320px] sm:min-h-[420px] md:min-h-[460px]">
               <Eyewear3DModel
                 key={`${activeFrame}-${activeLens}`}
                 frameType={activeFrame}
                 lensType={activeLens}
-                className="w-full h-[340px] sm:h-[440px] md:h-[480px]"
+                className="w-full h-[320px] sm:h-[420px] md:h-[460px]"
                 autoRotate={true}
               />
             </div>
 
-            {/* Pure Controls: Gem Mineral Lens Swatches & Acquire Action */}
-            <div className="w-full flex flex-col sm:flex-row items-center justify-between gap-6 pt-4">
-              {/* Gem-like Mineral Lens Swatches */}
-              <div className="flex items-center gap-2.5 sm:gap-3 flex-wrap justify-center font-sans">
+            {/* Floating Controls: Gem Mineral Lens Swatches & Acquire Action */}
+            <div className="w-full flex flex-col sm:flex-row items-center justify-between gap-4 pt-6 pb-2 border-t border-[#2A241D]/10">
+              {/* Gem Mineral Lens Swatches */}
+              <div className="flex items-center gap-2 sm:gap-2.5 flex-wrap justify-center font-sans">
                 {[
                   { id: "ruby", label: "Ruby", color: "#8A0E1C" },
                   { id: "obsidian", label: "Obsidian", color: "#1A1C20" },
@@ -283,19 +287,19 @@ export default function CollectionDetail() {
                         } catch {}
                         setActiveLens(lens.id as any);
                       }}
-                      className={`group flex items-center gap-2 px-3.5 py-1.5 rounded-full transition-all duration-300 cursor-pointer ${
+                      className={`group flex items-center gap-2 px-3 py-1.5 rounded-full transition-all duration-300 cursor-pointer ${
                         isSelected
-                          ? "bg-black text-white shadow-xs"
-                          : "bg-black/[0.03] text-black/70 hover:text-black hover:bg-black/[0.06]"
+                          ? "bg-[#2A241D] text-[#F9F6F0] shadow-sm"
+                          : "bg-[#2A241D]/[0.05] text-[#2A241D]/70 hover:text-[#2A241D] hover:bg-[#2A241D]/[0.09]"
                       }`}
                     >
                       <span
                         className={`w-2.5 h-2.5 rounded-full transition-transform duration-300 ${
-                          isSelected ? "scale-110 ring-2 ring-white/40" : "group-hover:scale-110"
+                          isSelected ? "scale-110 ring-2 ring-[#D4AF37]" : "group-hover:scale-110"
                         }`}
                         style={{ backgroundColor: lens.color }}
                       />
-                      <span className="text-xs font-normal">{lens.label}</span>
+                      <span className="text-xs font-normal lowercase">{lens.label}</span>
                     </button>
                   );
                 })}
@@ -304,11 +308,11 @@ export default function CollectionDetail() {
               {/* Bespoke Acquisition CTA */}
               <button
                 onClick={handleAcquireBespoke}
-                className="group relative inline-flex items-center gap-3 px-8 py-2.5 rounded-full font-sans text-xs font-medium bg-black text-white hover:bg-[#4A0E16] transition-all duration-300 cursor-pointer active:scale-98 shadow-xs"
+                className="group relative inline-flex items-center gap-3 px-6 py-2 rounded-full font-sans text-xs font-medium bg-[#2A241D] text-[#F9F6F0] hover:bg-[#D4AF37] hover:text-[#2A241D] transition-all duration-300 cursor-pointer active:scale-98 shadow-sm"
               >
-                <span>Acquire 3D Edition</span>
-                <span className="text-white/40">·</span>
-                <span>AED 18,000</span>
+                <span>acquire 3d bespoke</span>
+                <span className="text-white/40 group-hover:text-black/40">·</span>
+                <span>aed 18,000</span>
               </button>
             </div>
           </div>
@@ -316,87 +320,209 @@ export default function CollectionDetail() {
       </section>
 
       {/* ========================================================================= */}
-      {/* 6. EYEWEAR EDITIONS : ARCHITECTURAL ARCHES & OPTICAL CAPSULE VITRINES      */}
+      {/* 6. EYEWEAR EDITIONS : GENTLE MONSTER BOXLESS GALLERY                      */}
       {/* ========================================================================= */}
       <section
         id="frames"
-        className="relative w-full px-6 sm:px-12 md:px-20 pt-20 md:pt-36 pb-32 max-w-7xl mx-auto select-none"
+        className="relative w-full px-6 sm:px-12 md:px-20 pt-16 md:pt-24 pb-28 md:pb-36 max-w-7xl mx-auto select-none"
       >
-        <div className="flex flex-col sm:flex-row sm:items-baseline justify-between pb-8">
-          <div>
-            <span className="font-sans lowercase text-xs text-[#000000]/45 block font-normal">
-              catalog
-            </span>
-            <h2 className="font-serif lowercase text-3xl sm:text-4xl md:text-5xl font-normal mt-1 text-[#000000] tracking-tight">
-              {collection.title} editions
-            </h2>
-          </div>
-          <span className="font-sans text-xs text-[#000000]/50 font-normal">
-            0{collection.products.length} Silhouettes
-          </span>
+        {/* Curatorial Header */}
+        <div className="pb-6 border-b border-[#2A241D]/10 mb-14 md:mb-20">
+          <h2 className="font-serif lowercase text-3xl sm:text-4xl md:text-5xl font-normal text-[#2A241D] tracking-tight">
+            {collection.title} editions
+          </h2>
         </div>
 
-        {/* Sculptural Staggered Salon Layout (Architectural Arches & Stadium Capsules) */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-10 mt-16 md:mt-24">
-          {collection.products.map((product, idx) => {
-            const isArched = idx % 2 === 0;
-            return (
-              <ScrollReveal key={product.id} delay={idx * 80}>
-                <div
-                  className={`group flex flex-col cursor-pointer ${
-                    !isArched ? "md:mt-14" : ""
-                  }`}
-                  onClick={() => handleEnquire(product)}
-                >
-                  {/* Sculptural Vitrine Silhouette */}
-                  <div
-                    className={`relative aspect-[3/4] w-full overflow-hidden bg-[#F8F7F5] border border-black/5 flex items-center justify-center p-6 transition-all duration-700 ease-out group-hover:-translate-y-2 group-hover:shadow-[0_24px_48px_rgba(0,0,0,0.07)] ${
-                      isArched
-                        ? "rounded-t-[140px] rounded-b-[16px]"
-                        : "rounded-[72px]"
-                    }`}
+        {/* --------------------------------------------------------------------- */}
+        {/* PIECE 01: THE FLAGSHIP SILHOUETTE (ASYMMETRIC MONUMENTAL SPOTLIGHT)   */}
+        {/* --------------------------------------------------------------------- */}
+        {p1 && (
+          <ScrollReveal className="w-full mb-24 md:mb-36">
+            <div
+              className="group grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-16 items-center cursor-pointer"
+              onClick={() => handleEnquire(p1)}
+            >
+              {/* Left / Center: Unboxed Eyewear Floating Free */}
+              <div className="lg:col-span-7 relative flex items-center justify-center py-8 sm:py-14">
+                <img
+                  src={p1.quad}
+                  alt={p1.name}
+                  loading="lazy"
+                  className="w-full max-w-xl max-h-[380px] object-contain transition-transform duration-700 ease-out group-hover:scale-[1.04] filter drop-shadow-[0_24px_38px_rgba(42,36,29,0.12)] group-hover:drop-shadow-[0_32px_48px_rgba(42,36,29,0.18)]"
+                />
+              </div>
+
+              {/* Right: Editorial Narrative Floating Beside */}
+              <div className="lg:col-span-5 flex flex-col justify-center space-y-4 px-2">
+                <h3 className="font-serif lowercase text-3xl sm:text-4xl font-normal text-[#2A241D] tracking-tight leading-snug group-hover:text-[#D4AF37] transition-colors">
+                  {p1.name}
+                </h3>
+
+                <p className="font-sans text-xs sm:text-sm text-[#2A241D]/65 leading-relaxed font-normal max-w-[40ch]">
+                  {p1.material}
+                </p>
+
+                <div className="pt-2 flex items-baseline gap-2 font-serif text-2xl text-[#2A241D]">
+                  <span>{p1.priceDisplay}</span>
+                </div>
+
+                <div className="pt-3">
+                  <button
+                    onClick={(e) => {
+                      e.stopPropagation();
+                      handleEnquire(p1);
+                    }}
+                    className="inline-flex items-center gap-3 px-6 py-2.5 rounded-full font-sans text-xs font-medium bg-[#2A241D] text-[#F9F6F0] hover:bg-[#D4AF37] hover:text-[#2A241D] transition-all duration-300 cursor-pointer shadow-sm active:scale-98"
                   >
-                    {/* Architectural Numeral Marker */}
-                    <div className="absolute top-4 left-1/2 -translate-x-1/2 font-sans text-[10px] tracking-widest text-black/35 font-medium">
-                      0{idx + 1}
-                    </div>
+                    <span>acquire edition +</span>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </ScrollReveal>
+        )}
 
+        {/* --------------------------------------------------------------------- */}
+        {/* PIECES 02 & 03: ASYMMETRIC SCULPTURAL DUET (OFFSET RUNWAY)            */}
+        {/* --------------------------------------------------------------------- */}
+        {(p2 || p3) && (
+          <div className="grid grid-cols-1 md:grid-cols-12 gap-12 md:gap-20 items-start mb-24 md:mb-36">
+            {/* Piece 02: Offset Left */}
+            {p2 && (
+              <ScrollReveal delay={80} className="col-span-1 md:col-span-6">
+                <div
+                  className="group flex flex-col cursor-pointer"
+                  onClick={() => handleEnquire(p2)}
+                >
+                  {/* Floating Frame */}
+                  <div className="relative w-full aspect-[4/3] flex items-center justify-center py-6 sm:py-10">
                     <img
-                      src={product.quad}
-                      alt={product.name}
+                      src={p2.quad}
+                      alt={p2.name}
                       loading="lazy"
-                      className="max-h-[75%] max-w-[85%] object-contain mix-blend-multiply transition-transform duration-700 ease-out group-hover:scale-108 filter contrast-[1.03]"
+                      className="w-full max-w-md max-h-[300px] object-contain transition-transform duration-700 ease-out group-hover:scale-[1.04] filter drop-shadow-[0_20px_35px_rgba(42,36,29,0.11)] group-hover:drop-shadow-[0_28px_45px_rgba(42,36,29,0.16)]"
                     />
-
-                    {/* Floating Acquire Pill on Hover */}
-                    <div className="absolute bottom-4 left-1/2 -translate-x-1/2 opacity-0 group-hover:opacity-100 transition-all duration-300 translate-y-1 group-hover:translate-y-0 font-sans text-xs bg-black text-white px-4 py-1.5 rounded-full font-medium shadow-sm whitespace-nowrap">
-                      Acquire Edition +
-                    </div>
                   </div>
 
-                  {/* Typographic Metadata in GT Sectra & GT America */}
-                  <div className="mt-5 flex flex-col space-y-1.5 px-2">
-                    <h3 className="font-serif text-lg font-normal text-[#000000] leading-snug group-hover:underline">
-                      {product.name}
+                  {/* Metadata Floating Beneath */}
+                  <div className="mt-4 flex flex-col space-y-1.5 px-2">
+                    <h3 className="font-serif lowercase text-xl sm:text-2xl font-normal text-[#2A241D] tracking-tight group-hover:text-[#D4AF37] transition-colors">
+                      {p2.name}
                     </h3>
-                    <p className="font-sans text-xs text-[#000000]/55 leading-relaxed font-normal">
-                      {product.material}
+                    <p className="font-sans text-xs text-[#2A241D]/60 leading-relaxed font-normal">
+                      {p2.material}
                     </p>
-                    <p className="font-serif text-base font-normal text-[#000000] pt-0.5">
-                      {product.priceDisplay}
-                    </p>
+                    <div className="pt-2 flex items-center justify-between">
+                      <span className="font-serif text-lg text-[#2A241D]">{p2.priceDisplay}</span>
+                      <button
+                        onClick={(e) => {
+                          e.stopPropagation();
+                          handleEnquire(p2);
+                        }}
+                        className="font-sans lowercase text-xs text-[#2A241D] hover:text-[#D4AF37] transition-colors underline underline-offset-4 cursor-pointer"
+                      >
+                        acquire +
+                      </button>
+                    </div>
                   </div>
                 </div>
               </ScrollReveal>
-            );
-          })}
-        </div>
+            )}
+
+            {/* Piece 03: Offset Right with Vertical Stagger */}
+            {p3 && (
+              <ScrollReveal delay={160} className="col-span-1 md:col-span-6 md:mt-24">
+                <div
+                  className="group flex flex-col cursor-pointer"
+                  onClick={() => handleEnquire(p3)}
+                >
+                  {/* Floating Frame */}
+                  <div className="relative w-full aspect-[4/3] flex items-center justify-center py-6 sm:py-10">
+                    <img
+                      src={p3.quad}
+                      alt={p3.name}
+                      loading="lazy"
+                      className="w-full max-w-md max-h-[300px] object-contain transition-transform duration-700 ease-out group-hover:scale-[1.04] filter drop-shadow-[0_20px_35px_rgba(42,36,29,0.11)] group-hover:drop-shadow-[0_28px_45px_rgba(42,36,29,0.16)]"
+                    />
+                  </div>
+
+                  {/* Metadata Floating Beneath */}
+                  <div className="mt-4 flex flex-col space-y-1.5 px-2">
+                    <h3 className="font-serif lowercase text-xl sm:text-2xl font-normal text-[#2A241D] tracking-tight group-hover:text-[#D4AF37] transition-colors">
+                      {p3.name}
+                    </h3>
+                    <p className="font-sans text-xs text-[#2A241D]/60 leading-relaxed font-normal">
+                      {p3.material}
+                    </p>
+                    <div className="pt-2 flex items-center justify-between">
+                      <span className="font-serif text-lg text-[#2A241D]">{p3.priceDisplay}</span>
+                      <button
+                        onClick={(e) => {
+                          e.stopPropagation();
+                          handleEnquire(p3);
+                        }}
+                        className="font-sans lowercase text-xs text-[#2A241D] hover:text-[#D4AF37] transition-colors underline underline-offset-4 cursor-pointer"
+                      >
+                        acquire +
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </ScrollReveal>
+            )}
+          </div>
+        )}
+
+        {/* --------------------------------------------------------------------- */}
+        {/* PIECE 04: THE ARCHIVAL MONOLITH (CENTERED SCULPTURAL FINALE)          */}
+        {/* --------------------------------------------------------------------- */}
+        {p4 && (
+          <ScrollReveal delay={120} className="w-full flex justify-center">
+            <div
+              className="group w-full max-w-3xl flex flex-col items-center text-center cursor-pointer"
+              onClick={() => handleEnquire(p4)}
+            >
+              {/* Floating Frame */}
+              <div className="relative w-full aspect-[16/9] flex items-center justify-center py-6 sm:py-12">
+                <img
+                  src={p4.quad}
+                  alt={p4.name}
+                  loading="lazy"
+                  className="w-full max-w-lg max-h-[340px] object-contain transition-transform duration-700 ease-out group-hover:scale-[1.04] filter drop-shadow-[0_24px_38px_rgba(42,36,29,0.12)] group-hover:drop-shadow-[0_32px_48px_rgba(42,36,29,0.18)]"
+                />
+              </div>
+
+              {/* Metadata Floating Beneath */}
+              <div className="mt-4 flex flex-col items-center space-y-2 px-4 max-w-xl">
+                <h3 className="font-serif lowercase text-2xl sm:text-3xl font-normal text-[#2A241D] tracking-tight group-hover:text-[#D4AF37] transition-colors">
+                  {p4.name}
+                </h3>
+                <p className="font-sans text-xs sm:text-sm text-[#2A241D]/65 leading-relaxed font-normal">
+                  {p4.material}
+                </p>
+                <div className="pt-2 flex items-center gap-4">
+                  <span className="font-serif text-xl text-[#2A241D]">{p4.priceDisplay}</span>
+                  <span className="text-[#2A241D]/30">·</span>
+                  <button
+                    onClick={(e) => {
+                      e.stopPropagation();
+                      handleEnquire(p4);
+                    }}
+                    className="inline-flex items-center gap-2 px-5 py-2 rounded-full font-sans text-xs font-medium bg-[#2A241D] text-[#F9F6F0] hover:bg-[#D4AF37] hover:text-[#2A241D] transition-all duration-300 cursor-pointer shadow-sm active:scale-98"
+                  >
+                    <span>acquire edition +</span>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </ScrollReveal>
+        )}
       </section>
 
       {/* ========================================================================= */}
-      {/* 8. NEXT COLLECTION PORTAL                                                  */}
+      {/* 7. NEXT COLLECTION PORTAL                                                  */}
       {/* ========================================================================= */}
-      <section className="relative w-full h-[65svh] overflow-hidden select-none bg-black">
+      <section className="relative w-full h-[60svh] overflow-hidden select-none bg-black">
         <Link
           href={`/collection/${collection.nextId}`}
           onClick={() => {
@@ -415,14 +541,14 @@ export default function CollectionDetail() {
           />
 
           <div className="absolute inset-0 bg-black/40 group-hover:bg-black/25 transition-colors duration-700 flex flex-col items-center justify-center text-center p-6 text-white">
-            <span className="font-sans text-xs text-white/70 mb-3 block font-normal">
-              Next Destination
+            <span className="font-sans text-xs text-white/70 mb-3 block font-normal lowercase tracking-[0.2em]">
+              next destination
             </span>
-            <h2 className="font-serif text-[clamp(2.2rem,7vw,5.5rem)] font-normal tracking-tight leading-none">
+            <h2 className="font-serif lowercase text-[clamp(2.2rem,6vw,5rem)] font-normal tracking-tight leading-none">
               {collection.nextName}
             </h2>
-            <div className="mt-6 flex items-center gap-2 font-sans text-xs text-white font-medium">
-              <span>Enter Collection</span>
+            <div className="mt-5 flex items-center gap-2 font-sans text-xs text-white font-medium lowercase tracking-wider">
+              <span>enter collection</span>
               <span className="transition-transform duration-500 group-hover:translate-x-1.5">
                 →
               </span>

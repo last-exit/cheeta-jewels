@@ -8,6 +8,7 @@ import { ArrowDownRight, Sparkles } from "lucide-react";
 import { Link } from "wouter";
 import CheetahBar from "@/components/CheetahBar";
 import HeaderWordmark from "@/components/HeaderWordmark";
+import SubtleLuxuryBackground from "@/components/SubtleLuxuryBackground";
 
 const atelierImage = "/manus-storage/cheeta-dubai-atelier_0dde518b.png";
 const leopardBox = "/manus-storage/cheeta-leopard-vault-box.jpg";
@@ -20,6 +21,9 @@ export default function Founder() {
 
       {/* Centered Transparent CHEETA JEWELS Header Wordmark */}
       <HeaderWordmark dark={false} />
+
+      {/* Subtle Background Swirls & Cheetah Rosettes (3-4% Opacity) */}
+      <SubtleLuxuryBackground variant="full" />
 
       {/* ========================================================================= */}
       {/* 1. FOUNDER OPEN */}
@@ -162,7 +166,7 @@ export default function Founder() {
               Purdey & Sons
             </h3>
             <p className="font-sans text-sm md:text-base text-[#1A1410]/75 leading-relaxed">
-              The vintage British gunmaker. Engraved metalwork, lavish wood finishes, heritage weight. The first eyewear chassis is a double-barrel sporting gun, translated to a frame.
+              The vintage British gunmaker. Engraved metalwork, lavish wood finishes, heritage weight. The first eyewear chassis is an iconic British sporting gun, translated to a frame.
             </p>
             <p className="font-sans text-xs uppercase tracking-[0.18em] text-[#1A1410]/45 pt-2">
               Old-world craft, new-world wear
@@ -186,7 +190,7 @@ export default function Founder() {
           </div>
           <div className="md:col-span-5 font-sans text-base md:text-lg text-[#1A1410]/75 leading-relaxed">
             <p>
-              The first Cheetah Jewelz drop is a hundred pairs of eyewear. Ruby-toned mineral lenses, sculpted metallic frames, gemstone detailing, engraved barrel-inspired temples. AED 15,000 per pair.
+              The first Cheetah Jewelz drop is a hundred pairs of eyewear. Ruby-toned mineral lenses, sculpted metallic frames, gemstone detailing, engraved sporting gun-inspired temples. AED 15,000 per pair.
             </p>
             <p className="mt-4 font-sans text-xs uppercase tracking-[0.2em] text-[#1A1410]/50">
               No reissue

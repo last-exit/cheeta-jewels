@@ -10,6 +10,7 @@ import { Link } from "wouter";
 import { toast } from "sonner";
 import CheetahBar from "@/components/CheetahBar";
 import HeaderWordmark from "@/components/HeaderWordmark";
+import SubtleLuxuryBackground from "@/components/SubtleLuxuryBackground";
 import { useCart } from "@/contexts/CartContext";
 import { playMetallicClick, playVaultAcquisition } from "@/lib/soundEffects";
 
@@ -43,14 +44,17 @@ export default function Cart() {
   };
 
   return (
-    <main className="min-h-screen w-full bg-[#F4F3EE] text-[#0B0B0C] selection:bg-[#0B0B0C] selection:text-[#F4F3EE]">
+    <main className="relative min-h-screen w-full bg-[#F4F3EE] text-[#0B0B0C] selection:bg-[#0B0B0C] selection:text-[#F4F3EE] overflow-hidden">
       {/* Floating Transparent Cheetah Bar */}
       <CheetahBar />
 
       {/* Centered Transparent CHEETA JEWELS Header Wordmark */}
       <HeaderWordmark dark={false} />
 
-      <div className="max-w-5xl mx-auto px-6 md:px-20 py-24 md:py-36 pl-16 md:pl-28">
+      {/* Subtle Background Swirls & Cheetah Rosettes (3-4% Opacity) */}
+      <SubtleLuxuryBackground variant="full" />
+
+      <div className="relative z-10 max-w-5xl mx-auto px-6 md:px-20 py-24 md:py-36 pl-16 md:pl-28">
         {/* Back Link */}
         <div className="mb-12 font-sans lowercase text-xs tracking-wider">
           <Link

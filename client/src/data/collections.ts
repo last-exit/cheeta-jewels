@@ -352,7 +352,7 @@ export const COLLECTIONS: Record<string, CollectionData> = {
       subtitle: "Dune Mirage Silhouette & Bone-Warmed Metal · Drag to Rotate 360°",
     },
     nextId: "barrel",
-    nextName: "BARREL",
+    nextName: "THE GUN COLLECTION",
     nextCampaign: "/campaigns/barrel-poster.jpg",
   },
 
@@ -365,7 +365,7 @@ export const COLLECTIONS: Record<string, CollectionData> = {
     cta: "View the Collection",
     secondary: "Acquire Edition",
     label: "THE GUN COLLECTION",
-    pageTitle: "the gun collection: double barrel",
+    pageTitle: "the gun collection",
     intro:
       "TEMPERED INSIDE THE SHADOWS OF CENTURY-OLD FRENCH CELLARS, THE GUN COLLECTION UNITES KNURLED GUNMETAL WITH CHARRED OAK PATINAS. ITS PROPRIETARY DUAL-CYLINDER CROSSBAR FORGES AN UNYIELDING INDUSTRIAL HORIZON, ECHOING THE RAW DISCIPLINE OF AGED GRAIN, SMOKED MINERAL OPTICS, AND TIME-HONORED COGNAC BRILLIANCE.",
     statement:
@@ -374,7 +374,7 @@ export const COLLECTIONS: Record<string, CollectionData> = {
       { cap: "CH. 01", note: "THE CHARRED OAK" },
       { cap: "CH. 02", note: "KNURLED GUNMETAL" },
       { cap: "CH. 03", note: "AGED CELLAR OPTICS" },
-      { cap: "CH. 04", note: "THE DOUBLE HORIZON" },
+      { cap: "CH. 04", note: "THE DUAL HORIZON" },
     ],
     video: "/videos/barrel.mp4",
     campaign: "/barrel/barrel-campaign.jpg",
@@ -397,7 +397,7 @@ export const COLLECTIONS: Record<string, CollectionData> = {
     products: [
       {
         id: "barrel-01",
-        name: "the double barrel 01: brushed gold",
+        name: "the gun collection 01: brushed gold",
         material: "18K Brushed Gold · Custom Ruby Mineral Lenses",
         price: 15000,
         priceDisplay: "AED 15,000",
@@ -405,7 +405,7 @@ export const COLLECTIONS: Record<string, CollectionData> = {
       },
       {
         id: "barrel-02",
-        name: "the double barrel 02: obsidian",
+        name: "the gun collection 02: obsidian",
         material: "Gunmetal Obsidian · Polarized Smoke Mineral Lenses",
         price: 15000,
         priceDisplay: "AED 15,000",
@@ -413,7 +413,7 @@ export const COLLECTIONS: Record<string, CollectionData> = {
       },
       {
         id: "barrel-03",
-        name: "the double barrel 03: antique bronze",
+        name: "the gun collection 03: antique bronze",
         material: "Antique Bronze · Amber Gradient Mineral Lenses",
         price: 15000,
         priceDisplay: "AED 15,000",
@@ -421,7 +421,7 @@ export const COLLECTIONS: Record<string, CollectionData> = {
       },
       {
         id: "barrel-04",
-        name: "the double barrel 04: charred oak",
+        name: "the gun collection 04: charred oak",
         material: "Charred Oak Acetate & Damascus Steel · Cognac Lenses",
         price: 19500,
         priceDisplay: "AED 19,500",
@@ -442,7 +442,7 @@ export const COLLECTIONS: Record<string, CollectionData> = {
         { id: "obsidian", label: "Polarized Smoke", hex: "#1A1C20" },
         { id: "amber", label: "Amber Gradient", hex: "#B86314" },
       ],
-      title: "Dual-Cylinder Double Barrel 01",
+      title: "The Gun Collection 01",
       subtitle: "Charred Oak Grain & Knurled Titanium Bridge · Drag to Rotate 360°",
     },
     nextId: "masquerade",

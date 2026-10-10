@@ -9,6 +9,7 @@ import { Link, useParams } from "wouter";
 import CheetahBar from "@/components/CheetahBar";
 import HeaderWordmark from "@/components/HeaderWordmark";
 import MacroJewelryLoupe from "@/components/MacroJewelryLoupe";
+import SubtleLuxuryBackground from "@/components/SubtleLuxuryBackground";
 import { useCart } from "@/contexts/CartContext";
 import { playMetallicClick, playVaultAcquisition } from "@/lib/soundEffects";
 import { PRODUCTS } from "./Retail";
@@ -16,7 +17,15 @@ import { toast } from "sonner";
 
 export default function ProductDetail() {
   const { slug } = useParams<{ slug: string }>();
-  const product = PRODUCTS.find((p) => p.slug === slug) || PRODUCTS[0];
+  const product =
+    PRODUCTS.find(
+      (p) =>
+        p.slug === slug ||
+        (slug?.startsWith("gun-collection") &&
+          p.slug === slug.replace("gun-collection", "double-barrel")) ||
+        (slug?.startsWith("double-barrel") &&
+          p.slug === slug.replace("double-barrel", "gun-collection"))
+    ) || PRODUCTS[0];
   const { addToCart, totalCount } = useCart();
   const [selectedImage, setSelectedImage] = useState(product.productImage);
 
@@ -48,6 +57,9 @@ export default function ProductDetail() {
 
       {/* Centered Transparent CHEETA JEWELS Header Wordmark */}
       <HeaderWordmark dark={false} />
+
+      {/* Subtle Background Swirls & Cheetah Rosettes (3-4% Opacity) */}
+      <SubtleLuxuryBackground variant="full" />
 
       <div className="max-w-6xl mx-auto px-6 md:px-20 py-24 md:py-36 pl-16 md:pl-28">
         {/* Navigation Breadcrumb */}

@@ -7,17 +7,21 @@ import { Link } from "wouter";
 import { ArrowLeft, ArrowUpRight } from "lucide-react";
 import CheetahBar from "@/components/CheetahBar";
 import HeaderWordmark from "@/components/HeaderWordmark";
+import SubtleLuxuryBackground from "@/components/SubtleLuxuryBackground";
 
 export default function NotFound() {
   return (
-    <main className="relative min-h-screen w-full bg-[#F4F1E8] text-[#1A1410] flex items-center justify-center px-6 py-32 select-none">
+    <main className="relative min-h-screen w-full bg-[#F4F1E8] text-[#1A1410] flex items-center justify-center px-6 py-32 select-none overflow-hidden">
       {/* Floating Transparent Cheetah Bar */}
       <CheetahBar dark={false} />
 
       {/* Centered Transparent CHEETA JEWELS Header Wordmark */}
       <HeaderWordmark dark={false} />
 
-      <div className="max-w-3xl w-full">
+      {/* Subtle Background Swirls & Cheetah Rosettes (3-4% Opacity) */}
+      <SubtleLuxuryBackground variant="full" />
+
+      <div className="relative z-10 max-w-3xl w-full">
         <motion.div
           initial={{ opacity: 0, y: 16 }}
           animate={{ opacity: 1, y: 0 }}

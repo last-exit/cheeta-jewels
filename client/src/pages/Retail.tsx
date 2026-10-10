@@ -10,6 +10,7 @@ import React, { useState } from "react";
 import { Link } from "wouter";
 import CheetahBar from "@/components/CheetahBar";
 import HeaderWordmark from "@/components/HeaderWordmark";
+import SubtleLuxuryBackground from "@/components/SubtleLuxuryBackground";
 import { useCart } from "@/contexts/CartContext";
 import { playMetallicClick, playVaultAcquisition } from "@/lib/soundEffects";
 import { toast } from "sonner";
@@ -30,7 +31,7 @@ export interface ProductItem {
 export const PRODUCTS: ProductItem[] = [
   {
     id: "barrel-01",
-    name: "The Double Barrel 01",
+    name: "The Gun Collection 01",
     category: "Eyewear",
     slug: "double-barrel-01",
     frame: "18K Brushed Gold",
@@ -42,7 +43,7 @@ export const PRODUCTS: ProductItem[] = [
   },
   {
     id: "barrel-02",
-    name: "The Double Barrel 02",
+    name: "The Gun Collection 02",
     category: "Eyewear",
     slug: "double-barrel-02",
     frame: "Gunmetal Obsidian",
@@ -54,7 +55,7 @@ export const PRODUCTS: ProductItem[] = [
   },
   {
     id: "barrel-03",
-    name: "The Double Barrel 03",
+    name: "The Gun Collection 03",
     category: "Eyewear",
     slug: "double-barrel-03",
     frame: "Antique Bronze",
@@ -138,6 +139,9 @@ export default function Retail() {
 
       {/* Centered Transparent CHEETA JEWELS Header Wordmark */}
       <HeaderWordmark dark={false} />
+
+      {/* Subtle Background Swirls & Cheetah Rosettes (3-4% Opacity) */}
+      <SubtleLuxuryBackground variant="full" />
 
       <div className="max-w-6xl mx-auto px-6 md:px-20 py-24 md:py-36 pl-16 md:pl-28">
         {/* ========================================================================= */}

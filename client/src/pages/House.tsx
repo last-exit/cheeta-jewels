@@ -6,6 +6,7 @@ import { ArrowDownRight, ArrowUpRight } from "lucide-react";
 import { Link } from "wouter";
 import CheetahBar from "@/components/CheetahBar";
 import HeaderWordmark from "@/components/HeaderWordmark";
+import SubtleLuxuryBackground from "@/components/SubtleLuxuryBackground";
 
 const mark = "/brand/cheeta-cj-transparent.png";
 const atelierImage = "/manus-storage/cheeta-dubai-atelier_0dde518b.png";
@@ -25,6 +26,9 @@ export default function House() {
 
       {/* Centered Transparent CHEETA JEWELS Header Wordmark */}
       <HeaderWordmark dark={false} />
+
+      {/* Subtle Background Swirls & Cheetah Rosettes (3-4% Opacity) */}
+      <SubtleLuxuryBackground variant="full" />
 
       <section className="house-hero px-5 pb-16 pt-24 sm:px-8 sm:pb-24 sm:pt-28 lg:px-11 lg:pb-32 lg:pt-36">
         <div className="mx-auto max-w-[1680px] pt-5">
@@ -103,7 +107,7 @@ export default function House() {
         </div>
       </section>
 
-      <footer className="bg-[#F4F1E8] px-5 py-7 sm:px-8 lg:px-11"><div className="mx-auto flex max-w-[1680px] items-center justify-between pt-5 font-sans text-[10px] uppercase tracking-[0.16em] text-[#1A1410]/55"><span>Cheetah Jewelz / Dossier 01</span><Link href="/retail" className="magnetic-link flex items-center gap-2">View the Barrel <ArrowUpRight size={13} /></Link></div></footer>
+      <footer className="bg-[#F4F1E8] px-5 py-7 sm:px-8 lg:px-11"><div className="mx-auto flex max-w-[1680px] items-center justify-between pt-5 font-sans text-[10px] uppercase tracking-[0.16em] text-[#1A1410]/55"><span>Cheetah Jewelz / Dossier 01</span><Link href="/retail" className="magnetic-link flex items-center gap-2">View the Gun Collection <ArrowUpRight size={13} /></Link></div></footer>
     </main>
   );
 }

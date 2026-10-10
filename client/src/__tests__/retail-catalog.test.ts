@@ -28,7 +28,7 @@ describe("Cheetah Jewelz Radical Minimal Retail Catalog", () => {
     });
   });
 
-  it("should feature the complete Double Barrel eyewear series", () => {
+  it("should feature the complete The Gun Collection eyewear series", () => {
     const goldBarrel = PRODUCTS.find((p) => p.id === "barrel-01");
     const gunmetalBarrel = PRODUCTS.find((p) => p.id === "barrel-02");
     const bronzeBarrel = PRODUCTS.find((p) => p.id === "barrel-03");

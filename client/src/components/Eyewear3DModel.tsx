@@ -30,6 +30,17 @@ export default function Eyewear3DModel({
   const targetRotationRef = useRef({ x: 0, y: 0 });
   const currentRotationRef = useRef({ x: 0, y: 0 });
 
+  // State for Explosion / Inspect Mode
+  const [isExploded, setIsExploded] = React.useState(false);
+  
+  const partsRef = useRef({
+    leftLens: null as THREE.Mesh | null,
+    rightLens: null as THREE.Mesh | null,
+    leftTempleGroup: null as THREE.Group | null,
+    rightTempleGroup: null as THREE.Group | null,
+    explosionProgress: 0,
+  });
+
   // Map lens color & physical properties for genuine luxury sunglasses lenses
   const getLensProps = (type: string) => {
     switch (type) {
@@ -261,10 +272,12 @@ export default function Eyewear3DModel({
 
     const leftLens = new THREE.Mesh(lensGeo, glassMaterial);
     leftLens.position.x = -lensSpacing;
+    partsRef.current.leftLens = leftLens;
     eyewearGroup.add(leftLens);
 
     const rightLens = new THREE.Mesh(lensGeo, glassMaterial);
     rightLens.position.x = lensSpacing;
+    partsRef.current.rightLens = rightLens;
     eyewearGroup.add(rightLens);
 
     // Double Barrel Brow Bridge Architecture
@@ -311,6 +324,14 @@ export default function Eyewear3DModel({
     rightPad.rotation.z = 0.3;
     eyewearGroup.add(rightPad);
 
+    // Groups for explosion animation
+    const leftTempleGroup = new THREE.Group();
+    const rightTempleGroup = new THREE.Group();
+    partsRef.current.leftTempleGroup = leftTempleGroup;
+    partsRef.current.rightTempleGroup = rightTempleGroup;
+    eyewearGroup.add(leftTempleGroup);
+    eyewearGroup.add(rightTempleGroup);
+
     // Sleek Sculptural Temple Arms
     const templeRadius = 0.02;
     const leftTempleCurve = new THREE.CatmullRomCurve3([
@@ -321,7 +342,7 @@ export default function Eyewear3DModel({
       new THREE.Vector3(-lensSpacing - lensRadius + 0.02, -0.18, -1.9),
     ]);
     const leftTemple = new THREE.Mesh(new THREE.TubeGeometry(leftTempleCurve, 48, templeRadius, 16, false), goldMaterial);
-    eyewearGroup.add(leftTemple);
+    leftTempleGroup.add(leftTemple);
 
     const rightTempleCurve = new THREE.CatmullRomCurve3([
       new THREE.Vector3(lensSpacing + lensRadius + 0.02, 0.1, 0),
@@ -331,27 +352,27 @@ export default function Eyewear3DModel({
       new THREE.Vector3(lensSpacing + lensRadius - 0.02, -0.18, -1.9),
     ]);
     const rightTemple = new THREE.Mesh(new THREE.TubeGeometry(rightTempleCurve, 48, templeRadius, 16, false), goldMaterial);
-    eyewearGroup.add(rightTemple);
+    rightTempleGroup.add(rightTemple);
 
     // Cheetah Head / Micro-Hinge Hardware
     const hingeBlockGeo = new THREE.BoxGeometry(0.06, 0.06, 0.08);
     const h1 = new THREE.Mesh(hingeBlockGeo, goldMaterial);
     h1.position.set(-lensSpacing - lensRadius - 0.03, 0.1, 0);
-    eyewearGroup.add(h1);
+    leftTempleGroup.add(h1);
 
     const h2 = new THREE.Mesh(hingeBlockGeo, goldMaterial);
     h2.position.set(lensSpacing + lensRadius + 0.03, 0.1, 0);
-    eyewearGroup.add(h2);
+    rightTempleGroup.add(h2);
 
     // Faceted Gemstone Pivot Studs
     const gemGeo = new THREE.OctahedronGeometry(0.035, 1);
     const g1 = new THREE.Mesh(gemGeo, emeraldPivotMaterial);
     g1.position.set(-lensSpacing - lensRadius - 0.045, 0.1, 0.045);
-    eyewearGroup.add(g1);
+    leftTempleGroup.add(g1);
 
     const g2 = new THREE.Mesh(gemGeo, emeraldPivotMaterial);
     g2.position.set(lensSpacing + lensRadius + 0.045, 0.1, 0.045);
-    eyewearGroup.add(g2);
+    rightTempleGroup.add(g2);
 
     scene.add(eyewearGroup);
 
@@ -432,6 +453,33 @@ export default function Eyewear3DModel({
         modelGroupRef.current.rotation.y = currentRotationRef.current.y;
         modelGroupRef.current.rotation.x = currentRotationRef.current.x;
       }
+      
+      // Explosion Animation Lerp
+      const targetExp = partsRef.current.explosionProgress;
+      partsRef.current.explosionProgress += (isExploded ? 1 - targetExp : 0 - targetExp) * 0.06;
+      const progress = partsRef.current.explosionProgress;
+      
+      if (partsRef.current.leftLens && partsRef.current.rightLens) {
+        // Pop lenses forward and slightly outwards
+        partsRef.current.leftLens.position.z = progress * 0.6;
+        partsRef.current.leftLens.position.x = -lensSpacing - (progress * 0.1);
+        partsRef.current.leftLens.rotation.y = progress * -0.15;
+        
+        partsRef.current.rightLens.position.z = progress * 0.6;
+        partsRef.current.rightLens.position.x = lensSpacing + (progress * 0.1);
+        partsRef.current.rightLens.rotation.y = progress * 0.15;
+      }
+      
+      if (partsRef.current.leftTempleGroup && partsRef.current.rightTempleGroup) {
+        // Separate temples outwards and rotate them to expose the hinges
+        partsRef.current.leftTempleGroup.position.x = progress * -0.6;
+        partsRef.current.leftTempleGroup.position.z = progress * 0.2;
+        partsRef.current.leftTempleGroup.rotation.y = progress * -0.25;
+        
+        partsRef.current.rightTempleGroup.position.x = progress * 0.6;
+        partsRef.current.rightTempleGroup.position.z = progress * 0.2;
+        partsRef.current.rightTempleGroup.rotation.y = progress * 0.25;
+      }
 
       renderer.render(scene, camera);
     };
@@ -464,7 +512,7 @@ export default function Eyewear3DModel({
       }
       renderer.dispose();
     };
-  }, []);
+  }, [isExploded]); // Added isExploded to dependency array to capture state changes!
 
   if (hasWebGLError) {
     return (
@@ -479,9 +527,39 @@ export default function Eyewear3DModel({
   }
 
   return (
-    <div
-      ref={mountRef}
-      className={`relative cursor-grab active:cursor-grabbing ${className}`}
-    />
+    <div className={`relative ${className}`}>
+      <div
+        ref={mountRef}
+        className="absolute inset-0 cursor-grab active:cursor-grabbing"
+      />
+      
+      {/* Explode / Inspect Mode Button */}
+      <div className="absolute bottom-6 right-6 md:bottom-8 md:right-8 z-10 flex flex-col items-end space-y-2 pointer-events-none">
+        {isExploded && (
+          <span className="text-[10px] uppercase tracking-widest text-[#2A241D]/60 font-semibold mb-1 pointer-events-none transition-opacity duration-500">
+            inspect mode active
+          </span>
+        )}
+        <button
+          onClick={() => setIsExploded(!isExploded)}
+          className={`group flex items-center justify-center h-12 w-12 rounded-full transition-all duration-500 cursor-pointer shadow-xl pointer-events-auto backdrop-blur-md border ${
+            isExploded 
+              ? "bg-[#D4AF37]/20 border-[#D4AF37]/40 text-[#D4AF37]" 
+              : "bg-black/5 border-black/10 text-black/40 hover:bg-black/10 hover:text-black"
+          }`}
+          title="Toggle Inspect Mode"
+        >
+          {isExploded ? (
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
+              <path d="M18 6L6 18M6 6l12 12" />
+            </svg>
+          ) : (
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
+              <path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7" />
+            </svg>
+          )}
+        </button>
+      </div>
+    </div>
   );
 }

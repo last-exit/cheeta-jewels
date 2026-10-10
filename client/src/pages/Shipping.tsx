@@ -23,11 +23,11 @@ export default function Shipping() {
           items={[
             {
               lead: "In-stock Atelier Editions:",
-              rest: "3–5 business days to dispatch, then 2–4 business days in transit (GCC) or 4–6 business days (international).",
+              rest: "3 to 5 business days to dispatch, then 2 to 4 business days in transit (GCC) or 4 to 6 business days (international).",
             },
             {
-              lead: "Numbered edition 004 - 100:",
-              rest: "Each piece is finished to order. Allow 4–6 weeks for hand-finishing before dispatch.",
+              lead: "Numbered edition 004 to 100:",
+              rest: "Each piece is finished to order. Allow 4 to 6 weeks for hand-finishing before dispatch.",
             },
             {
               lead: "By-Appointment pieces:",
@@ -35,7 +35,7 @@ export default function Shipping() {
             },
             {
               lead: "Custom commissions:",
-              rest: "Quoted individually. Typically 8–12 weeks from approved specification.",
+              rest: "Quoted individually. Typically 8 to 12 weeks from approved specification.",
             },
           ]}
         />

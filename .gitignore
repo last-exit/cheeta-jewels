@@ -121,7 +121,9 @@ skills-lock.json
 agent/
 cheeta-jewels-offline-media/
 
-# Root raw video files
+# Root raw video & screenshot files
 /*.mp4
+/*.png
+
 
 

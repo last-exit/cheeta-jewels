@@ -8,6 +8,7 @@ import { useEffect } from "react";
 import { Link } from "wouter";
 import CheetahBar from "@/components/CheetahBar";
 import HeaderWordmark from "@/components/HeaderWordmark";
+import SubtleLuxuryBackground from "@/components/SubtleLuxuryBackground";
 
 export interface LegalPageProps {
   eyebrow: string;
@@ -30,14 +31,17 @@ export default function LegalPage({
   }, []);
 
   return (
-    <main className="relative w-full min-h-screen bg-[#F4F1E8] text-[#1A1410] selection:bg-[#1A1410] selection:text-[#F4F1E8] pt-20 md:pt-24">
+    <main className="relative w-full min-h-screen bg-[#F4F1E8] text-[#1A1410] selection:bg-[#1A1410] selection:text-[#F4F1E8] pt-20 md:pt-24 overflow-hidden">
       {/* Floating Transparent Cheetah Bar */}
       <CheetahBar dark={false} />
 
       {/* Centered Transparent CHEETA JEWELS Header Wordmark */}
       <HeaderWordmark dark={false} />
 
-      <article className="max-w-3xl mx-auto px-6 md:px-10 py-16 md:py-24">
+      {/* Subtle Background Swirls & Cheetah Rosettes (3-4% Opacity) */}
+      <SubtleLuxuryBackground variant="full" />
+
+      <article className="relative z-10 max-w-3xl mx-auto px-6 md:px-10 py-16 md:py-24">
         {/* Eyebrow */}
         <motion.span
           initial={{ opacity: 0, y: 6 }}
